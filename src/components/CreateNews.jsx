@@ -18,7 +18,6 @@ export default class CreateNews extends Component{
             text,
             bigText,
         });
-        ReactDOM.findDOMNode(this.refs.comment).value='';
     };
 
     handleChange = e => {
