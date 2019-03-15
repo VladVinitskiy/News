@@ -1,33 +1,76 @@
-.App {
-  text-align: center;
+.none {
+    display: none;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+p {
+    margin: 0 0 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.article {
+    list-style: none;
+    background: #fff;
+    border: 1px solid rgba(0, 89, 181, 0.82);
+    width: 600px;
+    margin: 0 0 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.news__author {
+    text-decoration: underline;
+    color: #007ddc;
 }
+.news__count {
+    margin: 10px 0 0 0;
+    display: block;
+}
+.test-input {
+    margin: 0 5px 5px 0;
+}
+
+.add {
+    margin: 0 5px 5px 0;
+    width: 40%;
+    border: 1px dashed rgba(0, 89, 181, 0.82);
+    padding: 5px;
+}
+.add__author,
+.add__text,
+.add__btn,
+.add__checkrule {
+    font-size: 16px;
+    display: block;
+    margin: 0 0 5px 0;
+    padding: 5px;
+    width: 94%;
+    border: 1px solid rgba(0, 89, 181, 0.82);
+}
+.add__btn {
+    box-sizing: content-box;
+    color: #fff;
+    text-transform: uppercase;
+    background: #b0adff;
+}
+.add__btn:disabled {
+    background: #ccc;
+    color: #999;
+}
+
+.miniWrap{
+    display: flex;
+    font-size: 16px;
+}
+.comment{
+    width: 90%;
+    display: flex;
+}
+.bt{
+    background-color: white !important;
+    color: black;
+}
+.count{
+    float: right;
+}
+
