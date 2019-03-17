@@ -1,16 +1,16 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-export default class Comment extends Component{
-    state={
-      comment:''
+export default class Comment extends Component {
+    state = {
+        comment: ''
     };
 
-    addComment=()=>{
+    addComment = () => {
         this.setState({
-            comment:ReactDOM.findDOMNode(this.refs.comment).value
+            comment: ReactDOM.findDOMNode(this.refs.comment).value
         });
-        ReactDOM.findDOMNode(this.refs.comment).value='';
+        ReactDOM.findDOMNode(this.refs.comment).value = '';
     };
 
     render() {

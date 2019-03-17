@@ -1,18 +1,20 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import Article from './Article';
 import PropTypes from 'prop-types';
-class News extends Component{
+
+class News extends Component {
     render() {
         return (
-            <div>
+            <div className='main'>
                 <ul style={{paddingLeft: 0}}>
-                    {this.props.data.map((item,index)=>(
+                    {this.props.data.map((item, index) => (
                         <Article
                             key={index}
                             author={item.author}
                             text={item.text}
                             bigText={item.bigText}
                             index={index}
+                            count={item.count}
                         />
                     ))}
                 </ul>
@@ -22,12 +24,12 @@ class News extends Component{
 }
 
 
-News.propTypes={
-    data:PropTypes.array.isRequired
+News.propTypes = {
+    data: PropTypes.array.isRequired
 };
 
-News.defaultProps={
-    data:[]
+News.defaultProps = {
+    data: []
 };
 
 

@@ -1,8 +1,7 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import ReactDOM from "react-dom";
 
-export default class CreateNews extends Component{
+export default class CreateNews extends Component {
     state = {
         name: '',
         text: '',
@@ -40,6 +39,7 @@ export default class CreateNews extends Component{
         const {name, text, bigText} = this.state;
         return (
             <form className="add">
+                <h3>Добавити новину</h3>
                 <input
                     id="name"
                     type="text"
@@ -63,7 +63,7 @@ export default class CreateNews extends Component{
                     value={bigText}
                 />
                 <label className="add__checkrule">
-                    <input type="checkbox" onChange={this.handleCheckboxChange}/>Приймаю правила
+                    <input type="checkbox" onChange={this.handleCheckboxChange}/> Приймаю правила
                 </label>
                 <button
                     className="add__btn"
@@ -77,8 +77,8 @@ export default class CreateNews extends Component{
     }
 }
 
-CreateNews.propTypes={
-    name:PropTypes.string,
-    text:PropTypes.string,
-    bigText:PropTypes.string,
+CreateNews.propTypes = {
+    name: PropTypes.string,
+    text: PropTypes.string,
+    bigText: PropTypes.string,
 };

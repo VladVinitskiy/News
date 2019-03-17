@@ -9,12 +9,16 @@ export default class MainApp extends Component {
     state = {
         news: null,
         isLoading: false,
+        counter: 0
     };
 
     componentDidMount() {
         setTimeout(() => {
-            this.setState({isLoading: true, news: data})
-        }, 1000)
+            this.setState({
+                isLoading: true,
+                news: localStorage.getItem('data') !== null ? JSON.parse(localStorage.getItem('data')) : data
+            })
+        }, 1000);
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -38,16 +42,18 @@ export default class MainApp extends Component {
 
     handleAddNews = data => {
         const nextNews = [data, ...this.state.news];
-        this.setState({news: nextNews})
+        this.setState({news: nextNews});
+        localStorage.setItem('data', JSON.stringify(nextNews))
     };
+
 
     render() {
         const {news, isLoading} = this.state;
-
         return (
-            <div>
+            <div className='wrapper'>
                 <CreateNews onAddNews={this.handleAddNews}/>
-                {isLoading ? <News data={news}/> : <p>One minute please...</p>}
+                <h1 className='header'>News</h1>
+                {isLoading ? <News data={news}/> : <h2 className='load'>One minute please...</h2>}
                 {isLoading && <InfoAboutNews length={this.state.news.length}/>}
             </div>
         );
