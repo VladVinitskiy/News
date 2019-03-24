@@ -1,5 +1,7 @@
-.none {
-    display: none;
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -8,10 +10,15 @@ body {
     padding: 0;
 }
 
+button:active, button:focus {
+    outline: none;
+}
+
+input, textarea {
+    outline: none;
+}
 
 .wrapper {
-    /*width: 1920px;*/
-    /*height: 1080px;*/
     width: 100vw;
     height: 100vh;
 }
@@ -106,6 +113,12 @@ body {
     background: #fff;
     border: 1px solid rgba(0, 89, 181, 0.82);
     margin: 0 0 5px;
+    transition: .2s;
+}
+
+.readen {
+    transition: .2s;
+    filter: contrast(60%);
 }
 
 .author {
@@ -176,4 +189,35 @@ body {
     font-family: monospace;
 }
 
+.add__check {
+    font-size: 24px;
+    display: inline;
+    float: right;
+    margin: 10px 10px;
+}
 
+
+.add__check input[type='checkbox'] {
+    transform: scale(2.5);
+    -ms-transform: scale(2.5);
+    -webkit-transform: scale(2.5);
+    width: 21px;
+}
+
+.add__check span {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.filters {
+    float: right;
+    margin: 1.5em 1em;
+    font-size: 22px;
+    font-family: monospace;
+}
+
+.activeFilter {
+    color: #2e77c2;
+    text-decoration: underline;
+    font-weight: bold;
+}
