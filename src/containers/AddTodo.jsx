@@ -29,7 +29,7 @@ export default class AddTodo extends Component {
         let text, author, bigText;
         return (
             <form
-                className="add"
+                className={this.props.isAuthorize===false ? 'none add':'add'}
                 onSubmit={e => {
                     e.preventDefault();
                     if (!text.value.trim() || !author.value.trim() || !bigText.value.trim()) {
@@ -43,7 +43,7 @@ export default class AddTodo extends Component {
                 <h3>Добавити новину</h3>
                 <input
                     className="add__author"
-                    placeholder="Ім'я"
+                    placeholder="Name"
                     ref={node => {author = node}}
                     onChange={this.handleChangeName}/>
                 <textarea
@@ -51,23 +51,23 @@ export default class AddTodo extends Component {
                     id="text"
                     onChange={this.handleChangeText}
                     className="add__text"
-                    placeholder="Текст новини"
+                    placeholder="News"
                 />
                 <textarea
                     ref={node => {bigText = node}}
                     id="bigText"
                     className="add__text"
-                    placeholder="Описати"
+                    placeholder="Description"
                     onChange={this.handleChangeBigText}
                 />
                 <label className="add__checkrule">
-                    <input type="checkbox" onChange={this.handleCheckboxChange}/>    Приймаю правила
+                    <input type="checkbox" onChange={this.handleCheckboxChange}/>    Agree with rules
                 </label>
                 <button
                     className="add__btn"
                     type='submit'
                     disabled={!this.validate()}>
-                    Публікувати
+                    Public
                 </button>
             </form>
         )

@@ -15,20 +15,20 @@ export default class Todo extends Component {
 
     addComment = () => {
         this.setState({
-            comment: ReactDOM.findDOMNode(this.refs.comment).value
+            comment: `${this.props.userName}: ${ReactDOM.findDOMNode(this.refs.comment).value}`
         });
         ReactDOM.findDOMNode(this.refs.comment).value = '';
     };
 
     render() {
-        const {onClick, status, author, text, bigText} = this.props;
+        const {onClick, status, author, text, bigText,isAuthorize} = this.props;
 
         return (
             <li
                 className={status ? 'article readen' : 'article'}
             >
                 <label className="add__check">
-                    <span>Прочитано</span>
+                    <span>Readen</span>
                     <input type="checkbox"
                            onChange={onClick}
                            checked={status}
@@ -40,19 +40,27 @@ export default class Todo extends Component {
                        type='text'
                        defaultValue=''
                        ref='comment'
-                       placeholder='Ваш коментар'/>
+                       placeholder='Your comment'/>
                 <div className='miniWrap'>
-                    <button className='bt dif'
-                            onClick={this.handleClick}>
-                        {this.state.visible ? `Менше` : 'Більше'}
+                    <button
+                        className='bt dif'
+                        onClick={this.handleClick}
+                    >
+                        {this.state.visible ? `Less` : 'More'}
                     </button>
-                    <button className='bt'
-                            onClick={this.addComment}>
-                        Опоблікувати
+                    <button
+                        className='bt'
+                        onClick={this.addComment}
+                        disabled={!isAuthorize}
+                    >
+                        Public
                     </button>
-                    <button className='bt count'
-                            onClick={this.handleCount}>
-                        +{this.state.counter === 0 ? '' : this.state.counter} Лукас
+                    <button
+                        className='bt count'
+                        onClick={this.handleCount}
+                        disabled={!isAuthorize}
+                    >
+                        +{this.state.counter === 0 ? '' : this.state.counter} Like
                     </button>
                 </div>
                 <p className='comment'>{this.state.comment}</p>
