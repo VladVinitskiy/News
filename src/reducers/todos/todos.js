@@ -1,7 +1,5 @@
-import {ADD_NEWS, TOGGLE_TODO} from "../../action/action";
+import {ADD_NEWS, TOGGLE_TODO} from "../../constants/constants";
 import newsData from '../../newsData';
-
-
 
 export default function todos(state=newsData,action) {
     switch (action.type) {

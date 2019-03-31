@@ -9,8 +9,7 @@ export default class Main extends Component {
         newsLength:0
     };
 
-    updateData = value => {
-        this.setState({ newsLength: value })};
+    updateData = value => this.setState({ newsLength: value });
 
     render(){
         return(

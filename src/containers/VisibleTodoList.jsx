@@ -1,21 +1,7 @@
 import {connect} from 'react-redux';
-import {toggleTodo, VisibilityFilters} from '../action/action';
+import {toggleTodo} from '../action/toggleTodo';
 import TodoList from '../components/TodoList';
-
-const {SHOW_ALL, SHOW_READEN, SHOW_UNREADEN} = VisibilityFilters;
-
-const getVisibleTodos = (todos, filter) => {
-    switch (filter) {
-        case SHOW_ALL:
-            return todos;
-        case SHOW_READEN:
-            return todos.filter(t => t.status);
-        case SHOW_UNREADEN:
-            return todos.filter(t => !t.status);
-        default:
-            return todos;
-    }
-};
+import getVisibleTodos from '../reducers/visibilityFilter/getVisibleTodos'
 
 const mapStateToProps = state => {
     return {
