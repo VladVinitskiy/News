@@ -2,7 +2,7 @@ import {VisibilityFilters} from '../../constants/constants';
 
 const {SHOW_ALL, SHOW_READEN, SHOW_UNREADEN} = VisibilityFilters;
 
-export default function getVisibleTodos(todos, filter){
+export default function getVisibleTodos(todos, filter) {
     switch (filter) {
         case SHOW_ALL:
             return todos;

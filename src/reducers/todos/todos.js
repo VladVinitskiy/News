@@ -1,22 +1,22 @@
 import {ADD_NEWS, TOGGLE_TODO} from "../../constants/constants";
 import newsData from '../../newsData';
 
-export default function todos(state=newsData,action) {
+export default function todos(state = newsData, action) {
     switch (action.type) {
         case ADD_NEWS:
-            return[
+            return [
                 {
-                    author:action.author,
-                    text:action.text,
-                    bigText:action.bigText,
-                    status:false
+                    author: action.author,
+                    text: action.text,
+                    bigText: action.bigText,
+                    status: false
                 },
                 ...state
             ];
         case TOGGLE_TODO:
-            return state.map((todo,index)=> {
-                if (index===action.index){
-                    return Object.assign({},todo,{
+            return state.map((todo, index) => {
+                if (index === action.index) {
+                    return Object.assign({}, todo, {
                         status: !todo.status
                     })
                 }

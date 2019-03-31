@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {addNews} from '../action/addNews';
 
-
 export default class AddTodo extends Component {
     state = {
         NAME: '',
@@ -29,7 +28,7 @@ export default class AddTodo extends Component {
         let text, author, bigText;
         return (
             <form
-                className={this.props.isAuthorize===false ? 'none add':'add'}
+                className={this.props.isAuthorize === false ? 'none add' : 'add'}
                 onSubmit={e => {
                     e.preventDefault();
                     if (!text.value.trim() || !author.value.trim() || !bigText.value.trim()) {
@@ -44,24 +43,30 @@ export default class AddTodo extends Component {
                 <input
                     className="add__author"
                     placeholder="Name"
-                    ref={node => {author = node}}
+                    ref={node => {
+                        author = node
+                    }}
                     onChange={this.handleChangeName}/>
                 <textarea
-                    ref={node => {text = node}}
+                    ref={node => {
+                        text = node
+                    }}
                     id="text"
                     onChange={this.handleChangeText}
                     className="add__text"
                     placeholder="News"
                 />
                 <textarea
-                    ref={node => {bigText = node}}
+                    ref={node => {
+                        bigText = node
+                    }}
                     id="bigText"
                     className="add__text"
                     placeholder="Description"
                     onChange={this.handleChangeBigText}
                 />
                 <label className="add__checkrule">
-                    <input type="checkbox" onChange={this.handleCheckboxChange}/>    Agree with rules
+                    <input type="checkbox" onChange={this.handleCheckboxChange}/> Agree with rules
                 </label>
                 <button
                     className="add__btn"

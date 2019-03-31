@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Link = ({ active, children, onClick }) => {
+const Link = ({active, children, onClick}) => {
     if (active) {
         return <span className='activeFilter'>{children}</span>
     }
 
     return (
         <span onClick={e => {
-                e.preventDefault();
-                onClick()
-            }}
+            e.preventDefault();
+            onClick()
+        }}
         >
             {children}
         </span>

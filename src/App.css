@@ -14,7 +14,7 @@ button:active, button:focus {outline: none;}
 
 input, textarea {outline: none;}
 
-.none{display: none;}
+.none {display: none;}
 
 .wrapper {
     width: 90vw;
@@ -22,31 +22,35 @@ input, textarea {outline: none;}
 }
 
 
-.navbar_wrapper{
+.navbar_wrapper {
     width: 90vw;
     justify-content: space-between;
     display: flex;
     margin: 0 auto;
 }
 
-.navbar h2{
+.navbar h2 {
     margin: 0;
     font-size: 30px;
     font-weight: 500;
     font-family: "Times New Roman";
 }
 
-.wrapper_links{display: flex;}
+.wrapper_links {
+    display: flex;
+}
 
-.wrapper_links a{
+.wrapper_links a {
     margin: 0;
     font-size: 24px;
     color: #7a79a9;
 }
 
-.wrapper_links a:nth-child(even){margin-left: 30px;}
+.wrapper_links a:nth-child(even) {
+    margin-left: 30px;
+}
 
-.wrapper_header{
+.wrapper_header {
     margin: 15px 0 10px;
     display: flex;
     align-items: center;
@@ -54,12 +58,12 @@ input, textarea {outline: none;}
 }
 
 .header {
-    margin:0 0 0 50px;
+    margin: 0 0 0 50px;
     font-size: 70px;
     font-family: serif;
 }
 
-.wrapper_header div{
+.wrapper_header div {
     margin-right: 50px;
     font-size: 22px;
     font-family: monospace;
@@ -67,7 +71,7 @@ input, textarea {outline: none;}
 
 .main_on {width: 63%;}
 
-.main_off{
+.main_off {
     width: 95%;
     margin: 0 auto;
 }
@@ -209,7 +213,6 @@ input, textarea {outline: none;}
 }
 
 
-
 .load {
     text-align: center;
     font-size: 30px;
@@ -245,16 +248,14 @@ input, textarea {outline: none;}
 }
 
 
-.footer{
-    margin: 30px 0 ;
-}
+.footer {margin: 30px 0;}
 
 .amount_of_news {
     font-size: 30px;
     font-family: monospace;
 }
 
-.form_valid{
+.form_valid {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -270,23 +271,30 @@ input, textarea {outline: none;}
     overflow: hidden;
     width: 240px;
 }
+
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
+
 input {
     border-radius: 5px;
     font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
 }
-.account-info {padding: 30px 30px 0 30px;}
+
+.account-info {
+    padding: 30px 30px 0 30px;
+}
+
 .account-info label {
     color: #395870;
     display: block;
     font-weight: bold;
     margin-bottom: 20px;
 }
+
 .account-info input {
     background: #fff;
     border: 1px solid #c6c7cc;
@@ -296,11 +304,13 @@ input {
     margin-top: 6px;
     width: 92%;
 }
+
 .account-action {
     background: #f0f0f2;
     border-top: 1px solid #c6c7cc;
     padding: 20px;
 }
+
 .account-action .btn {
     background: linear-gradient(#49708f, #293f50);
     border: 0;
@@ -310,6 +320,7 @@ input {
     float: left;
     padding: 8px 16px;
 }
+
 .account-action label {
     color: #7c7c80;
     font-size: 12px;

@@ -8,9 +8,9 @@ export default class TodoList extends Component {
     componentDidUpdate() {this.props.updateData(this.props.todos.length);}
 
     render() {
-        const {todos, onTodoClick,isAuthorize,userName} = this.props;
+        const {todos, onTodoClick, isAuthorize, userName} = this.props;
         return (
-            <div className={isAuthorize===false?'main_off':'main_on'}>
+            <div className={isAuthorize === false ? 'main_off' : 'main_on'}>
                 <ul style={{paddingLeft: 0}}>
                     {todos.map((todo, index) => (
                         <Todo

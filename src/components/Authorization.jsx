@@ -1,14 +1,14 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 
-export default class Authorization extends Component{
-    state={
-        isAuthorize:true
+export default class Authorization extends Component {
+    state = {
+        isAuthorize: true
     };
 
-    onSubmit=(name, password,remembered)=>{
-        if (localStorage.getItem(name) && JSON.parse(localStorage.getItem(name)).password === password ){
-            this.props.changeAuthorize(this.state.isAuthorize,JSON.parse(localStorage.getItem(name)).name);
-            if (remembered===true){
+    onSubmit = (name, password, remembered) => {
+        if (localStorage.getItem(name) && JSON.parse(localStorage.getItem(name)).password === password) {
+            this.props.changeAuthorize(this.state.isAuthorize, JSON.parse(localStorage.getItem(name)).name);
+            if (remembered === true) {
                 localStorage.setItem('remembered', JSON.stringify(name));
             }
             this.props.history.push('/');
@@ -17,20 +17,23 @@ export default class Authorization extends Component{
     };
 
     render() {
-        let name,password,remembered;
-        return(
+        let name, password, remembered;
+        return (
             <div className='form_valid'>
                 <form
                     className='forms'
-                    onSubmit={e=>{
+                    onSubmit={e => {
                         e.preventDefault();
-                        this.onSubmit(name.value, password.value,remembered.checked)}
+                        this.onSubmit(name.value, password.value, remembered.checked)
+                    }
                     }>
                     <fieldset className="account-info">
                         <label>
                             User name
                             <input
-                                ref={node => {name = node}}
+                                ref={node => {
+                                    name = node
+                                }}
                                 type='text'
                                 placeholder='Name'
                                 required
@@ -43,7 +46,9 @@ export default class Authorization extends Component{
                         <label>
                             Password
                             <input
-                                ref={node => {password = node}}
+                                ref={node => {
+                                    password = node
+                                }}
                                 type='password'
                                 placeholder='Password'
                                 minLength='4'
@@ -58,7 +63,9 @@ export default class Authorization extends Component{
                         <input className="btn" type='submit' value='Sign In'/>
                         <label>
                             <input
-                                ref={node => {remembered = node}}
+                                ref={node => {
+                                    remembered = node
+                                }}
                                 type="checkbox"
                                 name="remember"
                             />

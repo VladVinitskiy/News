@@ -1,9 +1,9 @@
 import React from 'react';
 import FilterLink from '../containers/FilterLink';
-import { VisibilityFilters } from '../constants/constants';
+import {VisibilityFilters} from '../constants/constants';
 
-const Filters = () =>{
-    return(
+const Filters = () => {
+    return (
         <div>
             <FilterLink filter={VisibilityFilters.SHOW_ALL}>All</FilterLink>
             {', '}

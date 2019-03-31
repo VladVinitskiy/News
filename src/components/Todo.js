@@ -21,7 +21,7 @@ export default class Todo extends Component {
     };
 
     render() {
-        const {onClick, status, author, text, bigText,isAuthorize} = this.props;
+        const {onClick, status, author, text, bigText, isAuthorize} = this.props;
 
         return (
             <li
