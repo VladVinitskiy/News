@@ -39,7 +39,7 @@ export default class AddTodo extends Component {
                     bigText.value = '';
                 }}
             >
-                <h3>Добавити новину</h3>
+                <h3>Add news</h3>
                 <input
                     className="add__author"
                     placeholder="Name"
@@ -66,7 +66,7 @@ export default class AddTodo extends Component {
                     onChange={this.handleChangeBigText}
                 />
                 <label className="add__checkrule">
-                    <input type="checkbox" onChange={this.handleCheckboxChange}/> Agree with rules
+                    <input type="checkbox" onChange={this.handleCheckboxChange}/>   Agree with rules
                 </label>
                 <button
                     className="add__btn"
