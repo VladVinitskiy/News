@@ -66,7 +66,7 @@ export default class AddTodo extends Component {
                     onChange={this.handleChangeBigText}
                 />
                 <label className="add__checkrule">
-                    <input type="checkbox" onChange={this.handleCheckboxChange}/>   Agree with rules
+                    <input type="checkbox" style={{marginRight:'20px'}} onChange={this.handleCheckboxChange}/>Agree with rules
                 </label>
                 <button
                     className="add__btn"
