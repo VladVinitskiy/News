@@ -3,7 +3,7 @@ In the project directory, you can run application, that allows read and create s
 
 Deployment
 This project has moved here: https://newssss.herokuapp.com/ If the site will be loaded for a long time, please wait for the heroku wake up
-## For normal working application you must download server/app.js file and run it with help command node app
+# For normal working application you must download server/app.js file and run it with help command node app
 
 ### npm start
 Runs the app in the development mode.
