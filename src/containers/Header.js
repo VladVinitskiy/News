@@ -19,11 +19,11 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         checkAuthorize: (statement) => dispatch(checkAuthorize(statement)),
-        changePassword: (name,password) => dispatch(changePassword(name,password)),
-        changeEmail: (name,email) => dispatch(changeEmail(name,email)),
-        changePhone: (name,phone) => dispatch(changePhone(name,phone)),
+        changePassword: (name,email,password,phone) => dispatch(changePassword(name,email,password,phone)),
+        changeEmail: (name,email,password,phone) => dispatch(changeEmail(name,email,password,phone)),
+        changePhone: (name,email,password,phone) => dispatch(changePhone(name,email,password,phone)),
         removeCurrentUser: () => dispatch(removeCurrentUser()),
-        removeUser: (index) => dispatch(removeUser(index)),
+        removeUser: (name) => dispatch(removeUser(name)),
     }
 };
 

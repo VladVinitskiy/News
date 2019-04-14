@@ -34,7 +34,7 @@ const Todo = ({onClick,onAddComment,onAddLike,showMore,userName, status, author,
                         className='col-lg-5 col-sm-4 h4 p-lg-2 p-md-2 p-sm-2 p-1 bg-light border-dark text_mode flexible_btn'
                         onClick={()=>{
                             onAddComment(index, Comment.value!=='' && `${userName}: ${Comment.value}`);
-                            Comment.value='';
+                            Comment.value ='';
                         }}
                         disabled={!isAuthorize}
                     >

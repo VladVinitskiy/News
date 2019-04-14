@@ -3,7 +3,7 @@ import Filters from './Filters';
 import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
 
-const Main = ({isAuthorize,newsLength,changeNewsLength,validateUser}) =>{
+const Main = ({isAuthorize,newsLength,changeNewsLength,validateUser,getNews}) =>{
     return (
         <Fragment>
             <div className='container-fluid wrapper_header'>

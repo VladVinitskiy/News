@@ -7,7 +7,6 @@ const Registration = ({addUser, history}) => {
             <form className="text-center border border-dark p-lg-5 p-md-5 p-sm-5 p-3"
                   onSubmit={e => {
                       e.preventDefault();
-                      addUser(name.value, email.value, password.value, phone.value);
                       if (localStorage.getItem(name.value)) {
                           const confirm = window.confirm(`юзер ${JSON.parse(localStorage.getItem(name.value)).name} вже існує. Перейти на сторінку авторризації ?`);
                           if (confirm) {
@@ -16,6 +15,7 @@ const Registration = ({addUser, history}) => {
                               history.push('/registration')
                           }
                       } else {
+                          addUser(name.value, email.value, password.value, phone.value);
                           localStorage.setItem(name.value, JSON.stringify({
                               name: name.value,
                               email: email.value,

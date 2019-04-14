@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import Main from '../components/Main'
 import {changeNewsLength} from '../action/changeNewsLength'
+import {getNews} from '../action/getNews'
 
 const mapStateToProps = state => {
     return {
@@ -12,7 +13,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        changeNewsLength:(newsLength)=> dispatch(changeNewsLength(newsLength))
+        changeNewsLength:(newsLength)=> dispatch(changeNewsLength(newsLength)),
+        getNews:()=> dispatch(getNews())
     }
 };
 

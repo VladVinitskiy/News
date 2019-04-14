@@ -1,9 +1,28 @@
-import {ADD_NEWS, TOGGLE_TODO, ADD_COMMENT, ADD_LIKE,SHOW_MORE} from "../../constants/constants";
+import {ADD_NEWS, TOGGLE_TODO, ADD_COMMENT, ADD_LIKE,SHOW_MORE,GET_NEWS} from "../../constants/constants";
 import newsData from '../../newsData';
 
-export default function todos(state = newsData, action) {
+function postNews(author, text, bigText, comment,status,like) {
+    let data = JSON.stringify({
+        "author": author,
+        "text": text,
+        "bigText": bigText,
+        "comment": comment,
+        "status": status,
+        "like": like
+    });
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:5000/news");
+    xhr.setRequestHeader("content-type", "application/json");
+    xhr.setRequestHeader("cache-control", "no-cache");
+    xhr.send(data);
+}
+
+export default function todos(state = [], action) {
     switch (action.type) {
+        case GET_NEWS:
+            return action.payload===[] ? newsData : action.payload;
         case ADD_NEWS:
+            postNews(action.author,action.text,action.bigText,'',false,0);
             return [
                 {
                     author: action.author,

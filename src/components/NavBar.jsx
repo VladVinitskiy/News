@@ -35,7 +35,7 @@ const NavBar = ({users, user, isAuthorize, checkAuthorize, changeEmail, changePa
                                         />
                                         <button
                                             className="btn btn-dark mb-2 col-4"
-                                            onClick={() => changePassword(user.name, password.value)}>
+                                            onClick={() => changePassword(user.name,email.value, password.value,phone.value)}>
                                             Change
                                         </button>
                                     </div>
@@ -46,8 +46,6 @@ const NavBar = ({users, user, isAuthorize, checkAuthorize, changeEmail, changePa
                                         <input
                                             className="form-control col-8"
                                             placeholder="Password"
-                                            minLength='4'
-                                            maxLength='10'
                                             type='text'
                                             defaultValue={user.email}
                                             ref={node => email = node}
@@ -56,7 +54,7 @@ const NavBar = ({users, user, isAuthorize, checkAuthorize, changeEmail, changePa
                                         />
                                         <button
                                             className="btn btn-dark mb-2 col-4"
-                                            onClick={() => changeEmail(user.name, email.value)}>
+                                            onClick={() => changeEmail(user.name,email.value, password.value,phone.value)}>
                                             Change
                                         </button>
                                     </div>
@@ -77,7 +75,7 @@ const NavBar = ({users, user, isAuthorize, checkAuthorize, changeEmail, changePa
                                         />
                                         <button
                                             className="btn btn-dark mb-2 col-4"
-                                            onClick={() => changePhone(user.name, phone.value)}>
+                                            onClick={() => changePhone(user.name, email.value, password.value, phone.value)}>
                                             Change
                                         </button>
                                     </div>
@@ -94,9 +92,9 @@ const NavBar = ({users, user, isAuthorize, checkAuthorize, changeEmail, changePa
                                     <button
                                         className={isAuthorize === false ? 'none' : 'btn btn-dark col-6'}
                                         onClick={() => {
-                                            let Index = 0;
-                                            users.forEach((User, index) => User.name === user.name ? Index = index : -1);
-                                            removeUser(Index);
+                                            // let Index = 0;
+                                            // users.forEach((User, index) => User.name === user.name ? Index = index : -1);
+                                            removeUser(user.name);
                                             checkAuthorize(false);
                                             removeCurrentUser();
                                             localStorage.removeItem('remembered');

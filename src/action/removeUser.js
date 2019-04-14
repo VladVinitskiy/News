@@ -1,8 +1,8 @@
 import {REMOVE_USER} from "../constants/constants";
 
-export function removeUser(index) {
+export function removeUser(name) {
     return {
         type: REMOVE_USER,
-        index
+        payload:name
     }
 }
