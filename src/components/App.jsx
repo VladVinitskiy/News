@@ -1,9 +1,9 @@
 import React, {Component, Fragment} from 'react';
-import MainContent from '../containers/MainContent';
-import Header from '../containers/Header';
-import Footer from '../containers/Footer';
-import AddUser from '../containers/AddUser';
-import ValidateUser from '../containers/ValidateUser';
+import MainContainer from '../containers/MainContainer';
+import HeaderContainer from '../containers/HeaderContainer';
+import FooterContainer from '../containers/FooterContainer';
+import RegistrationContainer from '../containers/RegistrationContainer';
+import AuthorizationContainer from '../containers/AuthorizationContainer';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import '../App.css';
 
@@ -22,21 +22,21 @@ export default class App extends Component {
                             exact path='/'
                             render={() =>
                                 <Fragment>
-                                    <Header/>
-                                    <MainContent history={history}/>
-                                    <Footer/>
+                                    <HeaderContainer/>
+                                    <MainContainer history={history}/>
+                                    <FooterContainer/>
                                 </Fragment>}
                         />
                         <Route path='/registration' render={() =>
                             <Fragment>
-                                <Header/>
-                                <AddUser history={history}/>
+                                <HeaderContainer/>
+                                <RegistrationContainer history={history}/>
                             </Fragment>}
                         />
                         <Route path='/authorization' render={() =>
                             <Fragment>
-                                <Header/>
-                                <ValidateUser history={history}/>
+                                <HeaderContainer/>
+                                <AuthorizationContainer history={history}/>
                             </Fragment>}
                         />
                     </Switch>

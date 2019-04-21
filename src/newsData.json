@@ -6,7 +6,8 @@
     "comment": "",
     "like": 243,
     "more": false,
-    "status": false
+    "status": false,
+    "comments": []
   },
   {
     "author": "Andrew Ellson",
@@ -15,7 +16,8 @@
     "comment": "",
     "like": 213,
     "more": false,
-    "status": false
+    "status": false,
+    "comments": []
   },
   {
     "author": "Sam Joiner",
@@ -24,7 +26,8 @@
     "comment": "",
     "like": 2332,
     "more": false,
-    "status": false
+    "status": false,
+    "comments": []
   },
   {
     "author": "David Walsh",
@@ -33,6 +36,7 @@
     "comment": "",
     "like": 231,
     "more": false,
-    "status": false
+    "status": false,
+    "comments": []
   }
 ]

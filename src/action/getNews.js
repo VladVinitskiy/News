@@ -1,14 +1,13 @@
 import {GET_NEWS} from '../constants/constants'
 
+const axios = require('axios');
+
 export const getNews = () => dispatch => {
-    fetch('http://localhost:5000/news')
-        .then((response) => {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        })
-        .then((response) => response.json())
+    axios.get('http://localhost:5000/news')
+        .then((response) => response.data)
         .then((data) => dispatch({type: GET_NEWS, payload: data}))
-        .catch(() => dispatch({type: GET_NEWS, payload: []}));
+        .catch((e) => {
+            dispatch({type: GET_NEWS, payload: []});
+            console.warn(e.toString());
+        })
 };

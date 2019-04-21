@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddTodo = ({correctlyForm, addNews, changeNewsLength, newsLength, validateForm, isAuthorize, userName}) => {
+const AddNews = ({correctlyForm, addNews, validateForm, isAuthorize, userName}) => {
     let text, author, bigText, agree;
     return (
         <div className='ml-lg-5 navbar navbar_mode'>
@@ -9,12 +9,12 @@ const AddTodo = ({correctlyForm, addNews, changeNewsLength, newsLength, validate
                     className={isAuthorize === true ? 'text_mode nav-link dropdown-toggle text-dark h3' : 'text_mode nav-link dropdown-toggle text-dark h3 disabled'}
                     href='/' data-toggle="dropdown">Add News
                 </a>
-                <div className={isAuthorize === false ? 'none add' : 'border-secondary dropdown-menu dropdown-menu-right add p-lg-3 p-md-3 p-sm-2 p-1'}>
+                <div
+                    className={isAuthorize === false ? 'none add' : 'border-secondary dropdown-menu dropdown-menu-right add p-lg-3 p-md-3 p-sm-2 p-1'}>
                     <form
                         onSubmit={e => {
                             e.preventDefault();
-                            addNews(author.value, text.value, bigText.value);
-                            changeNewsLength(newsLength + 1);
+                            addNews(author.value, text.value, bigText.value, [], false, 0);
                             text.value = '';
                             bigText.value = '';
                         }}
@@ -79,4 +79,4 @@ const AddTodo = ({correctlyForm, addNews, changeNewsLength, newsLength, validate
     )
 };
 
-export default AddTodo;
+export default AddNews;

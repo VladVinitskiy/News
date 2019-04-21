@@ -1,9 +1,8 @@
 import {ADD_COMMENT} from "../constants/constants";
 
-export function addComment(index, comment) {
-    return {
-        type: ADD_COMMENT,
-        index,
-        comment
-    }
-}
+const axios = require('axios');
+
+export const addComment = (index, user, comment) => dispatch => {
+    axios.put(`http://localhost:5000/news/:${index}`, {"user": user, "msg": comment})
+        .then(() => dispatch({type: ADD_COMMENT, index, user, comment}));
+};

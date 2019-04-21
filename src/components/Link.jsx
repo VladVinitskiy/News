@@ -9,9 +9,9 @@ const Link = ({active, children, onClick}) => {
         <span
             className='nav-item h4 text-black-50 ml-md-3 ml-sm-3 ml-2 text_mode'
             onClick={e => {
-            e.preventDefault();
-            onClick()
-        }}
+                e.preventDefault();
+                onClick()
+            }}
         >
             {children}
         </span>

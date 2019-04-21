@@ -65,7 +65,7 @@ const Authorization = ({checkAuthorize, checkUser, history, users}) => {
                             type="checkbox"
                             name="remember"
                         />
-                            <label className="custom-control-label" htmlFor="defaultContactFormCopy">Remembered</label>
+                        <label className="custom-control-label" htmlFor="defaultContactFormCopy">Remembered</label>
                     </div>
                     <input className="btn btn-dark btn-block" type='submit' value='Log In'/>
                 </fieldset>
