@@ -33,10 +33,10 @@ const Authorization = ({checkAuthorize, checkUser, history, users}) => {
                         ref={node => name = node}
                         className="form-control mb-4"
                         type='text'
-                        placeholder='Name'
+                        placeholder='Email'
                         required
                         minLength='4'
-                        maxLength='10'
+                        maxLength='20'
                         title="Username must have only letters"
                         pattern="[a-zA-Z]{4,10}"
                         id="defaultSubscriptionFormName"
@@ -65,7 +65,7 @@ const Authorization = ({checkAuthorize, checkUser, history, users}) => {
                             type="checkbox"
                             name="remember"
                         />
-                        <label className="custom-control-label" htmlFor="defaultContactFormCopy">Remembered</label>
+                            <label className="custom-control-label" htmlFor="defaultContactFormCopy">Remembered</label>
                     </div>
                     <input className="btn btn-dark btn-block" type='submit' value='Log In'/>
                 </fieldset>

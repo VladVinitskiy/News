@@ -1,23 +1,23 @@
-import React, {Fragment} from 'react';
+import React,{Fragment} from 'react';
 import Filters from './Filters';
-import News from '../containers/AddNewsContainer';
-import NewsContainer from '../containers/NewsContainer';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
 
-const Main = ({isAuthorize, newsLength, currentUser}) => {
+const Main = ({isAuthorize,newsLength,validateUser}) =>{
     return (
         <Fragment>
             <div className='container-fluid wrapper_header'>
-                <News
+                <AddTodo
                     isAuthorize={isAuthorize}
                     newsLength={newsLength}
-                    userName={currentUser.name}
+                    userName={validateUser.name}
                 />
                 <Filters/>
             </div>
             <div className='container-fluid bg-dark'>
-                <NewsContainer
+                <VisibleTodoList
                     isAuthorize={isAuthorize}
-                    userName={currentUser.name}
+                    userName={validateUser.name}
                 />
             </div>
         </Fragment>

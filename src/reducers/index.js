@@ -1,18 +1,18 @@
-import news from './news/news';
+import todos from './todos/todos';
 import visibilityFilter from './visibilityFilter/visibilityFilter';
 import correctlyForm from './validate/validateForm';
 import users from './users/users';
-import currentUser from './currentUser/currentUser';
+import validateUser from './validateUser/validateUser';
 import isAuthorize from './isAuthorize/isAuthorize'
 import {combineReducers} from 'redux'
 
-const NewsApp = combineReducers({
+const todoApp = combineReducers({
     correctlyForm,
     visibilityFilter,
-    news,
+    todos,
     users,
-    currentUser,
+    validateUser,
     isAuthorize
 });
 
-export default NewsApp;
+export default todoApp;

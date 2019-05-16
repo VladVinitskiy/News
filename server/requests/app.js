@@ -4,24 +4,25 @@ const axios = require('axios');
 const bodyPareser = require('body-parser');
 const cors = require('cors');
 const KEY = '19c35e4ad3b54f4faae2dfc9b75ea8f7';
-const port = 5000;
+const port = '5000';
 
-let users = [{"name": "Vlad", "email": "kalit@com.ua", "password": "1111", "phone": "380933312313"}];
+let users = [
+    {"name": "Vlad", "email": "kalit@com.ua", "password": "1111", "phone": "380933312313"},
+    {"name": "USERADMIN", "email": "USERADMIN@com.ua", "password": "Testing1", "phone": "380977777777"},
+];
 let news = [];
 
 app.use(bodyPareser.json());
 app.use(bodyPareser.urlencoded({extended: true}));
 app.use(cors());
 
-
-//GET NEWS
-app.get('/news', cors(), (req, res) => {
+app.get('/news', (req, res) => {
     axios.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${KEY}`)
         .then(response => {
             return response.data.articles
         })
         .then(data => {
-            return data.map((item) => {
+            return data.map((item, index) => {
                 return {
                     author: item.author,
                     text: item.title,
@@ -42,32 +43,24 @@ app.get('/news', cors(), (req, res) => {
     console.log('GET NEWS');
 });
 
-
-//GET USERS
-app.get('/users', cors(), (req, res) => {
+app.get('/users', (req, res) => {
     res.send(users);
     console.log('GET USERS');
 });
 
-
-//ADD USERS
-app.post('/users', cors(), (req, res) => {
+app.post('/users', (req, res) => {
     users.push({...req.body});
     res.send(req.body);
     console.log('SIGN UP USER');
 });
 
-
-//ADD NEWS
-app.post('/news', cors(), (req, res) => {
+app.post('/news', (req, res) => {
     news.unshift({...req.body});
     res.send(req.body);
     console.log('ADD NEWS');
 });
 
-
-//ADD COMMENTS
-app.put('/news/:index', cors(), (req, res) => {
+app.put('/news/:index', (req, res) => {
     news.map((article, index) => {
         if (index === +req.params.index.slice(1)) {
             return article.comments.push({
@@ -82,38 +75,20 @@ app.put('/news/:index', cors(), (req, res) => {
 });
 
 
-//UPDATE USER'S DATA
-app.put('/users/:name', cors(), (req, res) => {
+//update data
+app.put('/users/:name', (req, res) => {
     let user = users.find((user) => {
         return user.name === req.params.name
     });
-
-    const responce = (type, name) => {
-        res.sendStatus(200);
-        console.log(`CHANGE ${(type).toUpperCase()} BY ${name.toUpperCase()}`);
-    };
-
-    switch (req.body.type) {
-        case "phone":
-            user.phone = req.body.phone;
-            responce(req.body.type, req.params.name);
-            return users;
-        case "password":
-            user.password = req.body.password;
-            responce(req.body.type, req.params.name);
-            return users;
-        case "email":
-            user.email = req.body.email;
-            responce(req.body.type, req.params.name);
-            return users;
-        default:
-            return null
-    }
+    user.email = req.body.email;
+    user.password = req.body.password;
+    user.phone = req.body.phone;
+    res.sendStatus(200);
+    console.log('CHANGE DATA BY ' + req.params.name.toUpperCase());
 });
 
-
-//DELETE USERS
-app.delete('/users/:name', cors(), (req, res) => {
+//delete data
+app.delete('/users/:name', (req, res) => {
     users = users.filter((user) => {
         return user.name !== req.params.name;
     });
@@ -122,4 +97,4 @@ app.delete('/users/:name', cors(), (req, res) => {
 });
 
 
-app.listen(port, () => console.log(`app is listening on port ${port}`));
+app.listen(port, () => console.log(`listening on port ${port}`));

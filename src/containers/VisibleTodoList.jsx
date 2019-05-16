@@ -17,8 +17,8 @@ const mapDispatchToProps = dispatch => {
         onTodoClick: id => {
             dispatch(toggleTodo(id))
         },
-        onAddComment: (index,comment) => {
-            dispatch(addComment(index,comment))
+        onAddComment: (index,user,comment) => {
+            dispatch(addComment(index,user,comment))
         },
         onAddLike:(index,like) => {
             dispatch(addLike(index,like))

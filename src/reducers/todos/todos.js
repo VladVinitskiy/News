@@ -1,36 +1,22 @@
-import {ADD_NEWS, TOGGLE_TODO, ADD_COMMENT, ADD_LIKE,SHOW_MORE,GET_NEWS} from "../../constants/constants";
+import {ADD_NEWS, TOGGLE_TODO, ADD_COMMENT, ADD_LIKE, SHOW_MORE, GET_NEWS} from "../../constants/constants";
 import newsData from '../../newsData';
-
-function postNews(author, text, bigText, comment,status,like) {
-    let data = JSON.stringify({
-        "author": author,
-        "text": text,
-        "bigText": bigText,
-        "comment": comment,
-        "status": status,
-        "like": like
-    });
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:5000/news");
-    xhr.setRequestHeader("content-type", "application/json");
-    xhr.setRequestHeader("cache-control", "no-cache");
-    xhr.send(data);
-}
+import {postNews} from '../../action/addNews'
 
 export default function todos(state = [], action) {
     switch (action.type) {
         case GET_NEWS:
-            return action.payload===[] ? newsData : action.payload;
+            return action.payload.length === 0 ? newsData : action.payload;
         case ADD_NEWS:
-            postNews(action.author,action.text,action.bigText,'',false,0);
+            const likes = Math.round(5 + Math.random() * (100 - 5));
+            postNews(action.author, action.text, action.bigText, [], false, likes);
             return [
                 {
                     author: action.author,
                     text: action.text,
                     bigText: action.bigText,
-                    comment: '',
+                    comments: [],
                     status: false,
-                    like:0
+                    like: likes
                 },
                 ...state
             ];
@@ -46,8 +32,9 @@ export default function todos(state = [], action) {
         case ADD_COMMENT:
             return state.map((todo, index) => {
                 if (index === action.index) {
-                    return Object.assign({}, todo, {
-                        comment:action.comment
+                    todo.comments.push({
+                        user: action.user,
+                        comment: action.comment
                     })
                 }
                 return todo;
@@ -56,7 +43,7 @@ export default function todos(state = [], action) {
             return state.map((todo, index) => {
                 if (index === action.index) {
                     return Object.assign({}, todo, {
-                        like:action.like+1
+                        like: action.like + 1
                     })
                 }
                 return todo;
@@ -65,7 +52,7 @@ export default function todos(state = [], action) {
             return state.map((todo, index) => {
                 if (index === action.index) {
                     return Object.assign({}, todo, {
-                        more:!action.more
+                        more: !action.more
                     })
                 }
                 return todo;

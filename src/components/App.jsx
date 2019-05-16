@@ -1,9 +1,9 @@
 import React, {Component, Fragment} from 'react';
-import MainContainer from '../containers/MainContainer';
-import HeaderContainer from '../containers/HeaderContainer';
-import FooterContainer from '../containers/FooterContainer';
-import RegistrationContainer from '../containers/RegistrationContainer';
-import AuthorizationContainer from '../containers/AuthorizationContainer';
+import MainContent from '../containers/MainContent';
+import Header from '../containers/Header';
+import Footer from '../containers/Footer';
+import AddUser from '../containers/AddUser';
+import ValidateUser from '../containers/ValidateUser';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import '../App.css';
 
@@ -22,21 +22,21 @@ export default class App extends Component {
                             exact path='/'
                             render={() =>
                                 <Fragment>
-                                    <HeaderContainer/>
-                                    <MainContainer history={history}/>
-                                    <FooterContainer/>
+                                    <Header/>
+                                    <MainContent history={history}/>
+                                    <Footer/>
                                 </Fragment>}
                         />
                         <Route path='/registration' render={() =>
                             <Fragment>
-                                <HeaderContainer/>
-                                <RegistrationContainer history={history}/>
+                                <Header/>
+                                <AddUser history={history}/>
                             </Fragment>}
                         />
                         <Route path='/authorization' render={() =>
                             <Fragment>
-                                <HeaderContainer/>
-                                <AuthorizationContainer history={history}/>
+                                <Header/>
+                                <ValidateUser history={history}/>
                             </Fragment>}
                         />
                     </Switch>

@@ -1,9 +1,7 @@
 import {connect} from 'react-redux';
 import NavBar from '../components/NavBar';
 import {checkAuthorize} from '../action/checkAuthorize';
-import {changePassword} from '../action/changePassword';
-import {changeEmail} from '../action/changeEmail';
-import {changePhone} from '../action/changePhone';
+import {changePassword,changeEmail,changePhone} from '../action/changeData';
 import {removeCurrentUser} from '../action/removeCurrentUser';
 import {removeUser} from '../action/removeUser';
 

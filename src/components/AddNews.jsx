@@ -9,12 +9,11 @@ const AddNews = ({correctlyForm, addNews, validateForm, isAuthorize, userName}) 
                     className={isAuthorize === true ? 'text_mode nav-link dropdown-toggle text-dark h3' : 'text_mode nav-link dropdown-toggle text-dark h3 disabled'}
                     href='/' data-toggle="dropdown">Add News
                 </a>
-                <div
-                    className={isAuthorize === false ? 'none add' : 'border-secondary dropdown-menu dropdown-menu-right add p-lg-3 p-md-3 p-sm-2 p-1'}>
+                <div className={isAuthorize === false ? 'none add' : 'border-secondary dropdown-menu dropdown-menu-right add p-lg-3 p-md-3 p-sm-2 p-1'}>
                     <form
                         onSubmit={e => {
                             e.preventDefault();
-                            addNews(author.value, text.value, bigText.value, [], false, 0);
+                            addNews(author.value, text.value, bigText.value);
                             text.value = '';
                             bigText.value = '';
                         }}
