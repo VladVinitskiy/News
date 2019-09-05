@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
 
-const TodoList = ({todos, onTodoClick, onAddComment, onAddLike, showMore, isAuthorize, userName}) => {
+const TodoList = ({news, onTodoClick, onAddComment, onAddLike, showMore, isLoggedIn, userName}) => {
     return (
         <ul
             className='list-group mr-lg-5 ml-lg-5 mr-md-2
             ml-md-2 ml-sm-1 mr-sm-1 pt-lg-3 pt-md-3 pt-sm-2
             pb-lg-3 pb-md-3 pb-sm-2 p_mode'
             style={{paddingLeft: 0}}>
-            {todos.map((todo, index) => (
+            {news.length > 0 && news.map((todo, index) => (
                 <Todo
                     key={index}
                     index={index}
@@ -18,7 +18,7 @@ const TodoList = ({todos, onTodoClick, onAddComment, onAddLike, showMore, isAuth
                     onAddComment={onAddComment}
                     onAddLike={onAddLike}
                     showMore={showMore}
-                    isAuthorize={isAuthorize}
+                    isLoggedIn={isLoggedIn}
                     userName={userName}
                 />
             ))}
@@ -29,7 +29,7 @@ const TodoList = ({todos, onTodoClick, onAddComment, onAddLike, showMore, isAuth
 export default TodoList;
 
 TodoList.propTypes = {
-    todos: PropTypes.arrayOf(
+    news: PropTypes.arrayOf(
         PropTypes.shape({
             completed: PropTypes.bool,
             text: PropTypes.string.isRequired

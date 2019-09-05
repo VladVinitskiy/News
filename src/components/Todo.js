@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // const socket = io('http://localhost:5050');
 
 
-const Todo = ({onClick,onAddComment,onAddLike,showMore,userName, status, author, text, bigText, isAuthorize, index, more, comments, like})=>{
+const Todo = ({onClick,onAddComment,onAddLike, showMore,userName, status, author, text, bigText, isLoggedIn, index, more, comments, like})=>{
     let Comment;
     return (
         <li
@@ -36,28 +36,28 @@ const Todo = ({onClick,onAddComment,onAddLike,showMore,userName, status, author,
                     <button
                         className='col-lg-5 col-sm-4 h4 p-lg-2 p-md-2 p-sm-2 p-1 bg-light border-dark text_mode flexible_btn'
                         onClick={()=>{
-                            onAddComment(index,userName, Comment.value);
+                            onAddComment(index ,userName, Comment.value);
                             // socket.on('chat message', function (msg) {});
                             // socket.emit('chat message',index,userName, Comment.value);
                             Comment.value ='';
                         }}
-                        disabled={!isAuthorize}
+                        disabled={!isLoggedIn}
                     >
                         Public
                     </button>
                     <button
                         className='col-lg-2 btn-dark h4 p-lg-2 p-md-2 p-sm-2 p-1 col-sm-4 text_mode flexible_btn'
                         onClick={()=> {onAddLike(index,like)}}
-                        disabled={!isAuthorize}
+                        disabled={!isLoggedIn}
                     >
                         +{like === 0 ? '' : like} Like
                     </button>
                 </div>
             </div>
 
-            {comments.map((item,index)=>{
-                return <p key={index} className='h3 my-2 my-lg-3 my-md-3 my-sm-2 font-italic text_mode'>{item.user}: {item.comment}</p>
-            })}
+            {/*{comments.map((item,index)=>{*/}
+            {/*    return <p key={index} className='h3 my-2 my-lg-3 my-md-3 my-sm-2 font-italic text_mode'>{item.user}: {item.comment}</p>*/}
+            {/*})}*/}
         </li>
     )
 };

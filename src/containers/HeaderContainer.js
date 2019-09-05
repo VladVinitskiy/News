@@ -1,30 +1,29 @@
 import {connect} from 'react-redux';
 import Header from '../components/Header';
 import {checkAuthorize} from '../action/checkAuthorize';
-import {changePassword, changeEmail, changePhone} from '../action/changeData';
+import {changePassword,changeEmail,changePhone} from '../action/changeData';
 import {removeCurrentUser} from '../action/removeCurrentUser';
 import {removeUser} from '../action/removeUser';
 
 
 const mapStateToProps = state => {
     return {
-        users: state.users,
-        user: localStorage.getItem('remembered') !== null ? JSON.parse(localStorage.getItem('remembered')) : state.currentUser,
-        isAuthorize: state.isAuthorize
+        user: state.user,
+        isLoggedIn: state.filters.isLoggedIn
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         checkAuthorize: (statement) => dispatch(checkAuthorize(statement)),
-        changePassword: (name, password,) => dispatch(changePassword(name, password)),
-        changeEmail: (name, email) => dispatch(changeEmail(name, email)),
-        changePhone: (name, phone) => dispatch(changePhone(name, phone)),
+        changePassword: (name,email,password,phone) => dispatch(changePassword(name,email,password,phone)),
+        changeEmail: (name,email,password,phone) => dispatch(changeEmail(name,email,password,phone)),
+        changePhone: (name,email,password,phone) => dispatch(changePhone(name,email,password,phone)),
         removeCurrentUser: () => dispatch(removeCurrentUser()),
         removeUser: (name) => dispatch(removeUser(name)),
     }
 };
 
-const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header);
+const HeaderContainer = connect(mapStateToProps,mapDispatchToProps)(Header);
 
 export default HeaderContainer;

@@ -1,10 +1,10 @@
-import {ADD_NEWS, TOGGLE_TODO, ADD_COMMENT, ADD_LIKE, SHOW_MORE, GET_NEWS} from "../../constants/constants";
-import newsData from '../../newsData';
-import {postNews} from '../../action/addNews'
+import {ADD_NEWS, TOGGLE_TODO, ADD_COMMENT, ADD_LIKE, SHOW_MORE} from "../constants/constants";
+import newsData from '../newsData';
+import {postNews} from '../action/addNews'
 
-export default function todos(state = [], action) {
+export default function news(state = [], action) {
     switch (action.type) {
-        case GET_NEWS:
+        case "GET_NEWS_FULFILLED":
             return action.payload.length === 0 ? newsData : action.payload;
         case ADD_NEWS:
             const likes = Math.round(5 + Math.random() * (100 - 5));
@@ -61,26 +61,3 @@ export default function todos(state = [], action) {
             return state;
     }
 }
-
-
-//Action with using and saving data in localStorage
-// export default function todos(state=localStorage.getItem('data') !== null ? JSON.parse(localStorage.getItem('data')) : newsData,action) {
-//     switch (action.type) {
-//         case ADD_NEWS:
-//             localStorage.setItem('data', JSON.stringify([{
-//                 author:action.author,
-//                 text:action.text,
-//                 bigText:action.bigText,
-//                 status:false
-//             },...state]));
-//             return[
-//                 {
-//                     author:action.author,
-//                     text:action.text,
-//                     bigText:action.bigText,
-//                     status:false
-//                 },
-//                 ...state
-//             ];
-//     }
-// }

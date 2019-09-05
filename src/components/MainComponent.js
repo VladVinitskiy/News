@@ -3,12 +3,12 @@ import Filters from './Filters';
 import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
 
-const Main = ({isAuthorize,newsLength,validateUser}) =>{
+const MainComponent = ({isLoggedIn,newsLength,validateUser}) =>{
     return (
         <Fragment>
             <div className='container-fluid wrapper_header'>
                 <AddTodo
-                    isAuthorize={isAuthorize}
+                    isLoggedIn={isLoggedIn}
                     newsLength={newsLength}
                     userName={validateUser.name}
                 />
@@ -16,7 +16,7 @@ const Main = ({isAuthorize,newsLength,validateUser}) =>{
             </div>
             <div className='container-fluid bg-dark'>
                 <VisibleTodoList
-                    isAuthorize={isAuthorize}
+                    isLoggedIn={isLoggedIn}
                     userName={validateUser.name}
                 />
             </div>
@@ -24,4 +24,4 @@ const Main = ({isAuthorize,newsLength,validateUser}) =>{
     )
 };
 
-export default Main;
+export default MainComponent;

@@ -4,7 +4,7 @@ import getVisibleTodos from "../reducers/visibilityFilter/getVisibleTodos";
 
 const mapStateToProps = state => {
     return {
-        newsLength: getVisibleTodos(state.todos, state.visibilityFilter).length
+        newsLength: getVisibleTodos(state.news, state.visibilityFilter).length
     }
 };
 

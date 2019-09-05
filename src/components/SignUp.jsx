@@ -1,29 +1,20 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 
-const Registration = ({addUser, history}) => {
+const SignUp = ({addUser, history}) => {
     let name, email, password, phone;
     return (
         <div className='form_registration'>
             <form className="text-center border border-dark p-lg-5 p-md-5 p-sm-5 p-3"
                   onSubmit={e => {
                       e.preventDefault();
-                      if (localStorage.getItem(name.value)) {
-                          const confirm = window.confirm(`юзер ${JSON.parse(localStorage.getItem(name.value)).name} вже існує. Перейти на сторінку авторризації ?`);
-                          if (confirm) {
-                              history.push('/authorization')
-                          } else {
-                              history.push('/registration')
-                          }
-                      } else {
-                          addUser(name.value, email.value, password.value, phone.value);
-                          localStorage.setItem(name.value, JSON.stringify({
-                              name: name.value,
-                              email: email.value,
-                              password: password.value,
-                              phone: phone.value
-                          }));
-                          history.push('/authorization');
-                      }
+                      addUser({
+                          name: name.value,
+                          email: email.value,
+                          password: password.value,
+                          phone: phone.value
+                      });
+                      history.push("login")
                   }}>
 
                 <p className="h4 mb-4">Sign up</p>
@@ -86,4 +77,4 @@ const Registration = ({addUser, history}) => {
     )
 };
 
-export default Registration;
+export default withRouter(SignUp);

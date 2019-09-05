@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import New from './New'
 
-const News = ({news, onNewsClick, onAddComment, onAddLike, showMore, isAuthorize, userName}) => {
+const News = ({news, onNewsClick, onAddComment, onAddLike, showMore, isLoggedIn, userName}) => {
     return (
         <ul
             className='list-group mr-lg-5 ml-lg-5 mr-md-2
@@ -18,7 +18,7 @@ const News = ({news, onNewsClick, onAddComment, onAddLike, showMore, isAuthorize
                     onAddComment={onAddComment}
                     onAddLike={onAddLike}
                     showMore={showMore}
-                    isAuthorize={isAuthorize}
+                    isLoggedIn={isLoggedIn}
                     userName={userName}
                 />
             ))}

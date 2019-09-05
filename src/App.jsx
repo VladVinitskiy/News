@@ -1,12 +1,33 @@
-import React from 'react';
-import {Provider} from 'react-redux';
-import MainApp from './containers/MainApp'
-import store from './store/store';
+import React, {Fragment} from 'react'
+import {connect} from 'react-redux';
+import { Switch, Route, withRouter } from 'react-router-dom'
 
-const App = ()=>(
-    <Provider store={store}>
-        <MainApp/>
-    </Provider>
-);
+import BaseContainer from './containers/BaseContainer'
+import SpinnerContainer from './containers/SpinnerContainer'
+import StartPageContainer from './containers/StartPageContainer'
 
-export default App;
+
+
+const App = ({isLoggedIn}) => {
+    return (
+        <Switch>
+            <Route path="/" render={() => {
+                return (
+                    <Fragment>
+                        {isLoggedIn ? <BaseContainer/> : <StartPageContainer/>}
+                        <SpinnerContainer/>
+                    </Fragment>
+                )
+            }}/>
+        </Switch>
+    )
+};
+
+
+const mapStateToProps = (state) => {
+    return {
+        isLoggedIn: state.filters.isLoggedIn
+    };
+};
+
+export default withRouter(connect(mapStateToProps)(App));

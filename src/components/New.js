@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // const socket = io('http://localhost:5050');
 
 
-const New = ({onClick, onAddComment, onAddLike, showMore, userName, status, author, text, bigText, isAuthorize, index, more, comments, like}) => {
+const New = ({onClick, onAddComment, onAddLike, showMore, userName, status, author, text, bigText, isLoggedIn, index, more, comments, like}) => {
     let Comment;
     return (
         <li
@@ -42,7 +42,7 @@ const New = ({onClick, onAddComment, onAddLike, showMore, userName, status, auth
                             onAddComment(index, userName, Comment.value);
                             Comment.value = '';
                         }}
-                        disabled={!isAuthorize}
+                        disabled={!isLoggedIn}
                     >
                         Public
                     </button>
@@ -51,7 +51,7 @@ const New = ({onClick, onAddComment, onAddLike, showMore, userName, status, auth
                         onClick={() => {
                             onAddLike(index, like)
                         }}
-                        disabled={!isAuthorize}
+                        disabled={!isLoggedIn}
                     >
                         +{like === 0 ? '' : like} Like
                     </button>

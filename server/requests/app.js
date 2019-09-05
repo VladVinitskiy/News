@@ -7,10 +7,11 @@ const KEY = '19c35e4ad3b54f4faae2dfc9b75ea8f7';
 const port = '5000';
 
 let users = [
-    {"name": "Vlad", "email": "kalit@com.ua", "password": "1111", "phone": "380933312313"},
+    {"name": "Vlad", "email": "kalit@gmail.com", "password": "password", "phone": "380933312313"},
     {"name": "USERADMIN", "email": "USERADMIN@com.ua", "password": "Testing1", "phone": "380977777777"},
 ];
 let news = [];
+let session;
 
 app.use(bodyPareser.json());
 app.use(bodyPareser.urlencoded({extended: true}));
@@ -40,25 +41,55 @@ app.get('/news', (req, res) => {
         .catch(error => {
             console.log(error);
         });
-    console.log('GET NEWS');
 });
 
 app.get('/users', (req, res) => {
     res.send(users);
-    console.log('GET USERS');
 });
 
-app.post('/users', (req, res) => {
+app.post('/user', (req, res) => {
     users.push({...req.body});
     res.send(req.body);
-    console.log('SIGN UP USER');
+    console.log(`SIGN UP ${req.body.name}`);
 });
 
 app.post('/news', (req, res) => {
     news.unshift({...req.body});
     res.send(req.body);
-    console.log('ADD NEWS');
 });
+
+
+app.post('/login', (req, res) => {
+    const {email, password} = req.body;
+
+    users.map((user)=>{
+        if(user.email === email && user.password === password){
+            const {password, ...response} = user;
+            session = response;
+            res.send(response);
+        }else {
+            res.send("Not found");
+        }
+    });
+});
+
+app.get('/me',(req,res) => {
+    if (session){
+        res.send(session)
+    } else {
+        res.send("Need login");
+    }
+});
+
+app.get('/logout',(req,res) => {
+    if (session) {
+        res.send("Error");
+    }else {
+        session = "";
+        res.send("OK");
+    }
+});
+
 
 app.put('/news/:index', (req, res) => {
     news.map((article, index) => {

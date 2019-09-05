@@ -1,14 +1,14 @@
 import {connect} from 'react-redux';
-import {toggleTodo} from '../action/toggleTodo';
+import {toggleTodo} from '../action/filters';
 import {addComment} from '../action/addComment';
 import {addLike} from '../action/addLike';
-import {showMore} from '../action/showMore';
+import {showMore} from '../action/filters';
 import TodoList from '../components/TodoList';
 import getVisibleTodos from '../reducers/visibilityFilter/getVisibleTodos'
 
 const mapStateToProps = state => {
     return {
-        todos: getVisibleTodos(state.todos, state.visibilityFilter)
+        news: getVisibleTodos(state.news, state.visibilityFilter)
     }
 };
 

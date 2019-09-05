@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
-import {toggleNews} from '../action/toggleNews';
+import {toggleNews} from '../action/filters';
 import {addComment} from '../action/addComment';
 import {addLike} from '../action/addLike';
-import {showMore} from '../action/showMore';
+import {showMore} from '../action/filters';
 import News from '../components/News';
 import getVisibleNews from '../reducers/visibilityFilter/getVisibleNews'
 

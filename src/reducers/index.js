@@ -1,18 +1,23 @@
-import todos from './todos/todos';
+import news from './news';
 import visibilityFilter from './visibilityFilter/visibilityFilter';
 import correctlyForm from './validate/validateForm';
-import users from './users/users';
+import users from './users';
 import validateUser from './validateUser/validateUser';
-import isAuthorize from './isAuthorize/isAuthorize'
+import user from './user'
+import filters from './filters'
+import spinner from './spinner'
+
 import {combineReducers} from 'redux'
 
 const todoApp = combineReducers({
     correctlyForm,
     visibilityFilter,
-    todos,
+    news,
     users,
     validateUser,
-    isAuthorize
+    user,
+    filters,
+    spinner
 });
 
 export default todoApp;

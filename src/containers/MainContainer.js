@@ -1,19 +1,20 @@
 import {connect} from 'react-redux';
-import Main from '../components/Main'
-import {getNews} from '../action/getNews'
+import MainComponent from '../components/MainComponent'
+import { getNews } from '../action/apiRequests'
 
 const mapStateToProps = state => {
     return {
-        currentUser: state.currentUser,
-        isAuthorize: state.isAuthorize,
-        newsLength: state.newsLength
+        validateUser: state.validateUser,
+        isLoggedIn: state.filters.isLoggedIn
     }
 };
 
 const mapDispatchToProps = dispatch => {
-    return {getNews: () => dispatch(getNews())}
+    return {
+        getNews:()=> dispatch(getNews())
+    }
 };
 
-const MainContainer = connect(mapStateToProps, mapDispatchToProps)(Main);
+const MainContainer = connect(mapStateToProps,mapDispatchToProps)(MainComponent);
 
 export default MainContainer;
