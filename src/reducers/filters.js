@@ -6,7 +6,8 @@ const defaultState = {
 
 const filters = (state = defaultState, action) =>{
     switch (action.type) {
-        case 'LOG_IN_FULFILLED': {
+        case 'LOG_IN_FULFILLED':
+        case 'GET_CURRENT_SESSION_FULFILLED': {
             return Object.assign({}, state, {
                 isLoggedIn: action.payload ? true : state.isLoggedIn
             });

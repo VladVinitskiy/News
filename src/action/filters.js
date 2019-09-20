@@ -21,10 +21,3 @@ export function showMore(index, more) {
         more
     }
 }
-
-export function setVisibilityFilter(filter) {
-    return {
-        type: "SET_VISIBILITY_FILTER",
-        filter
-    }
-}

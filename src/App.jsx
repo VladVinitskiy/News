@@ -1,20 +1,16 @@
 import React, {Fragment} from 'react'
-import {connect} from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom'
 
 import BaseContainer from './containers/BaseContainer'
 import SpinnerContainer from './containers/SpinnerContainer'
-import StartPageContainer from './containers/StartPageContainer'
 
-
-
-const App = ({isLoggedIn}) => {
+const App = () => {
     return (
         <Switch>
             <Route path="/" render={() => {
                 return (
                     <Fragment>
-                        {isLoggedIn ? <BaseContainer/> : <StartPageContainer/>}
+                        <BaseContainer/>
                         <SpinnerContainer/>
                     </Fragment>
                 )
@@ -24,10 +20,4 @@ const App = ({isLoggedIn}) => {
 };
 
 
-const mapStateToProps = (state) => {
-    return {
-        isLoggedIn: state.filters.isLoggedIn
-    };
-};
-
-export default withRouter(connect(mapStateToProps)(App));
+export default withRouter(App);

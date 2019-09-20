@@ -13,25 +13,13 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        onNewsClick: id => {
-            dispatch(toggleNews(id))
-        },
-        onAddComment: (index, user, comment) => {
-            dispatch(addComment(index, user, comment))
-        },
-        onAddLike: (index, like) => {
-            dispatch(addLike(index, like))
-        },
-        showMore: (index, visible) => {
-            dispatch(showMore(index, visible))
-        },
+    return {onNewsClick: id => {dispatch(toggleNews(id))},
+        onAddComment: (index, user, comment) => {dispatch(addComment(index, user, comment))},
+        onAddLike: (index, like) => {dispatch(addLike(index, like))},
+        showMore: (index, visible) => {dispatch(showMore(index, visible))},
     }
 };
 
-const NewsContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(News);
+const NewsContainer = connect(mapStateToProps, mapDispatchToProps)(News);
 
 export default NewsContainer;

@@ -9,7 +9,7 @@ const Spinner = ({show}) => {
             <ClipLoader
                 sizeUnit={"px"}
                 size={150}
-                color={'#201158'}
+                color={'#23272b'}
                 loading={show}
             />
         </div>

@@ -1,13 +1,12 @@
 import {connect} from 'react-redux';
-import Footer from '../components/Footer'
-import getVisibleNews from "../reducers/visibilityFilter/getVisibleNews";
+import FooterComponent from '../components/FooterComponent'
 
 const mapStateToProps = state => {
     return {
-        newsLength: getVisibleNews(state.news, state.visibilityFilter).length
+        newsLength: state.news.length
     }
 };
 
-const FooterContainer = connect(mapStateToProps)(Footer);
+const FooterContainer = connect(mapStateToProps)(FooterComponent);
 
 export default FooterContainer;

@@ -1,9 +1,8 @@
 import {connect} from 'react-redux';
-import Header from '../components/Header';
-import {logout} from '../action/apiRequests';
-import {changePassword,changeEmail,changePhone} from '../action/changeData';
-import {removeUser} from '../action/removeUser';
-
+import ProfileComponent from '../components/ProfileComponent';
+import {logout} from "../action/apiRequests";
+import {changeEmail, changePassword, changePhone} from "../action/changeData";
+import {removeUser} from "../action/removeUser";
 
 const mapStateToProps = state => {
     return {
@@ -14,7 +13,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        logout: () => dispatch(logout()),
+        logout: () => (logout()),
         changePassword: (name,email,password,phone) => dispatch(changePassword(name,email,password,phone)),
         changeEmail: (name,email,password,phone) => dispatch(changeEmail(name,email,password,phone)),
         changePhone: (name,email,password,phone) => dispatch(changePhone(name,email,password,phone)),
@@ -22,6 +21,6 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-const HeaderContainer = connect(mapStateToProps,mapDispatchToProps)(Header);
+const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(ProfileComponent);
 
-export default HeaderContainer;
+export default ProfileContainer;

@@ -2,7 +2,9 @@ import {ADD_NEWS, TOGGLE_TODO, ADD_COMMENT, ADD_LIKE, SHOW_MORE} from "../consta
 import newsData from '../newsData';
 import {postNews} from '../action/addNews'
 
-export default function news(state = [], action) {
+const defaultState= [];
+
+export default function news(state = defaultState, action) {
     switch (action.type) {
         case "GET_NEWS_FULFILLED":
             return action.payload.length === 0 ? newsData : action.payload;

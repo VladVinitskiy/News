@@ -9,7 +9,7 @@ import spinner from './spinner'
 
 import {combineReducers} from 'redux'
 
-const todoApp = combineReducers({
+const News = combineReducers({
     correctlyForm,
     visibilityFilter,
     news,
@@ -20,4 +20,4 @@ const todoApp = combineReducers({
     spinner
 });
 
-export default todoApp;
+export default News;

@@ -23,8 +23,8 @@ export const apiCall = (method, type, data = null) => {
         .then( response => response.data)
 };
 
-export const getNews = () => {
-    const payload = apiCall("get", "news")
+export const getNews = (options="") => {
+    const payload = apiCall("get", "news"+options)
         .then((response) => response)
         .catch((e) => {
             console.log(e);
@@ -91,7 +91,7 @@ export function addNews(data) {
 
 
 export const login = (data, remember) => {
-    const payload = apiCall("post", "login", data) //{"email": "kalit@gmail.com", "password": "password"}
+    const payload = apiCall("post", "login", {"email": "kalit@gmail.com", "password": "password"}) //{"email": "kalit@gmail.com", "password": "password"}
         .then((response) => {
             if(remember) {
                 Cookies.set('isLoggedIn', true, { expires: 7 });
@@ -126,3 +126,21 @@ export const getCurrentSession = () => {
     }
 };
 
+export const logout = () => {
+    const payload = apiCall("get","logout")
+        .then((response) => {
+            Cookies.remove('isLoggedIn');
+            return response
+        })
+        .catch(() => {
+            toastr.error("Error", "Something went wrong, try again");
+            return false;
+        });
+
+    return (dispatch) => {
+        dispatch({
+            type: 'LOGGED_OUT',
+            payload
+        });
+    }
+};

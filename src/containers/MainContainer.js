@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getNews:()=> dispatch(getNews())
+        getNews:(options="")=> dispatch(getNews(options))
     }
 };
 

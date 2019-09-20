@@ -6,18 +6,16 @@ import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import promiseMiddleware  from 'redux-promise-middleware';
 
-import index from "./reducers/index"
-
+import News from "./reducers/index"
 import App from './App'
 
 import "./styles/App.css"
-
-
+import 'react-datepicker/dist/react-datepicker.css';
 
 const middlewares = [thunk, promiseMiddleware];
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
 
-const store = createStore(index, composeEnhancers(applyMiddleware(...middlewares)));
+const store = createStore(News, composeEnhancers(applyMiddleware(...middlewares)));
 
 ReactDOM.render(
     <Provider store={store}>

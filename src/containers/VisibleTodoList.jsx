@@ -4,11 +4,10 @@ import {addComment} from '../action/addComment';
 import {addLike} from '../action/addLike';
 import {showMore} from '../action/filters';
 import TodoList from '../components/TodoList';
-import getVisibleTodos from '../reducers/visibilityFilter/getVisibleTodos'
 
 const mapStateToProps = state => {
     return {
-        news: getVisibleTodos(state.news, state.visibilityFilter)
+        news: state.news
     }
 };
 

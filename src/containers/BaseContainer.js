@@ -1,10 +1,10 @@
 import {connect} from 'react-redux';
 import Base from '../components/Base';
-import { getNews, getCurrentSession  } from '../action/apiRequests';
+import {getNews, getCurrentSession, login, addUser} from '../action/apiRequests';
 
-const mapStateToProps = () => {
+const mapStateToProps = (state) => {
     return {
-
+        isLoggedIn: state.filters.isLoggedIn
     }
 };
 
@@ -12,6 +12,8 @@ const mapDispatchToProps = dispatch => {
     return {
         getNews:() => dispatch(getNews()),
         getCurrentSession:() => dispatch(getCurrentSession()),
+        login:(data, remembered) => dispatch(login(data, remembered)),
+        addUser:(data) => dispatch(addUser(data)),
     }
 };
 

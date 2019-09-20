@@ -1,7 +1,9 @@
 const defaultState= {
-    name: "User",
+    name: "",
+    surname:"",
     email: "",
-    phone: ""
+    phone: "",
+    birthday:""
 };
 
 const user = (state = defaultState, action) =>{
