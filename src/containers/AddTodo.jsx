@@ -11,8 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addNews: (author, text, bigText) => dispatch(addNews(author, text, bigText)),
-        validateForm:(author,text,bigText,agree)=> dispatch(validateForm(author,text,bigText,agree))
+        addNews: (author, text, description) => dispatch(addNews(author, text, description)),
+        validateForm:(author,text,description,agree)=> dispatch(validateForm(author,text,description,agree))
     }
 };
 

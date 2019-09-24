@@ -7,15 +7,15 @@ const defaultState= [];
 export default function news(state = defaultState, action) {
     switch (action.type) {
         case "GET_NEWS_FULFILLED":
-            return action.payload.length === 0 ? newsData : action.payload;
+            return (action.payload && action.payload.length !== 0) ?  action.payload : newsData;
         case ADD_NEWS:
             const likes = Math.round(5 + Math.random() * (100 - 5));
-            postNews(action.author, action.text, action.bigText, [], false, likes);
+            postNews(action.author, action.text, action.description, [], false, likes);
             return [
                 {
                     author: action.author,
                     text: action.text,
-                    bigText: action.bigText,
+                    description: action.description,
                     comments: [],
                     status: false,
                     like: likes

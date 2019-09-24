@@ -3,6 +3,7 @@ import { Switch, Route, withRouter } from 'react-router-dom'
 
 import BaseContainer from './containers/BaseContainer'
 import SpinnerContainer from './containers/SpinnerContainer'
+import ModalArticleContainer from './containers/ModalArticleContainer'
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
                 return (
                     <Fragment>
                         <BaseContainer/>
+                        <ModalArticleContainer/>
                         <SpinnerContainer/>
                     </Fragment>
                 )

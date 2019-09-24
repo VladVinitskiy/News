@@ -1,5 +1,4 @@
 import {ADD_USER, CHANGE_EMAIL, CHANGE_PASSWORD, CHANGE_PHONE, REMOVE_USER, GET_USERS} from "../constants/constants";
-import Users from "../Users";
 import {deleteUser} from "../action/removeUser";
 import {addUSER} from "../action/addUser";
 import {changeData} from "../action/changeData";
@@ -7,7 +6,7 @@ import {changeData} from "../action/changeData";
 export default function users(state = [], action) {
     switch (action.type) {
         case "GET_USERS_FULFILLED":
-            return action.payload === [] ? Users : action.payload;
+            return action.payload === [] ? [] : action.payload;
             // return action.payload;
         case ADD_USER:
             addUSER(action.name, action.email, action.password, action.phone);

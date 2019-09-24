@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Cantata+One&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Vollkorn&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Roboto:500i&display=swap&subset=cyrillic')
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap')
+
+.my-masonry-grid
+    display: flex
+    width: auto
+    padding: 20px 30px
+    .my-masonry-grid_column
+      padding: 0 15px
+      background-clip: padding-box
+      background-color: transparent
+      .article
+        &:hover
+          cursor: pointer
+        .article_image
+          position: relative
+          width: 100%
+          img
+            width: 100%
+        .article_content
+          padding: 10px 15px
+          position: relative
+          z-index: 5
+          width: 90%
+          margin: -70px 0 0 15px
+          background-color: #fff
+          .title
+            font-family: 'Cantata One', 'Vollkorn', serif
+            font-weight: 500
+          .more
+            font-family: 'Roboto', sans-serif
+            font-size: 18px
+            color: rgba(73,75,68,0.82)
+

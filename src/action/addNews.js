@@ -2,20 +2,20 @@ import {ADD_NEWS} from "../constants/constants";
 
 const axios = require('axios');
 
-export function addNews(author, text, bigText) {
+export function addNews(author, text, description) {
     return {
         type: ADD_NEWS,
         author,
         text,
-        bigText
+        description
     }
 }
 
-export function postNews(author, text, bigText, comments, status, like) {
+export function postNews(author, text, description, comments, status, like) {
     let data = {
         "author": author,
         "text": text,
-        "bigText": bigText,
+        "description": description,
         "comments": comments,
         "status": status,
         "like": like

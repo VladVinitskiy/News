@@ -27,7 +27,7 @@ app.get('/news', (req, res) => {
                 return {
                     author: item.author,
                     text: item.title,
-                    bigText: item.description,
+                    description: item.description,
                     comments: [],
                     status: false,
                     like: Math.round(5 + Math.random() * (100 - 5))

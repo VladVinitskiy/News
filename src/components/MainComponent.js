@@ -1,9 +1,10 @@
 import React,{Fragment} from 'react';
 import Filters from './Filters';
 import AddTodo from '../containers/AddTodo';
-import VisibleTodoList from '../containers/VisibleTodoList';
+import NewsBoardConatiner from '../containers/NewsBoardConatiner';
 
-const MainComponent = ({isLoggedIn,newsLength,validateUser, getNews}) =>{
+
+const MainComponent = ({isLoggedIn,newsLength,validateUser, getNews, newsSource}) =>{
     return (
         <Fragment>
             <div className='container-fluid wrapper_header'>
@@ -12,14 +13,9 @@ const MainComponent = ({isLoggedIn,newsLength,validateUser, getNews}) =>{
                     newsLength={newsLength}
                     userName={validateUser.name}
                 />
-                <Filters getNews={getNews}/>
+                <Filters getNews={getNews} newsSource={newsSource}/>
             </div>
-            <div className='container-fluid bg-dark'>
-                <VisibleTodoList
-                    isLoggedIn={isLoggedIn}
-                    userName={validateUser.name}
-                />
-            </div>
+            <NewsBoardConatiner isLoggedIn={isLoggedIn} userName={validateUser.name}/>
         </Fragment>
     )
 };

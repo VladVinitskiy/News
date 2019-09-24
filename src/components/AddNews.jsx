@@ -1,21 +1,21 @@
 import React from 'react';
 
 const AddNews = ({correctlyForm, addNews, validateForm, isLoggedIn, userName}) => {
-    let text, author, bigText, agree;
+    let text, author, description, agree;
     return (
         <div className='ml-lg-5 navbar navbar_mode'>
             <div className='dropright'>
                 <a
-                    className={isLoggedIn === true ? 'text_mode nav-link dropdown-toggle text-dark h3' : 'text_mode nav-link dropdown-toggle text-dark h3 disabled'}
+                    className={`text_mode nav-link dropdown-toggle text-dark h3 disabled ${isLoggedIn !== true ? "disabled" : ""}`}
                     href='/' data-toggle="dropdown">Add News
                 </a>
                 <div className={isLoggedIn === false ? 'none add' : 'border-secondary dropdown-menu dropdown-menu-right add p-lg-3 p-md-3 p-sm-2 p-1'}>
                     <form
                         onSubmit={e => {
                             e.preventDefault();
-                            addNews(author.value, text.value, bigText.value);
+                            addNews(author.value, text.value, description.value);
                             text.value = '';
-                            bigText.value = '';
+                            description.value = '';
                         }}
                     >
                         <div className='container-fluid'>
@@ -28,14 +28,14 @@ const AddNews = ({correctlyForm, addNews, validateForm, isLoggedIn, userName}) =
                                     title="Password must have from 4 to 10 symbols"
                                     defaultValue={userName}
                                     ref={node => author = node}
-                                    onChange={() => validateForm(author.value, text.value, bigText.value, agree.checked)}
+                                    onChange={() => validateForm(author.value, text.value, description.value, agree.checked)}
                                 />
                             </div>
                             <div className="row form-group m-3">
                                 <textarea
                                     ref={node => text = node}
                                     id="text"
-                                    onChange={() => validateForm(author.value, text.value, bigText.value, agree.checked)}
+                                    onChange={() => validateForm(author.value, text.value, description.value, agree.checked)}
                                     className="form-control"
                                     placeholder="News"
                                     rows='3'
@@ -43,11 +43,11 @@ const AddNews = ({correctlyForm, addNews, validateForm, isLoggedIn, userName}) =
                             </div>
                             <div className="row form-group m-3">
                                 <textarea
-                                    ref={node => bigText = node}
-                                    id="bigText"
+                                    ref={node => description = node}
+                                    id="description"
                                     className="form-control"
                                     placeholder="Description"
-                                    onChange={() => validateForm(author.value, text.value, bigText.value, agree.checked)}
+                                    onChange={() => validateForm(author.value, text.value, description.value, agree.checked)}
                                     rows='4'
                                 />
                             </div>
@@ -56,7 +56,7 @@ const AddNews = ({correctlyForm, addNews, validateForm, isLoggedIn, userName}) =
                                     <input
                                         type="checkbox"
                                         ref={node => agree = node}
-                                        onChange={() => validateForm(author.value, text.value, bigText.value, agree.checked)}
+                                        onChange={() => validateForm(author.value, text.value, description.value, agree.checked)}
                                     /> Agree with rules
                                 </div>
                             </div>

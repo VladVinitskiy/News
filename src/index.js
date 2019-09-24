@@ -10,6 +10,7 @@ import News from "./reducers/index"
 import App from './App'
 
 import "./styles/App.css"
+import "./styles/Main.sass"
 import 'react-datepicker/dist/react-datepicker.css';
 
 const middlewares = [thunk, promiseMiddleware];

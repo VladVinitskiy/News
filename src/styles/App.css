@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cantata+One&display=swap');
+
 html {
     width: 100%;
     max-width: 100%;
@@ -27,6 +29,19 @@ input, textarea {outline: none;}
 
 .navbar-nav .dropdown-menu {
     position: absolute !important;
+}
+
+.nav-item{
+    cursor: pointer;
+    font-family: 'Cantata One', serif
+}
+
+.nav-item.active{
+    color: rgba(255, 101, 2, 0.82) !important;;
+}
+
+.nav-item:hover{
+    color: rgba(255, 101, 2, 0.82) !important;
 }
 
 .logo_mode{

@@ -1,23 +1,20 @@
-import {SET_VISIBILITY_FILTER} from "../constants/constants";
-
-export function toggleTodo(index) {
+export function chooseArticle(article) {
     return {
-        type: "TOGGLE_TODO",
-        index
+        type: "CHOOSE_ARTICLE",
+        payload: article
     }
 }
 
-export function toggleNews(index) {
+export function showArticleModal(state) {
     return {
-        type: "TOGGLE_NEWS",
-        index
+        type: "SHOW_ARTICLE_MODAL",
+        payload: state
     }
 }
 
-export function showMore(index, more) {
+export function switchNewsSource(source) {
     return {
-        type: "SHOW_MORE",
-        index,
-        more
+        type: "SWITCH_NEWS_SOURCE",
+        payload: source
     }
 }

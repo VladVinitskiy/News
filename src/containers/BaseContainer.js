@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getNews:() => dispatch(getNews()),
+        getNews:(options="")=> dispatch(getNews(options)),
         getCurrentSession:() => dispatch(getCurrentSession()),
         login:(data, remembered) => dispatch(login(data, remembered)),
         addUser:(data) => dispatch(addUser(data)),
