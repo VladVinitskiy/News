@@ -49,17 +49,27 @@ input, textarea {outline: none;}
     align-items: center
 }
 
+.drop{
+    display: flex;
+    flex-direction: column;
+}
+
+.drop > a{
+    text-align: left;
+    padding: 5px 0 5px 2rem;
+    border: none;
+    width: 100%;
+}
+
+.drop > a:hover{
+    background-color: #e2e6ea;
+}
+
 .wrapper_header{
     display: flex;
     justify-content: space-between;
 }
 
-.add {width: 30vw;}
-
-.readen {
-    transition: .2s;
-    filter: contrast(60%);
-}
 
 .add__check {
     margin-top: 0.5rem;

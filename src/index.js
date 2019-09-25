@@ -12,6 +12,7 @@ import App from './App'
 import "./styles/App.css"
 import "./styles/Main.sass"
 import 'react-datepicker/dist/react-datepicker.css';
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
 
 const middlewares = [thunk, promiseMiddleware];
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;

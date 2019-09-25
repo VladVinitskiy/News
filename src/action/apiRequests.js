@@ -60,7 +60,7 @@ export const getUsers = () => {
 
 export const addUser = (data) => {
     const payload = apiCall("post", "user", data)
-        .then((response) => response)
+        .then((response) => console.log(response))
         .catch((e) => {
             console.log(e);
             // toastr.error(e.response.data.result, e.response.data.response.errors);
@@ -88,6 +88,25 @@ export function addNews(data) {
         payload
     }
 }
+
+export const editUser = (id, data) => {
+    const payload = apiCall("put",`user/${id}`, data)
+        .then((response) => {
+            toastr.success('Success', `${response.name} has been edited`);
+            return response
+        })
+        .catch(() => {
+            toastr.error("Error", "Something went wrong");
+            return null
+        });
+
+    return (dispatch) => {
+        dispatch({
+            type: 'EDIT_USER',
+            payload
+        });
+    };
+};
 
 
 export const login = (data, remember) => {

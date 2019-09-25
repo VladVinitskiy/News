@@ -13,13 +13,13 @@ export default class Base extends Component{
     }
 
     render(){
-        const {login, addUser, getNews, isLoggedIn} = this.props;
+        const {login, addUser, getNews, isLoggedIn, news} = this.props;
 
         return (
             <Fragment>
                 <HeaderContainer/>
                 <Switch>
-                    <Route path="/dashboard" render={() => <Dashboard getNews={getNews}/>}/>
+                    <Route path="/dashboard" render={() => <Dashboard getNews={getNews} news={news}/>}/>
                     <Route path='/login' render={() => <LogIn login={login}/>}/>
                     <Route path='/signup' render={() => <SignUp addUser={addUser}/>}/>
                     {isLoggedIn && <Route path='/profile' component={ProfileContainer}/>}

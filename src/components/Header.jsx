@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
 import logo from '../logo.png'
 
-const Header = ({ user, isLoggedIn, logout}) => {
+const Header = ({isLoggedIn, logout}) => {
     return (
         <div className='container-fluid bg-dark'>
             <div className='row mr-lg-5 ml-lg-5 mr-md-2 ml-md-2 ml-sm-1 mr-sm-1'>
@@ -15,17 +15,16 @@ const Header = ({ user, isLoggedIn, logout}) => {
                     <div className='dropdown'>
                         <a className='nav-link dropdown-toggle text-white adaptive_text pr-0' href='/'
                            data-toggle="dropdown">My Cabinet</a>
-                        <div className='dropdown-menu border-secondary dropdown-menu-right add p-lg-3 p-md-1 pb-sm-1'>
-                            <h2 className='text-right h2 mr-4 mt-lg-2 mt-md-1 mt-sm-2 user_name_mode'>Hello {user.name}</h2>
-                            <div className='container-fluid'>
+                        <div className='dropdown-menu border-secondary dropdown-menu-right'>
+                            <div className='drop'>
                                 {isLoggedIn ?
                                     <Fragment>
-                                        <Link className='btn btn-light border-dark col-6' to={`/profile`}>Profile</Link>
-                                        <Link className='btn btn-light border-dark col-6' to={`/dashboard`} onClick={() => logout()}>Log Out</Link>
+                                        <Link className='btn' to={`/profile`}>Profile</Link>
+                                        <Link className='btn' to={`/dashboard`} onClick={() => logout()}>Logout</Link>
                                     </Fragment>:
                                         <div className='row m-2'>
-                                            <Link className={isLoggedIn === true ? 'none' : 'btn btn-dark col-6'} to={`/signup`}>Sign Up</Link>
-                                            <Link className={isLoggedIn === true ? 'none' : 'btn btn-light border-dark col-6'} to={`/login`}>Log in</Link>
+                                            <Link className='btn' to={`/signup`}>Sign Up</Link>
+                                            <Link className='btn' to={`/login`}>Login</Link>
                                         </div>}
                             </div>
                         </div>

@@ -4,7 +4,8 @@ import {getNews, getCurrentSession, login, addUser} from '../action/apiRequests'
 
 const mapStateToProps = (state) => {
     return {
-        isLoggedIn: state.filters.isLoggedIn
+        news: state.news,
+        isLoggedIn: state.filters.isLoggedIn,
     }
 };
 

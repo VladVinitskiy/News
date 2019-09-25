@@ -3,11 +3,12 @@ import {deleteUser} from "../action/removeUser";
 import {addUSER} from "../action/addUser";
 import {changeData} from "../action/changeData";
 
-export default function users(state = [], action) {
+const defaultState = [];
+
+export default function users(state = defaultState, action) {
     switch (action.type) {
         case "GET_USERS_FULFILLED":
-            return action.payload === [] ? [] : action.payload;
-            // return action.payload;
+            return action.payload.length ===0 ? defaultState : action.payload;
         case ADD_USER:
             addUSER(action.name, action.email, action.password, action.phone);
             return [
@@ -19,6 +20,16 @@ export default function users(state = [], action) {
                 },
                 ...state
             ];
+        case 'EDIT_USER_FULFILLED': {
+            return state.map((item) => {
+                if (item.id === action.payload.id) {
+                    return Object.assign({}, item, {
+                        ...action.payload
+                    })
+                }
+                return item;
+            })
+        }
         case CHANGE_PASSWORD:
             changeData(action.name,action.email,action.password,action.phone);
             return state.map((user) => {
