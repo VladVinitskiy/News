@@ -8,6 +8,8 @@ export default function news(state = defaultState, action) {
     switch (action.type) {
         case "GET_NEWS_FULFILLED":
             return (action.payload && action.payload.length !== 0) ?  action.payload : newsData;
+        case "POST_ARTICLE_FULFILLED":
+            return action.payload  ?  [action.payload, ...state] : newsData;
         case ADD_NEWS:
             const likes = Math.round(5 + Math.random() * (100 - 5));
             postNews(action.author, action.text, action.description, [], false, likes);

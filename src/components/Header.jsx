@@ -21,11 +21,11 @@ const Header = ({isLoggedIn, logout}) => {
                                     <Fragment>
                                         <Link className='btn' to={`/profile`}>Profile</Link>
                                         <Link className='btn' to={`/dashboard`} onClick={() => logout()}>Logout</Link>
-                                    </Fragment>:
-                                        <div className='row m-2'>
-                                            <Link className='btn' to={`/signup`}>Sign Up</Link>
-                                            <Link className='btn' to={`/login`}>Login</Link>
-                                        </div>}
+                                    </Fragment> :
+                                    <Fragment>
+                                        <Link className='btn' to={`/login`}>Login</Link>
+                                        <Link className='btn' to={`/signup`}>Sign Up</Link>
+                                    </Fragment>}
                             </div>
                         </div>
                     </div>

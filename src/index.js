@@ -9,8 +9,7 @@ import promiseMiddleware  from 'redux-promise-middleware';
 import News from "./reducers/index"
 import App from './App'
 
-import "./styles/App.css"
-import "./styles/Main.sass"
+import "./styles/App.sass"
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
 

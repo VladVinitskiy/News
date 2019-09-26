@@ -34,7 +34,7 @@ class ModalArticle extends Component{
             isArticleModalOpen &&
             <div className="dimScreen dark">
                 <KeyboardEventHandler handleKeys={['esc']} onKeyEvent={() => showArticleModal(false)}/>
-                <div className="modal_content px-5 py-4 ml-5" ref={this.modal}>
+                <div className="modal_content px-lg-5 px-md-4 px-sm-3 py-lg-4 py-md-3 py-sm-2 ml-5" ref={this.modal}>
                     <button className="close_btn"
                             type="button"
                             onClick={() => showArticleModal(false)}>
@@ -42,13 +42,15 @@ class ModalArticle extends Component{
 
                     <div className="wrap_for_title">
                         <div className="article_image">
-                            <img src={urlToImage ? urlToImage : "/images/no_image.jpg"} alt="article_image"/>
+                            <img src={urlToImage ? urlToImage : "/images/no_image.png"}
+                                 id="modal_article_img"
+                                 alt="article_image"/>
                         </div>
 
-                        {title && <h3 className="title ml-5">{title}</h3>}
+                        {title && <h3 className="title ml-lg-5 ml-md-3 ml-sm-2">{title}</h3>}
                     </div>
 
-                    <p className="m-4 description">{description}</p>
+                    <p className="m-lg-4 m-md-3 description">{description}</p>
 
                     <footer className="article_footer">
                         {source && <a className="author" target="_blank" href={url ? url : "/"}>{source}</a>}

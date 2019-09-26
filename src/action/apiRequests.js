@@ -75,16 +75,19 @@ export const addUser = (data) => {
     }
 };
 
-export function addNews(data) {
-    const payload = apiCall("post", "news", data)
-        .then((response) => response.content)
+export function postArticle(data) {
+    const payload = apiCall("post", "article", data)
+        .then((response) => {
+            toastr.info("Success", "Article have successfully added");
+            return response
+        })
         .catch((e) => {
-            toastr.info(e.response.data.result, e.response.data.response.errors);
+            toastr.info("Error", "Article haven't added");
             return []
         });
 
     return {
-        type: "ADD_NEWS",
+        type: "POST_ARTICLE",
         payload
     }
 }

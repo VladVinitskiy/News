@@ -1,6 +1,6 @@
 import React,{Fragment} from 'react';
 import Filters from './Filters';
-import AddTodo from '../containers/AddTodo';
+import AddArticleContainer from '../containers/AddArticleContainer';
 import NewsBoardConatiner from '../containers/NewsBoardConatiner';
 
 
@@ -8,7 +8,7 @@ const MainComponent = ({isLoggedIn,newsLength,validateUser, getNews, newsSource}
     return (
         <Fragment>
             <div className='container-fluid wrapper_header'>
-                <AddTodo
+                <AddArticleContainer
                     isLoggedIn={isLoggedIn}
                     newsLength={newsLength}
                     userName={validateUser.name}

@@ -6,7 +6,7 @@ const Article = ({article, chooseArticle})=>{
         <div className='article my-lg-2 my-md-2 my-sm-2 py-3 px-2 m_mode'
              onClick={()=>chooseArticle(article)}>
             <div className="article_image">
-                <img src={urlToImage ? urlToImage : "/images/no_image.jpg"} alt="image"/>
+                <img src={urlToImage ? urlToImage : "/images/no_image.png"} alt="image"/>
             </div>
             <div className="article_content">
                 <p className='h3 p-1 font-weight-normal text_mode title'>{title}</p>
