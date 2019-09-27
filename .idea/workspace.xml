@@ -3,33 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b37f9447-2aeb-4cf6-8f23-f5c92453d82f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/requests/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/requests/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/addNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/addNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/action/apiRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/apiRequests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/changeData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/changeEmail.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/changePhone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/validateForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddArticle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddArticle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Base.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Base.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LogIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogIn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalArticle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalArticle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/HeaderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/HeaderContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ModalArticleContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ModalArticleContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/NewsBoardConatiner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/NewsBoardConatiner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ProfileContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/StartPageContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/readImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/newsData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/newsData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/validate/validateForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.sass" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,12 +18,54 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/action/apiRequests.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/HeaderContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="255">
+              <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/AddArticle.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="69" column="65" selection-start-line="69" selection-start-column="65" selection-end-line="69" selection-end-column="65" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,7 +128,6 @@
         <option value="$PROJECT_DIR$/src/components/Dashboard.js" />
         <option value="$PROJECT_DIR$/src/styles/App.css" />
         <option value="$PROJECT_DIR$/src/styles/Profile.sass" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/ProfileComponent.js" />
         <option value="$PROJECT_DIR$/src/styles/ModalArticle.sass" />
         <option value="$PROJECT_DIR$/src/index.js" />
@@ -122,7 +138,6 @@
         <option value="$PROJECT_DIR$/src/containers/AddNewsContainer.jsx" />
         <option value="$PROJECT_DIR$/src/containers/AddTodo.jsx" />
         <option value="$PROJECT_DIR$/src/reducers/spinner.js" />
-        <option value="$PROJECT_DIR$/src/action/apiRequests.js" />
         <option value="$PROJECT_DIR$/src/components/Base.jsx" />
         <option value="$PROJECT_DIR$/src/styles/App.sass" />
         <option value="$PROJECT_DIR$/src/components/SignUp.jsx" />
@@ -135,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/reducers/news.js" />
         <option value="$PROJECT_DIR$/src/action/addNews.js" />
         <option value="$PROJECT_DIR$/src/newsData.json" />
-        <option value="$PROJECT_DIR$/src/components/AddArticle.jsx" />
         <option value="$PROJECT_DIR$/src/helpers/readImage.js" />
         <option value="$PROJECT_DIR$/src/action/filters.js" />
         <option value="$PROJECT_DIR$/src/components/ModalArticle.js" />
@@ -147,6 +161,9 @@
         <option value="$PROJECT_DIR$/src/constants/constants.js" />
         <option value="$PROJECT_DIR$/src/reducers/users.js" />
         <option value="$PROJECT_DIR$/src/action/changeData.js" />
+        <option value="$PROJECT_DIR$/src/components/AddArticle.jsx" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/action/apiRequests.js" />
       </list>
     </option>
   </component>
@@ -171,65 +188,6 @@
             <path>
               <item name="News" type="b2602c69:ProjectViewProjectNode" />
               <item name="News" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="News" type="b2602c69:ProjectViewProjectNode" />
-              <item name="News" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="News" type="b2602c69:ProjectViewProjectNode" />
-              <item name="News" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="News" type="b2602c69:ProjectViewProjectNode" />
-              <item name="News" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="News" type="b2602c69:ProjectViewProjectNode" />
-              <item name="News" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="News" type="b2602c69:ProjectViewProjectNode" />
-              <item name="News" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="News" type="b2602c69:ProjectViewProjectNode" />
-              <item name="News" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="News" type="b2602c69:ProjectViewProjectNode" />
-              <item name="News" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="News" type="b2602c69:ProjectViewProjectNode" />
-              <item name="News" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="News" type="b2602c69:ProjectViewProjectNode" />
-              <item name="News" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-              <item name="validateUser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="News" type="b2602c69:ProjectViewProjectNode" />
-              <item name="News" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -303,7 +261,7 @@
       <workItem from="1569321927097" duration="10090000" />
       <workItem from="1569409508305" duration="12399000" />
       <workItem from="1569488377132" duration="14670000" />
-      <workItem from="1569578685511" duration="8687000" />
+      <workItem from="1569578685511" duration="12160000" />
     </task>
     <task id="LOCAL-00001" summary="The time has come for great changes!">
       <created>1567690583644</created>
@@ -347,14 +305,29 @@
       <option name="project" value="LOCAL" />
       <updated>1569510579945</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Removed useless code, refactored some components and added some styles.">
+      <created>1569591627060</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569591627060</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Test">
+      <created>1569592258279</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569592258279</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122531000" />
+    <option name="totallyTimeSpent" value="126004000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13208686" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -370,7 +343,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.1769317" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.36506158" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -402,29 +375,18 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
     <MESSAGE value="The time has come for great changes!" />
     <MESSAGE value="The time has come for great changes(2)" />
     <MESSAGE value="small fix" />
     <MESSAGE value="Added new articles logic, added new design, edited a few redux logic" />
     <MESSAGE value="Refactored some apiActions, added some styles, changes modals appearing logic." />
     <MESSAGE value="Added some apiActions, added some responsive styles." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some apiActions, added some responsive styles." />
+    <MESSAGE value="Removed useless code, refactored some components and added some styles." />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/App.css" />
     <entry file="file://$PROJECT_DIR$/src/styles/Main.sass" />
     <entry file="file://$PROJECT_DIR$/src/styles/ModalArticle.sass">
@@ -586,16 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddArticle.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/helpers/readImage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -612,16 +564,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/action/removeUser.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/action/apiRequests.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="141" column="30" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ProfileComponent.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -788,10 +730,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/HeaderContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="255">
+          <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddArticle.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="69" column="65" selection-start-line="69" selection-start-column="65" selection-end-line="69" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/apiRequests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
