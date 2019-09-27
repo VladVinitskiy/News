@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import moment from "moment"
 
 import "../styles/AddArticleModal.sass";
-import readImage from "../helpers/readImage";
 
 class AddArticle extends Component{
     state={
@@ -28,7 +27,6 @@ class AddArticle extends Component{
 
         if (type==="preview") {
             chooseArticle(data);
-            // readImage("modal_article_input","modal_article_img");
         }else {
             postArticle(data)
         }

@@ -11,14 +11,13 @@ export function addNews(author, text, description) {
     }
 }
 
-export function postNews(author, text, description, comments, status, like) {
+export function postNews(author, text, description, comments, status) {
     let data = {
         "author": author,
         "text": text,
         "description": description,
         "comments": comments,
         "status": status,
-        "like": like
     };
     axios.post("http://localhost:5000/news", data);
 }

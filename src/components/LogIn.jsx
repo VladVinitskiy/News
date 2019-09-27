@@ -21,11 +21,9 @@ const LogIn = ({login, history}) => {
                         type='email'
                         placeholder='Email'
                         required
+                        defaultValue="USERADMIN@com.ua"
                         minLength='4'
                         maxLength='20'
-                        // title="Username must have only letters"
-                        // pattern="[a-zA-Z]{4,10}"
-                        // id="defaultSubscriptionFormName"
                     />
 
                     <input
@@ -33,12 +31,10 @@ const LogIn = ({login, history}) => {
                         className="form-control mb-4"
                         type='password'
                         placeholder='Password'
+                        defaultValue="password"
                         minLength='4'
                         maxLength='10'
                         required
-                        // pattern="[a-zA-Z0-9_]{4,10}"
-                        // title="Password must have from 4 to 10 symbols"
-                        // id="defaultSubscriptionFormPassword"
                     />
 
                 </fieldset>
@@ -51,7 +47,7 @@ const LogIn = ({login, history}) => {
                             type="checkbox"
                             name="remember"
                         />
-                            <label className="custom-control-label" htmlFor="defaultContactFormCopy">Remembered</label>
+                            <label className="custom-control-label" htmlFor="defaultContactFormCopy">Remember</label>
                     </div>
                     <input className="btn btn-dark btn-block" type='submit' value='Log In'/>
                 </fieldset>

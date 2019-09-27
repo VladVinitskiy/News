@@ -3,9 +3,10 @@ import {showArticleModal} from '../action/filters';
 import ModalArticle from '../components/ModalArticle';
 
 const mapStateToProps = state => {
+    const { filters } = state;
     return {
-        chosenArticle: state.filters.chosenArticle,
-        isArticleModalOpen: state.filters.isArticleModalOpen,
+        chosenArticle: filters.chosenArticle,
+        isArticleModalOpen: filters.isArticleModalOpen
     }
 };
 

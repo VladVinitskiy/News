@@ -2,7 +2,11 @@ import axios from 'axios'
 import {toastr} from 'react-redux-toastr'
 import Cookies from "js-cookie";
 
-const API_URL = "http://localhost:5000/";
+let API_URL = "http://localhost:5000/";
+
+if (process.env.NODE_ENV === 'production') {
+    API_URL = "https://newssss-api.herokuapp.com"
+}
 
 export const apiCall = (method, type, data = null) => {
     const url = `${API_URL + type}`;
@@ -16,6 +20,7 @@ export const apiCall = (method, type, data = null) => {
         "contentType": false,
         "mimeType": "multipart/form-data",
         "data": data,
+        // "credentials": 'include',
         // "withCredentials": true
     };
 
@@ -113,15 +118,16 @@ export const editUser = (id, data) => {
 
 
 export const login = (data, remember) => {
-    const payload = apiCall("post", "login", {"email": "kalit@gmail.com", "password": "password"}) //{"email": "kalit@gmail.com", "password": "password"}
+    const payload = apiCall("post", "login", data) //{"email": "kalit@gmail.com", "password": "password"}
         .then((response) => {
             if(remember) {
                 Cookies.set('isLoggedIn', true, { expires: 7 });
+                Cookies.set('token', response.token, { expires: 7 });
             }
-            return response
+            return response.response
         })
         .catch((e) => {
-            toastr.error(e.response.data.result, e.response.data.response.errors);
+            toastr.error("Error", "Something went wrong");
             return false;
         });
 
@@ -134,7 +140,7 @@ export const login = (data, remember) => {
 };
 
 export const getCurrentSession = () => {
-    const payload = apiCall("get", "me")
+    const payload = apiCall("get", `session?token=${Cookies.get("token")}`)
         .then((response) => response)
         .catch(() => {
             return false;
@@ -149,9 +155,10 @@ export const getCurrentSession = () => {
 };
 
 export const logout = () => {
-    const payload = apiCall("get","logout")
+    const payload = apiCall("get",`logout?token=${Cookies.get("token")}`)
         .then((response) => {
             Cookies.remove('isLoggedIn');
+            Cookies.remove('token');
             return response
         })
         .catch(() => {

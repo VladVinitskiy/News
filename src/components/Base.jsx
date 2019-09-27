@@ -9,7 +9,8 @@ import HeaderContainer from "../containers/HeaderContainer";
 
 export default class Base extends Component{
     componentDidMount(){
-        this.props.getCurrentSession()
+        const { isLoggedIn, getCurrentSession } = this.props;
+        isLoggedIn && getCurrentSession()
     }
 
     render(){

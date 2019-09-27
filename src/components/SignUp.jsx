@@ -52,7 +52,7 @@ class SignUp extends Component{
                     <input
                         type="text"
                         className="form-control mb-4"
-                        placeholder="Name"
+                        placeholder="Surname"
                         ref={node => surname = node}
                         required
                         minLength='4'
@@ -65,12 +65,13 @@ class SignUp extends Component{
                         type="email"
                         className="form-control mb-4"
                         placeholder="E-mail"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        // pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                         ref={node => email = node}
-                        title="Must have a look ___@___.___"
+                        // title="Must have a look ___@___.___"
                         required
                     />
                     <DatePicker
+                        className="mb-4"
                         selected={this.state.birthday}
                         onChange={this.changeBirthday}
                         dateFormat="MMMM d, yyyy"

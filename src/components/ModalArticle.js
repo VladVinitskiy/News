@@ -53,7 +53,7 @@ class ModalArticle extends Component{
                     <p className="m-lg-4 m-md-3 description">{description}</p>
 
                     <footer className="article_footer">
-                        {source && <a className="author" target="_blank" href={url ? url : "/"}>{source}</a>}
+                        {source && <a className="author" target="_blank" rel="noopener noreferrer" href={url ? url : "/"}>{source}</a>}
 
                         {publishedAt && <span className="publish_date">{moment(publishedAt).format("YYYY-MM-DD HH:mm")}</span>}
                     </footer>

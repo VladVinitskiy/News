@@ -1,4 +1,4 @@
-import {ADD_NEWS, TOGGLE_TODO, ADD_COMMENT, ADD_LIKE, SHOW_MORE} from "../constants/constants";
+import {ADD_NEWS, TOGGLE_TODO, ADD_COMMENT, SHOW_MORE} from "../constants/constants";
 import newsData from '../newsData';
 import {postNews} from '../action/addNews'
 
@@ -11,16 +11,14 @@ export default function news(state = defaultState, action) {
         case "POST_ARTICLE_FULFILLED":
             return action.payload  ?  [action.payload, ...state] : newsData;
         case ADD_NEWS:
-            const likes = Math.round(5 + Math.random() * (100 - 5));
-            postNews(action.author, action.text, action.description, [], false, likes);
+            postNews(action.author, action.text, action.description, [], false);
             return [
                 {
                     author: action.author,
                     text: action.text,
                     description: action.description,
                     comments: [],
-                    status: false,
-                    like: likes
+                    status: false
                 },
                 ...state
             ];
@@ -39,15 +37,6 @@ export default function news(state = defaultState, action) {
                     todo.comments.push({
                         user: action.user,
                         comment: action.comment
-                    })
-                }
-                return todo;
-            });
-        case ADD_LIKE:
-            return state.map((todo, index) => {
-                if (index === action.index) {
-                    return Object.assign({}, todo, {
-                        like: action.like + 1
                     })
                 }
                 return todo;

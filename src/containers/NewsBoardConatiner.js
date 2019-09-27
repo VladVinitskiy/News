@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {addComment} from '../action/addComment';
-import {chooseArticle, showArticleModal, switchNewsSource} from '../action/filters';
+import {chooseArticle, showArticleModal} from '../action/filters';
 import NewsBoard from '../components/NewsBoard';
 
 const mapStateToProps = state => {
