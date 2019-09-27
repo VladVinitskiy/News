@@ -9,6 +9,8 @@ if (window.location.hostname === "newssss.herokuapp.com") {
     API_URL = "https://newssss-api.herokuapp.com/"
 }
 
+console.log(process.env.NODE_ENV);
+
 export const apiCall = (method, type, data = null) => {
     const url = `${API_URL + type}`;
 
