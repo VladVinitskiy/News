@@ -5,13 +5,14 @@ import {chooseArticle, showArticleModal} from "../action/filters";
 
 const mapStateToProps = state => {
     return {
-        user: state.user
+        user: state.user,
+        newsSource: state.filters.newsSource,
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        postArticle: (article) => dispatch(postArticle(article)),
+        postArticle: (article, type) => dispatch(postArticle(article, type)),
         chooseArticle: article => {
             dispatch(chooseArticle(article));
             dispatch(showArticleModal(true));

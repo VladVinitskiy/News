@@ -31,6 +31,31 @@ export const apiCall = (method, type, data = null) => {
         .then( response => response.data)
 };
 
+export const apiCallv2 = (method, type, data = null) => {
+    const url = `${API_URL + type}`;
+
+    const form = new FormData();
+
+    for (let key in data){
+        form.append(key, data[key])
+    }
+
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": url,
+        "method": method,
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": form,
+        // "withCredentials": true
+    };
+
+    return axios(settings)
+        .then( response => response.data)
+};
+
 export const getNews = (options="") => {
     const payload = apiCall("get", "news"+options)
         .then((response) => response)
@@ -83,8 +108,8 @@ export const addUser = (data) => {
     }
 };
 
-export function postArticle(data) {
-    const payload = apiCall("post", "article", data)
+export function postArticle(data, type) {
+    const payload = apiCallv2("post", `article?type=${type}`, data)
         .then((response) => {
             toastr.info("Success", "Article have successfully added");
             return response
@@ -172,6 +197,24 @@ export const logout = () => {
     return (dispatch) => {
         dispatch({
             type: 'LOGGED_OUT',
+            payload
+        });
+    }
+};
+
+export const deleteArticle = (id, type) => {
+    const payload = apiCall("delete",`article?id=${id}&type=${type}`)
+        .then((response) => {
+            return response
+        })
+        .catch(() => {
+            toastr.error("Error", "Something went wrong, try again");
+            return false;
+        });
+
+    return (dispatch) => {
+        dispatch({
+            type: 'DELETE_ARTICLE',
             payload
         });
     }

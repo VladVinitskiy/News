@@ -27,8 +27,8 @@ class ModalArticle extends Component{
     };
 
     render(){
-        const {chosenArticle, showArticleModal, isArticleModalOpen} = this.props,
-        {title, description, source, url, urlToImage, publishedAt} = chosenArticle;
+        const {chosenArticle, showArticleModal, isArticleModalOpen, deleteArticle, newsSource} = this.props,  //deleteArticle(id, newsSource)
+        {title, description, source, url, urlToImage, publishedAt, id} = chosenArticle;
 
         return(
             isArticleModalOpen &&

@@ -5,7 +5,8 @@ import NewsBoard from '../components/NewsBoard';
 
 const mapStateToProps = state => {
     return {
-        news: state.news
+        news: state.news,
+        newsSource: state.filters.newsSource,
     }
 };
 
@@ -15,7 +16,7 @@ const mapDispatchToProps = dispatch => {
         chooseArticle: article => {
             dispatch(chooseArticle(article));
             dispatch(showArticleModal(true));
-        },
+        }
     }
 };
 

@@ -12,8 +12,8 @@ class AddArticle extends Component{
     };
 
     post(type=""){
-        const {title, description} = this.state;
-        const {postArticle, chooseArticle, user} = this.props, {name, surname} = user;
+        const {title, description, main_image} = this.state;
+        const {postArticle, chooseArticle, user, newsSource} = this.props, {name, surname} = user;
         const data = {
             author:`${name} ${surname}`,
             title,
@@ -22,13 +22,14 @@ class AddArticle extends Component{
             urlToImage:null,
             url:null,
             publishedAt: moment.parseZone(Date.now()).utc().format(),
-            comments:[]
+            comments:[],
+            main_image
         };
 
         if (type==="preview") {
             chooseArticle(data);
         }else {
-            postArticle(data)
+            postArticle(data, newsSource)
         }
     }
 
