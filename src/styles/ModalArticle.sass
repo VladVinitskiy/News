@@ -11,6 +11,7 @@
   flex-direction: column
   align-items: center
   .wrap_for_title
+    width: 100%
     display: flex
     position: relative
     .title
@@ -66,8 +67,6 @@
   .modal_content
     width: 85%
     padding: 15px 20px
-    .close_btn
-      display: none
     .wrap_for_title
       .title
         font-size: 1.1rem
@@ -81,19 +80,19 @@
 @media (max-width: 568px)
   .modal_content
     width: 90%
-    padding: 15px 10px
+    padding: 30px 10px 15px
     margin-left: 1rem !important
     .wrap_for_title
       .title
-        font-size: 0.9rem
+        //font-size: 0.9rem
       .article_image
         width: 60%
         margin-left: -30px
         margin-top: -60px
     .description
-      font-size: 0.6rem
+      font-size: 0.9rem
     .article_footer
-      font-size: 0.6rem
+      font-size: 0.8rem
 
 @media (max-width: 425px)
   .modal_content

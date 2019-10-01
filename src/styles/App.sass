@@ -79,6 +79,10 @@ input, textarea
     transform: rotate(45deg)
   &:after
     transform: rotate(135deg)
+.close_btn.delete
+  right: 35px
+  &:after,&:before
+    background-color: red
 
 .wrapper_header
   display: flex
@@ -152,8 +156,8 @@ input, textarea
   .text_mode
     font-size: 20px !important
 
-  .add
-    width: 60vw
+  .dropright .dropdown-menu
+    width: 55vw
 
   .add__check input[type='checkbox'], .check_box input[type='checkbox']
     transform: scale(1.5)
@@ -167,12 +171,15 @@ input, textarea
   .footer_text_develop
     font-size: 12px !important
 
+@media (max-width: 768px)
+  .dropright .dropdown-menu
+    width: 80vw
+    top: 55px !important
+    left: 10% !important
+
 @media (max-width: 576px)
   .header_logo, .header_nav
     width: 50% !important
-
-  .add
-    width: 70vw
 
   .adaptive_text
     font-size: 1.1rem !important
@@ -208,10 +215,6 @@ input, textarea
   .footer_text_develop
     font-size: 8px !important
 
-  .dropright .dropdown-menu
-    top: 30px !important
-    left: 27% !important
-
   .form_authorization
     height: 88vh
     margin: 0 auto
@@ -231,8 +234,6 @@ input, textarea
   .navbar_mode
     padding: 0 !important
 
-  .add
-    width: 93vw
 
   .adaptive_text
     font-size: 0.9rem !important
@@ -264,8 +265,8 @@ input, textarea
     font-size: 8px !important
 
   .dropright .dropdown-menu
+    width: 90vw
     top: 40px !important
-    left: -1% !important
 
   .form_authorization
     height: 93vh !important

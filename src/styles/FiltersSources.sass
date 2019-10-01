@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Vollkorn&display=swap')
+
+.filters
+  .filters_sources
+    box-shadow: 4px 7px 14px #000
+    width: 25vw
+    span
+      font-size: 1.7rem
+      font-family: 'Vollkorn', serif
+      margin-top: 10px
+
+.filters_sources.show
+  display: flex
+  flex-direction: column
+
+
+@media (max-width: 1440px)
+  .filters
+    .filters_sources
+      width: 30vw
+
+@media (max-width: 1025px)
+  .filters
+    .filters_sources
+      width: 35vw
+      span
+        font-size: 1.8rem
+
+@media (max-width: 769px)
+  .filters
+    .filters_sources
+      width: 50vw
+      top: 55px
+      right: 0
+      span
+        font-size: 1.6rem
+
+@media (max-width: 500px)
+  .filters
+    .filters_sources
+      width: 70vw
+      span
+        font-size: 1.5rem
+
+@media (max-width: 425px)
+  .filters
+    .filters_sources
+      width: 80vw
+      span
+        font-size: 1.3rem

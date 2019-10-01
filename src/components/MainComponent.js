@@ -4,18 +4,14 @@ import AddArticleContainer from '../containers/AddArticleContainer';
 import NewsBoardConatiner from '../containers/NewsBoardConatiner';
 
 
-const MainComponent = ({isLoggedIn,newsLength,validateUser, getNews, newsSource}) =>{
+const MainComponent = ({isLoggedIn, getNews, newsSource, sources}) =>{
     return (
         <Fragment>
             <div className='container-fluid wrapper_header'>
-                <AddArticleContainer
-                    isLoggedIn={isLoggedIn}
-                    newsLength={newsLength}
-                    userName={validateUser.name}
-                />
-                <Filters getNews={getNews} newsSource={newsSource}/>
+                <AddArticleContainer isLoggedIn={isLoggedIn}/>
+                <Filters getNews={getNews} newsSource={newsSource} sources={sources}/>
             </div>
-            <NewsBoardConatiner isLoggedIn={isLoggedIn} userName={validateUser.name}/>
+            <NewsBoardConatiner isLoggedIn={isLoggedIn}/>
         </Fragment>
     )
 };

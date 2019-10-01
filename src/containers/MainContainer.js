@@ -8,14 +8,15 @@ const mapStateToProps = state => {
         validateUser: state.validateUser,
         isLoggedIn: state.filters.isLoggedIn,
         newsSource: state.filters.newsSource,
+        sources: state.filters.sources,
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        getNews:(options="", source)=>{
-            dispatch(getNews(options));
-            dispatch(switchNewsSource(source))
+        getNews:(countryCode="")=>{
+            dispatch(getNews(`?source=${countryCode}`));
+            dispatch(switchNewsSource(countryCode))
         },
     }
 };

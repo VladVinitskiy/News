@@ -44,7 +44,7 @@ class AddArticle extends Component{
                         className={`text_mode nav-link dropdown-toggle text-dark h3 ${isLoggedIn !== true ? "disabled" : ""}`}
                         href='/' data-toggle="dropdown">Add News
                     </a>
-                    <div className='border-secondary dropdown-menu dropdown-menu-right add p-lg-3 p-md-3 p-sm-2 p-1'>
+                    <div className='border-secondary dropdown-menu dropdown-menu-right p-lg-3 p-md-3 p-sm-2 p-1'>
                         <form>
                             <div className='container-fluid'>
                                 <div className="row form-group m-3">

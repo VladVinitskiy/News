@@ -108,8 +108,8 @@ export const addUser = (data) => {
     }
 };
 
-export function postArticle(data, type) {
-    const payload = apiCallv2("post", `article?type=${type}`, data)
+export function postArticle(data, source) {
+    const payload = apiCallv2("post", `article?source=${source}`, data)
         .then((response) => {
             toastr.info("Success", "Article have successfully added");
             return response

@@ -1,6 +1,5 @@
 import news from './news';
 import users from './users';
-import validateUser from './validateUser/validateUser';
 import user from './user'
 import filters from './filters'
 import spinner from './spinner'
@@ -11,7 +10,6 @@ import {combineReducers} from 'redux'
 const News = combineReducers({
     news,
     users,
-    validateUser,
     user,
     filters,
     spinner,

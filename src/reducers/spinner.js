@@ -5,6 +5,7 @@ const spinner = (state = false, action) => {
         case 'LOGGED_OUT_PENDING':
         case 'EDIT_USER_PENDING':
         case 'POST_ARTICLE_PENDING':
+        case 'DELETE_ARTICLE_PENDING':
             return true;
 
         case 'GET_NEWS_FULFILLED':
@@ -12,6 +13,7 @@ const spinner = (state = false, action) => {
         case 'LOGGED_OUT_FULFILLED':
         case 'EDIT_USER_FULFILLED':
         case 'POST_ARTICLE_FULFILLED':
+        case 'DELETE_ARTICLE_FULFILLED':
             return false;
 
         case 'GET_MALLS_REJECTED':
@@ -19,6 +21,7 @@ const spinner = (state = false, action) => {
         case 'LOGGED_OUT_REJECTED':
         case 'EDIT_USER_REJECTED':
         case 'POST_ARTICLE_REJECTED':
+        case 'DELETE_ARTICLE_REJECTED':
             return false;
 
         default:

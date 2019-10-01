@@ -1,10 +1,12 @@
 import Cookies from "js-cookie"
+import sources from "../sources"
 
 const defaultState = {
     isLoggedIn: !!Cookies.getJSON("isLoggedIn"),
     chosenArticle: {},
     isArticleModalOpen: false,
-    newsSource:"global"
+    newsSource:"global",
+    sources: sources
 };
 
 const filters = (state = defaultState, action) =>{

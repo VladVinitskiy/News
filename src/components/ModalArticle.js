@@ -27,14 +27,24 @@ class ModalArticle extends Component{
     };
 
     render(){
-        const {chosenArticle, showArticleModal, isArticleModalOpen, deleteArticle, newsSource} = this.props,  //deleteArticle(id, newsSource)
-        {title, description, source, url, urlToImage, publishedAt, id} = chosenArticle;
+        const {chosenArticle, showArticleModal, isArticleModalOpen, deleteArticle, newsSource, user} = this.props;
+        const {title, description, source, url, urlToImage, publishedAt, id, author} = chosenArticle;
+        const {name, surname} = user;
 
         return(
             isArticleModalOpen &&
             <div className="dimScreen dark">
                 <KeyboardEventHandler handleKeys={['esc']} onKeyEvent={() => showArticleModal(false)}/>
                 <div className="modal_content px-lg-5 px-md-4 px-sm-3 py-lg-4 py-md-3 py-sm-2 ml-5" ref={this.modal}>
+                    {author === `${name} ${surname}` &&
+                    <button className="close_btn delete"
+                            type="button"
+                            onClick={() => {
+                                showArticleModal(false);
+                                deleteArticle(id, newsSource)
+                            }}>
+                    </button>}
+
                     <button className="close_btn"
                             type="button"
                             onClick={() => showArticleModal(false)}>
@@ -43,6 +53,7 @@ class ModalArticle extends Component{
                     <div className="wrap_for_title">
                         <div className="article_image">
                             <img src={urlToImage ? urlToImage : "/images/no_image.png"}
+                                 onError={e => e.target.src = "images/no_image.png"}
                                  id="modal_article_img"
                                  alt="article_image"/>
                         </div>

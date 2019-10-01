@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Ukraine",
+    "countryCode": "ua"
+  },
+  {
+    "name": "Australia",
+    "countryCode": "au"
+  },
+  {
+    "name": "Canada",
+    "countryCode": "ca"
+  },
+  {
+    "name": "France",
+    "countryCode": "fr"
+  },
+  {
+    "name": "Germany",
+    "countryCode": "de"
+  },
+  {
+    "name": "Italy",
+    "countryCode": "it"
+  },
+  {
+    "name": "Russia",
+    "countryCode": "ru"
+  },
+  {
+    "name": "United Kingdom",
+    "countryCode": "gb"
+  }
+]

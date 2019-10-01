@@ -9,6 +9,7 @@ const mapStateToProps = state => {
         chosenArticle: filters.chosenArticle,
         isArticleModalOpen: filters.isArticleModalOpen,
         newsSource: state.filters.newsSource,
+        user: state.user,
     }
 };
 
