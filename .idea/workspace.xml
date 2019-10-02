@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b37f9447-2aeb-4cf6-8f23-f5c92453d82f" name="Default Changelist" comment="Refactored media requests and set some responsible design, refactored get news action and added more news sources.">
-      <change afterPath="$PROJECT_DIR$/src/helpers/readImage.js" afterDir="false" />
+    <list default="true" id="b37f9447-2aeb-4cf6-8f23-f5c92453d82f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/filters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddArticle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddArticle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalArticle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalArticle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AddArticleContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AddArticleContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ModalArticleContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ModalArticleContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/filters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/AddArticleModal.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/AddArticleModal.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/ModalArticle.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ModalArticle.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Spinner.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Spinner.sass" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,7 +18,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ModalArticle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="136">
               <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -61,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/AddArticle.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+            <state relative-caret-position="289">
+              <caret line="71" column="54" lean-forward="true" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="69" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -70,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styles/AddArticleModal.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+            <state relative-caret-position="187">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -91,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/styles/ModalArticle.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="31" />
+            <state relative-caret-position="204">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -189,10 +179,10 @@
         <option value="$PROJECT_DIR$/src/reducers/filters.js" />
         <option value="$PROJECT_DIR$/src/containers/AddArticleContainer.jsx" />
         <option value="$PROJECT_DIR$/src/containers/ModalArticleContainer.js" />
-        <option value="$PROJECT_DIR$/src/styles/ModalArticle.sass" />
         <option value="$PROJECT_DIR$/src/components/ModalArticle.js" />
         <option value="$PROJECT_DIR$/src/components/AddArticle.jsx" />
         <option value="$PROJECT_DIR$/src/styles/AddArticleModal.sass" />
+        <option value="$PROJECT_DIR$/src/styles/ModalArticle.sass" />
       </list>
     </option>
   </component>
@@ -334,7 +324,7 @@
       <workItem from="1569578685511" duration="13477000" />
       <workItem from="1569837140319" duration="11445000" />
       <workItem from="1569920725105" duration="12687000" />
-      <workItem from="1570013970771" duration="10293000" />
+      <workItem from="1570013970771" duration="10572000" />
     </task>
     <task id="LOCAL-00001" summary="The time has come for great changes!">
       <created>1567690583644</created>
@@ -420,11 +410,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569936170088</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added some design changes and added filters for modals, implemented preview possibility before public new article.">
+      <created>1570025698121</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1570025698122</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161746000" />
+    <option name="totallyTimeSpent" value="162025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -488,7 +485,8 @@
     <MESSAGE value="Test(3)" />
     <MESSAGE value="Added possibility added photo, and refactored some action." />
     <MESSAGE value="Refactored media requests and set some responsible design, refactored get news action and added more news sources." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored media requests and set some responsible design, refactored get news action and added more news sources." />
+    <MESSAGE value="Added some design changes and added filters for modals, implemented preview possibility before public new article." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some design changes and added filters for modals, implemented preview possibility before public new article." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/action/validateForm.js" />
@@ -824,6 +822,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ModalArticle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/NewsBoardConatiner.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -834,27 +842,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ModalArticle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/ModalArticle.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/AddArticle.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        <state relative-caret-position="289">
+          <caret line="71" column="54" lean-forward="true" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="69" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -863,8 +854,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/AddArticleModal.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+        <state relative-caret-position="187">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/ModalArticle.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
