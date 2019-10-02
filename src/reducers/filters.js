@@ -5,6 +5,8 @@ const defaultState = {
     isLoggedIn: !!Cookies.getJSON("isLoggedIn"),
     chosenArticle: {},
     isArticleModalOpen: false,
+    previewMode: false,
+    isOpenAddArticleModal: false,
     newsSource:"global",
     sources: sources
 };
@@ -27,9 +29,19 @@ const filters = (state = defaultState, action) =>{
                 chosenArticle: action.payload ? {...action.payload} : {}
             });
         }
+        case 'SWITCH_PREVIEW_MODE': {
+            return Object.assign({}, state, {
+                previewMode: action.payload
+            });
+        }
         case 'SHOW_ARTICLE_MODAL': {
             return Object.assign({}, state, {
                 isArticleModalOpen: action.payload
+            });
+        }
+        case 'SHOW_ADD_ARTICLE_MODAL': {
+            return Object.assign({}, state, {
+                isOpenAddArticleModal: action.payload
             });
         }
         case 'SWITCH_NEWS_SOURCE': {

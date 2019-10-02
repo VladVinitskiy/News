@@ -12,6 +12,20 @@ export function showArticleModal(state) {
     }
 }
 
+export function switchPreviewMode(state) {
+    return {
+        type: "SWITCH_PREVIEW_MODE",
+        payload: state
+    }
+}
+
+export function showAddArticleModal(state) {
+    return {
+        type: "SHOW_ADD_ARTICLE_MODAL",
+        payload: state
+    }
+}
+
 export function switchNewsSource(source) {
     return {
         type: "SWITCH_NEWS_SOURCE",

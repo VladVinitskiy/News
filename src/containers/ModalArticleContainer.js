@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {showArticleModal} from '../action/filters';
+import {showArticleModal, switchPreviewMode, showAddArticleModal} from '../action/filters';
 import ModalArticle from '../components/ModalArticle';
 import {deleteArticle} from "../action/apiRequests";
 
@@ -8,7 +8,8 @@ const mapStateToProps = state => {
     return {
         chosenArticle: filters.chosenArticle,
         isArticleModalOpen: filters.isArticleModalOpen,
-        newsSource: state.filters.newsSource,
+        previewMode: filters.previewMode,
+        newsSource: filters.newsSource,
         user: state.user,
     }
 };
@@ -16,7 +17,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         showArticleModal: state => dispatch(showArticleModal(state)),
-        deleteArticle: (id, type)=> dispatch(deleteArticle(id, type))
+        showAddArticleModal: state => dispatch(showAddArticleModal(state)),
+        deleteArticle: (id, type)=> dispatch(deleteArticle(id, type)),
+        switchPreviewMode: (state) => dispatch(switchPreviewMode(state)),
     }
 };
 

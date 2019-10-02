@@ -1,18 +1,84 @@
 .dropright
+  a.dropdown-toggle
+    cursor: pointer
   a.disabled
     color: #495057
     cursor: not-allowed !important
     pointer-events: auto !important
-  .dropdown-menu-right
-    width: 40vw
-  .file
-    input
-      height: 100%
-      padding: 5px
-      border: none
-  .wrap_for_buttons
-    display: flex
-    justify-content: space-between
-    button
-      width: 49% !important
-      margin: 0
+  .add_article_modal
+    width: 50%
+    background-color: #ffffff
+    padding: 20px
+    box-shadow: 4px 7px 14px #000
+    .form-control
+      font-size: 1.2rem
+    .file
+      .inputfile
+        width: 0.1px
+        height: 0.1px
+        opacity: 0
+        overflow: hidden
+        position: absolute
+        z-index: -1
+        box-sizing: border-box
+        + label
+          font-size: 1.25em
+          width: 100%
+          cursor: pointer
+          font-weight: 700
+          color: #dc3545
+          border: 1px solid #dc3545
+          display: inline-block
+          text-align: center
+          transition: 0.3s
+          padding: 3px 0
+          border-radius: 5px
+          word-wrap: break-word
+        &:focus + label, + label:hover
+          background-color: #dc3545
+          border-color: #ffffff
+          color: #ffffff
+        .inputfile:focus + label,
+        .inputfile + label:hover
+          background-color: #dc3545
+    .wrap_for_buttons
+      display: flex
+      justify-content: space-between
+      button
+        font-size: 1.1rem
+        width: 49% !important
+        margin: 0
+
+@media (max-width: 1440px)
+  .dropright
+    .add_article_modal
+      width: 70%
+
+@media (max-width: 1024px)
+  .dropright
+    .add_article_modal
+      width: 75%
+      .form-control
+        font-size: 1.25rem
+      .wrap_for_buttons
+        button
+          font-size: 1.2rem
+
+@media (max-width: 768px)
+  .dropright
+    .add_article_modal
+      width: 85%
+      .form-control
+        font-size: 1.35rem
+      .wrap_for_buttons
+        button
+          font-size: 1.3rem
+
+@media (max-width: 425px)
+  .dropright
+    .add_article_modal
+      .form-control
+        font-size: 1.25rem
+      .wrap_for_buttons
+        button
+          font-size: 1.2rem

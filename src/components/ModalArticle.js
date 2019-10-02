@@ -12,28 +12,33 @@ class ModalArticle extends Component{
         this.modal = React.createRef();
     }
 
-    componentDidMount() {
-        document.addEventListener('mousedown', this.handleClickOutside);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleClickOutside);
+    componentWillReceiveProps(nextProps){
+        if (nextProps.isArticleModalOpen){
+            document.addEventListener('mousedown', this.handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', this.handleClickOutside);
+        }
     }
 
     handleClickOutside = (event) => {
+        const {previewMode, switchPreviewMode, showArticleModal, showAddArticleModal} = this.props;
+
         if (this.modal.current && !this.modal.current.contains(event.target)) {
-            this.props.showArticleModal(false)
+            showArticleModal(false);
+            if (previewMode){
+                showAddArticleModal(true);
+                switchPreviewMode(false);
+            }
         }
     };
 
     render(){
-        const {chosenArticle, showArticleModal, isArticleModalOpen, deleteArticle, newsSource, user} = this.props;
+        const {chosenArticle, showArticleModal, isArticleModalOpen, deleteArticle, newsSource, user, previewMode, switchPreviewMode, showAddArticleModal} = this.props;
         const {title, description, source, url, urlToImage, publishedAt, id, author} = chosenArticle;
         const {name, surname} = user;
 
         return(
-            isArticleModalOpen &&
-            <div className="dimScreen dark">
+            <div className={`dimScreen dark fd ${isArticleModalOpen ? "" : "disabled"}`}>
                 <KeyboardEventHandler handleKeys={['esc']} onKeyEvent={() => showArticleModal(false)}/>
                 <div className="modal_content px-lg-5 px-md-4 px-sm-3 py-lg-4 py-md-3 py-sm-2 ml-5" ref={this.modal}>
                     {author === `${name} ${surname}` &&
@@ -68,6 +73,18 @@ class ModalArticle extends Component{
 
                         {publishedAt && <span className="publish_date">{moment(publishedAt).format("YYYY-MM-DD HH:mm")}</span>}
                     </footer>
+
+                    {previewMode && <div className="add_article_wrap_buttons">
+                        <button className="back"
+                                onClick={() => {
+                                    switchPreviewMode(false);
+                                    showArticleModal(false);
+                                    showAddArticleModal(true);
+                                }}>
+                            Back
+                        </button>
+                        <button className="public">Public</button>
+                    </div>}
                 </div>
             </div>
         )
