@@ -58,7 +58,7 @@ class AddArticle extends Component{
             readImage(this.file.current, "modal_article_img");
             chooseArticle(data);
         }else {
-            postArticle(data, newsSource)
+            postArticle(data, newsSource);
         }
     }
 

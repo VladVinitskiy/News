@@ -7,7 +7,7 @@ import "../styles/Article.sass"
 const NewsBoard = (props) => {
     return (
         <Masonry
-            breakpointCols={{default: 3, 1440: 2, 1024: 1}}
+            breakpointCols={{default: 3, 1460: 2, 1040: 1}}
             className="my-masonry-grid bg-dark"
             columnClassName="my-masonry-grid_column">
             {props.news.length > 0 && props.news.map((article, index) => (

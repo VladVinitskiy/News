@@ -37,8 +37,41 @@
             color: rgba(73,75,68,0.82)
 
 @media (max-width: 1024px)
-  .article_content
-    .title
-      font-size: 2rem !important
-    .more
-      font-size: 1.5rem !important
+  .my-masonry-grid
+    padding: 20px 70px
+    .article_content
+      .title
+        font-size: 2.3rem !important
+      .more
+        font-size: 1.6rem !important
+
+@media (max-width: 768px)
+  .my-masonry-grid
+    padding: 20px 30px
+    .article_content
+      .title
+        font-size: 2rem !important
+      .more
+        font-size: 1.5rem !important
+
+@media (max-width: 550px)
+  .my-masonry-grid
+    padding: 10px 0
+    .my-masonry-grid_column
+      padding: 0 5px
+      .article_content
+        padding: 5px 10px !important
+        margin: -45px 0 0 20px !important
+        .title
+          font-size: 1.5rem !important
+        .more
+          font-size: 1rem !important
+
+@media (max-width: 550px)
+  .my-masonry-grid
+    .my-masonry-grid_column
+      .article_content
+        .title
+          font-size: 1.3rem !important
+        .more
+          font-size: 0.8rem !important

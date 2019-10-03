@@ -1,7 +1,5 @@
 import React from 'react';
 
-import "../styles/FiltersSources.sass"
-
 const Filters = ({getNews, newsSource, sources}) => {
     return (
         <div className='mr-lg-5 navbar navbar_mode filters'>

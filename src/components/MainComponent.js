@@ -3,6 +3,7 @@ import Filters from './Filters';
 import AddArticleContainer from '../containers/AddArticleContainer';
 import NewsBoardConatiner from '../containers/NewsBoardConatiner';
 
+import "../styles/Filters.sass"
 
 const MainComponent = ({isLoggedIn, getNews, newsSource, sources}) =>{
     return (

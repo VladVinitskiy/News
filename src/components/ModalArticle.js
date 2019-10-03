@@ -32,8 +32,24 @@ class ModalArticle extends Component{
         }
     };
 
+    post(){
+        const {postArticle, chosenArticle, newsSource, showArticleModal} = this.props;
+        postArticle(chosenArticle, newsSource);
+        showArticleModal(false);
+    }
+
     render(){
-        const {chosenArticle, showArticleModal, isArticleModalOpen, deleteArticle, newsSource, user, previewMode, switchPreviewMode, showAddArticleModal} = this.props;
+        const {
+            chosenArticle,
+            showArticleModal,
+            isArticleModalOpen,
+            deleteArticle,
+            newsSource,
+            user,
+            previewMode,
+            switchPreviewMode,
+            showAddArticleModal
+        } = this.props;
         const {title, description, source, url, urlToImage, publishedAt, id, author} = chosenArticle;
         const {name, surname} = user;
 
@@ -83,7 +99,7 @@ class ModalArticle extends Component{
                                 }}>
                             Back
                         </button>
-                        <button className="public">Public</button>
+                        <button className="public" onClick={()=>this.post()}>Public</button>
                     </div>}
                 </div>
             </div>

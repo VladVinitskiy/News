@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap')
+
+.header_wrap
+  margin: 0 20px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  .nav-link.dropdown-toggle.text-white
+    font-size: 2.3rem
+    font-family: 'Fjalla+One', serif
+    cursor: pointer
+
+@media (max-width: 1440px)
+  .header_wrap
+    .nav-link.dropdown-toggle.text-white
+      font-size: 2.5rem
+
+@media (max-width: 768px)
+  .header_wrap
+    margin: 0
+    .navbar
+      padding: .5rem 0 !important
+      .nav-link.dropdown-toggle.text-white
+        font-size: 2.3rem
+
+@media (max-width: 550px)
+  .header_wrap
+    .navbar
+      padding: 0 !important
+      .nav-link.dropdown-toggle.text-white
+        font-size: 1.8rem
+        padding: .5rem 0 !important
+
+@media (max-width: 375px)
+  .header_wrap
+    padding: 7px 10px !important
+    .navbar
+      .nav-link.dropdown-toggle.text-white
+        font-size: 1.5rem
+
+@media (max-width: 320px)
+  .header_wrap
+    .navbar
+      .nav-link.dropdown-toggle.text-white
+        font-size: 1.3rem

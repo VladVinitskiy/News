@@ -14,7 +14,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        postArticle: (article, type) => dispatch(postArticle(article, type)),
+        postArticle: (article, type) => {
+            dispatch(postArticle(article, type));
+            dispatch(showAddArticleModal(false));
+        },
         showAddArticleModal: (state) => dispatch(showAddArticleModal(state)),
         chooseArticle: article => {
             dispatch(chooseArticle(article));
