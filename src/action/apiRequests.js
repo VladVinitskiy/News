@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {toastr} from 'react-redux-toastr'
 import Cookies from "js-cookie";
+const jwt = require('jsonwebtoken');
 
 let API_URL = "http://localhost:5000/";
 
@@ -56,12 +57,23 @@ export const apiCallv2 = (method, type, data = null) => {
         .then( response => response.data)
 };
 
+export const postStats = ()=>{
+    axios("https://api.ipify.org")
+        .then((response) => {
+            const token = jwt.sign({ token: response.data }, 'shhhhh');
+            apiCall("post", `stats?token=${token}`)
+                .catch(() => {
+                    toastr.error("Error", "Something went wrong");
+                    return false;
+                });
+        })
+};
+
 export const getNews = (options="") => {
-    const payload = apiCall("get", "news"+options)
+    const payload = apiCall("get", `news?source=${options}`)
         .then((response) => response)
-        .catch((e) => {
-            console.log(e);
-            // toastr.error(e.response.data.result, e.response.data.response.errors);
+        .catch(() => {
+            toastr.error("Error", "Something went wrong");
             return false;
         });
 
@@ -72,6 +84,34 @@ export const getNews = (options="") => {
         });
     }
 };
+
+// export const getNews = (options="") => {
+//     const payload = axios("https://api.ipify.org")
+//         .then((response) => {
+//             const token = jwt.sign({ token: response.data }, 'shhhhh');
+//             apiCall("get", `news?source=${options}&token=${token}`)
+//                 .then((response) => response)
+//                 .catch(() => {
+//                     toastr.error("Error", "Something went wrong");
+//                     return false;
+//                 });
+//         })
+//         .catch(()=>{
+//             apiCall("get", `news?source=${options}`)
+//                 .then((response) => response)
+//                 .catch(() => {
+//                     toastr.error("Error", "Something went wrong");
+//                     return false;
+//                 });
+//         });
+//
+//     return (dispatch) => {
+//         dispatch({
+//             type: 'GET_NEWS',
+//             payload
+//         });
+//     }
+// };
 
 
 export const getUsers = () => {

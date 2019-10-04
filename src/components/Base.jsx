@@ -7,10 +7,13 @@ import Dashboard from "./Dashboard";
 import ProfileContainer from "../containers/ProfileContainer";
 import HeaderContainer from "../containers/HeaderContainer";
 
+import {postStats} from "../action/apiRequests"
+
 export default class Base extends Component{
     componentDidMount(){
         const { isLoggedIn, getCurrentSession } = this.props;
-        isLoggedIn && getCurrentSession()
+        isLoggedIn && getCurrentSession();
+        postStats();
     }
 
     render(){

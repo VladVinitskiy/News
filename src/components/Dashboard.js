@@ -7,7 +7,7 @@ import FooterContainer from '../containers/FooterContainer';
 export default class Dashboard extends Component{
     componentDidMount() {
         const {news, getNews} = this.props;
-        news.length ===0 && getNews();
+        news.length ===0 && getNews("global");
     }
 
     render(){
