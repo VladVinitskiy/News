@@ -1,14 +1,16 @@
 import React from 'react'
-import {Switch, Route, Redirect, Link} from "react-router-dom";
+import {Switch, Route, Redirect, NavLink} from "react-router-dom";
 import UsersAdminContainer from "../containers/UsersAdminContainer"
 import StatisticsAdminContainer from "../containers/StatisticsAdminContainer"
 
-const AdminComponent = ()=>{
+import "../styles/Admin.sass"
+
+const AdminComponent = () =>{
     return (
         <div className="admin_wrap">
             <div className="nav_links_wrap">
-                <Link to="/admin/users">Users</Link>
-                <Link to="/admin/statistics">Statistics</Link>
+                <NavLink to="/admin/users" activeClassName="active">Users</NavLink>
+                <NavLink to="/admin/statistics" activeClassName="active">Statistics</NavLink>
             </div>
 
             <Switch>

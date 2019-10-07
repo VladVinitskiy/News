@@ -1,6 +1,4 @@
-import {ADD_NEWS, TOGGLE_TODO, ADD_COMMENT, SHOW_MORE} from "../constants/constants";
 import newsData from '../newsData';
-import {postNews} from '../action/addNews'
 
 const defaultState= [];
 
@@ -12,8 +10,7 @@ export default function news(state = defaultState, action) {
             return action.payload  ?  [action.payload, ...state] : newsData;
         case "DELETE_ARTICLE_FULFILLED":
             return action.payload  ? state.filter((item) => action.payload.id !== item.id) : newsData;
-        case ADD_NEWS:
-            postNews(action.author, action.text, action.description, [], false);
+        case "ADD_NEWS":
             return [
                 {
                     author: action.author,
@@ -24,30 +21,12 @@ export default function news(state = defaultState, action) {
                 },
                 ...state
             ];
-        case TOGGLE_TODO:
-            return state.map((todo, index) => {
-                if (index === action.index) {
-                    return Object.assign({}, todo, {
-                        status: !todo.status
-                    })
-                }
-                return todo;
-            });
-        case ADD_COMMENT:
+        case "ADD_COMMENT":
             return state.map((todo, index) => {
                 if (index === action.index) {
                     todo.comments.push({
                         user: action.user,
                         comment: action.comment
-                    })
-                }
-                return todo;
-            });
-        case SHOW_MORE:
-            return state.map((todo, index) => {
-                if (index === action.index) {
-                    return Object.assign({}, todo, {
-                        more: !action.more
                     })
                 }
                 return todo;

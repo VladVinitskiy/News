@@ -1,5 +1,5 @@
 import news from './news';
-import users from './users';
+import adminData from './adminData';
 import user from './user'
 import filters from './filters'
 import spinner from './spinner'
@@ -9,7 +9,7 @@ import {combineReducers} from 'redux'
 
 const News = combineReducers({
     news,
-    users,
+    adminData,
     user,
     filters,
     spinner,

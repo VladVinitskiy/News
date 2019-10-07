@@ -1,15 +1,19 @@
-import {ADD_USER, REMOVE_USER} from "../constants/constants";
-import {deleteUser} from "../action/removeUser";
-import {addUSER} from "../action/addUser";
+const defaultState = {
+    users:[],
+    statistics:[],
+};
 
-const defaultState = [];
-
-export default function users(state = defaultState, action) {
+const adminData = (state = defaultState, action) => {
     switch (action.type) {
         case "GET_USERS_FULFILLED":
-            return action.payload.length ===0 ? defaultState : action.payload;
-        case ADD_USER:
-            addUSER(action.name, action.email, action.password, action.phone);
+            return Object.assign({}, state, {
+                users: action.payload.length === 0 ? [] : action.payload
+            });
+        case "GET_STATISTICS_FULFILLED":
+            return Object.assign({}, state, {
+                statistics: action.payload.length === 0 ? [] : action.payload
+            });
+        case "ADD_USER_FULFILLED":
             return [
                 {
                     name: action.name,
@@ -29,11 +33,11 @@ export default function users(state = defaultState, action) {
                 return item;
             })
         }
-        case REMOVE_USER:
-            deleteUser(action.payload);
+        case "REMOVE_USER_FULFILLED":
             return state.filter((user) => action.payload !== user.name);
         default:
             return state;
     }
-}
+};
 
+export default adminData;

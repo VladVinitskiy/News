@@ -8,13 +8,13 @@ import ProfileContainer from "../containers/ProfileContainer";
 import HeaderContainer from "../containers/HeaderContainer";
 import AdminComponent from "../components/AdminComponent";
 
-import {postStats} from "../action/apiRequests"
+import {postStatistics} from "../action/apiRequests"
 
 export default class Base extends Component{
     componentDidMount(){
         const { isLoggedIn, getCurrentSession } = this.props;
         isLoggedIn && getCurrentSession();
-        postStats();
+        postStatistics();
     }
 
     render(){

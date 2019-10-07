@@ -1,7 +1,6 @@
 import {connect} from 'react-redux';
 import Header from '../components/Header';
 import {logout} from '../action/apiRequests';
-import {removeUser} from '../action/removeUser';
 
 
 const mapStateToProps = state => {
@@ -14,7 +13,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         logout: () => dispatch(logout()),
-        removeUser: (name) => dispatch(removeUser(name)),
     }
 };
 
