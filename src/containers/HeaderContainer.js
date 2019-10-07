@@ -6,7 +6,8 @@ import {removeUser} from '../action/removeUser';
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.filters.isLoggedIn
+        isLoggedIn: state.filters.isLoggedIn,
+        isAdmin: state.user.role,
     }
 };
 

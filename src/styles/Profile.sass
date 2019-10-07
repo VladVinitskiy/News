@@ -256,12 +256,16 @@
     top: 0
 
 @media (max-width: 1024px)
-  .profile_wrap
-    .profile
-      width: 65%
+    .profile_wrap
+      .add_new_data
+        width: 80%
+      .profile
+        width: 65%
 
 @media (max-width: 768px)
   .profile_wrap
+    .add_new_data
+      width: 85%
     .profile
       width: 90%
       .head
@@ -272,3 +276,21 @@
           tr
             td
               font-size: 0.9rem
+
+@media (max-width: 425px)
+  .profile_wrap
+    .add_new_data
+      width: 95%
+    .profile
+      width: 95%
+      .head
+        height: 70px
+        font-size: 28px
+      .main
+        .avatar
+          img
+            height: 150px
+        table
+          tr
+            td
+              font-size: 0.7rem

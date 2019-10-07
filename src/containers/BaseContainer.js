@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
     return {
         news: state.news,
         isLoggedIn: state.filters.isLoggedIn,
+        isAdmin: state.user.role,
     }
 };
 

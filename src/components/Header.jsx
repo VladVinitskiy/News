@@ -4,7 +4,7 @@ import logo from '../logo.png'
 
 import "../styles/Header.sass"
 
-const Header = ({isLoggedIn, logout}) => {
+const Header = ({isLoggedIn, logout, isAdmin}) => {
     return (
         <div className='container-fluid bg-dark'>
             <div className='header_wrap'>
@@ -22,6 +22,7 @@ const Header = ({isLoggedIn, logout}) => {
                                 {isLoggedIn ?
                                     <Fragment>
                                         <Link className='btn' to={`/profile`}>Profile</Link>
+                                        {isAdmin && <Link className='btn' to="/admin">Admin</Link>}
                                         <Link className='btn' to={`/dashboard`} onClick={() => logout()}>Logout</Link>
                                     </Fragment> :
                                     <Fragment>
