@@ -1,14 +1,8 @@
 import axios from 'axios'
 import {toastr} from 'react-redux-toastr'
 import Cookies from "js-cookie";
+import {API_URL} from "./../constants"
 const jwt = require('jsonwebtoken');
-
-let API_URL = "http://localhost:5000/";
-
-// if (process.env.NODE_ENV === 'production') {
-if (window.location.hostname === "newssss.herokuapp.com") {
-    API_URL = "https://newssss-api.herokuapp.com/"
-}
 
 // console.log(process.env.NODE_ENV);
 
@@ -55,18 +49,6 @@ export const apiCallv2 = (method, type, data = null) => {
 
     return axios(settings)
         .then( response => response.data)
-};
-
-export const postStatistics = ()=>{
-    axios("https://api.ipify.org")
-        .then((response) => {
-            const token = jwt.sign({ token: response.data }, 'shhhhh');
-            apiCall("post", `statistics?token=${token}`)
-                .catch(() => {
-                    toastr.error("Error", "Something went wrong");
-                    return false;
-                });
-        })
 };
 
 export const getNews = (options="") => {
@@ -150,6 +132,64 @@ export function postArticle(data, source) {
         payload
     }
 }
+
+export const postStatistics = ()=>{
+    axios("https://api.ipify.org")
+        .then((response) => {
+            const token = jwt.sign({ token: response.data }, 'shhhhh');
+            apiCall("post", `statistics?token=${token}`)
+                .catch(() => {
+                    toastr.error("Error", "Something went wrong");
+                    return false;
+                });
+        })
+};
+
+export const postComment = (id, source, comment) =>{
+    const payload = apiCall("post", `comment?source=${source}&articleId=${id}`, comment)
+        .then((response) => response)
+        .catch(() => {
+            toastr.error("Error", "Something went wrong");
+            return false;
+        });
+
+    return (dispatch) => {
+        dispatch({
+            type: 'POST_COMMENT',
+            payload
+        });
+    }
+};
+
+export function postCommentIO(payload) {
+    return {
+        type: "POST_COMMENT_FULFILLED",
+        payload
+    }
+}
+
+export function deleteCommentIO(payload) {
+    return {
+        type: "DELETE_COMMENT_FULFILLED",
+        payload
+    }
+}
+
+export const deleteComment = (newsSource, articleId, commentId) =>{
+    const payload = apiCall("delete", `comment?source=${newsSource}&articleId=${articleId}&commentId=${commentId}`)
+        .then((response) => response)
+        .catch(() => {
+            toastr.error("Error", "Something went wrong");
+            return false;
+        });
+
+    return (dispatch) => {
+        dispatch({
+            type: 'DELETE_COMMENT',
+            payload
+        });
+    }
+};
 
 export const editUser = (id, data) => {
     const payload = apiCall("put",`user/${id}`, data)

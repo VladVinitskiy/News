@@ -1,15 +1,29 @@
 import React, {Component} from 'react';
 import moment from "moment";
 import KeyboardEventHandler from "react-keyboard-event-handler";
-
 import "../styles/ModalArticle.sass";
+import socketIOClient from "socket.io-client";
+import Comment from "./Comment";
+import {API_URL} from "./../constants"
+const socket = socketIOClient(API_URL);
+
 
 class ModalArticle extends Component{
     constructor(props) {
         super(props);
+
+        this.state={
+          comment:""
+        };
+
         this.handleClickOutside = this.handleClickOutside.bind(this);
 
         this.modal = React.createRef();
+    }
+
+    componentDidMount() {
+        socket.on("post comment", data =>  this.props.postCommentIO(data));
+        socket.on("delete comment", data =>  this.props.deleteCommentIO(data));
     }
 
     componentWillReceiveProps(nextProps){
@@ -48,10 +62,14 @@ class ModalArticle extends Component{
             user,
             previewMode,
             switchPreviewMode,
-            showAddArticleModal
+            showAddArticleModal,
+            postComment,
+            isLoggedIn,
+            deleteComment
         } = this.props;
-        const {title, description, source, url, urlToImage, publishedAt, id, author} = chosenArticle;
-        const {name, surname} = user;
+        const {title, description, source, url, urlToImage, publishedAt, id, author, comments} = chosenArticle;
+        const {name, surname, role} = user;
+        const {comment} = this.state;
 
         return(
             <div className={`dimScreen dark fd ${isArticleModalOpen ? "" : "disabled"}`}>
@@ -89,6 +107,31 @@ class ModalArticle extends Component{
 
                         {publishedAt && <span className="publish_date">{moment(publishedAt).format("YYYY-MM-DD HH:mm")}</span>}
                     </footer>
+
+                    <div className={`comments_wrap ${(comments &&comments.length > 5) ? "scroll" : ""}`}>
+                        {(comments && comments.length > 0) && comments.map((item, index) => {
+                            return (
+                                <Comment deleteComment={deleteComment}
+                                         item={item}
+                                         author={author}
+                                         key={index}
+                                         articleId={id}
+                                         newsSource={newsSource}
+                                         role={role}/>
+                            )
+                        })}
+                    </div>
+
+                    {isLoggedIn && <div className="post_comment">
+                        <input value={comment} placeholder="Add comment" onChange={(e) => this.setState({comment: e.target.value})}/>
+                        <button onClick={() => {
+                            // postComment(id, newsSource, {author: `${name} ${surname}`, comment});
+                            socket.emit("post comment", {id, newsSource, author: `${name} ${surname}`, content: comment,
+                                publishedAt: moment.parseZone(Date.now()).utc().format()});
+                            this.setState({comment: ""});
+                        }
+                        }>Public</button>
+                    </div>}
 
                     {previewMode && <div className="add_article_wrap_buttons">
                         <button className="back"

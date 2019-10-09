@@ -21,15 +21,23 @@ export default function news(state = defaultState, action) {
                 },
                 ...state
             ];
-        case "ADD_COMMENT":
-            return state.map((todo, index) => {
-                if (index === action.index) {
-                    todo.comments.push({
-                        user: action.user,
-                        comment: action.comment
+        case "POST_COMMENT_FULFILLED":
+            return state.map((article) => {
+                if (article.id === action.payload.id) {
+                    return Object.assign({}, article, {
+                        comments: [action.payload.comment, ...article.comments]
                     })
                 }
-                return todo;
+                return article;
+            });
+        case "DELETE_COMMENT_FULFILLED":
+            return state.map((article) => {
+                if (article.id === action.payload.articleId) {
+                    return Object.assign({}, article, {
+                        comments: article.comments.filter(({id})=> id !== action.payload.commentId)
+                    })
+                }
+                return article;
             });
         default:
             return state;

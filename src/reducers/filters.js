@@ -29,6 +29,20 @@ const filters = (state = defaultState, action) =>{
                 chosenArticle: action.payload ? {...action.payload} : {}
             });
         }
+        case 'POST_COMMENT_FULFILLED': {
+            return Object.assign({}, state, {
+                chosenArticle: Object.assign({}, state.chosenArticle, {
+                    comments: [action.payload.comment, ...state.chosenArticle.comments]
+                })
+            });
+        }
+        case 'DELETE_COMMENT_FULFILLED': {
+            return Object.assign({}, state, {
+                chosenArticle: Object.assign({}, state.chosenArticle, {
+                    comments: state.chosenArticle.comments.filter(({id})=> id !== action.payload.commentId)
+                })
+            });
+        }
         case 'SWITCH_PREVIEW_MODE': {
             return Object.assign({}, state, {
                 previewMode: action.payload

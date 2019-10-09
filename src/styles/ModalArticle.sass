@@ -41,6 +41,49 @@
     .publish_date
       font-family: 'Fjalla One', sans-serif
       margin: 0
+  .comments_wrap
+    display: flex
+    flex-direction: column
+    width: 100%
+    margin-top: 20px
+    .comment_wrap
+      display: flex
+      justify-content: space-between
+      width: 100%
+      position: relative
+      margin-top: 5px
+      border-bottom: 1px solid rgba(255,101,2,1)
+      margin-bottom: 0.5rem
+      .close_btn
+        top: 0
+        right: -25px
+      .content_wrap
+        display: flex
+        .author
+          font-size: 1.1rem
+          margin: 0
+        .comment
+          margin-left: 20px
+          font-size: 1rem
+      .time
+        font-family: 'Fjalla One', sans-serif
+        margin: 0
+        font-size: 0.9rem
+  .comments_wrap.scroll
+    height: 200px
+    overflow: scroll
+  .post_comment
+    display: flex
+    width: 100%
+    justify-content: space-between
+    margin-top: 10px
+    input
+      width: 69%
+      font-size: 1rem
+    button
+      width: 29%
+      background-color: transparent
+      border: 1px solid rgba(255,101,2,1)
   .add_article_wrap_buttons
     display: flex
     justify-content: space-between

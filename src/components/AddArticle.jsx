@@ -69,13 +69,14 @@ class AddArticle extends Component{
         return (
             <div className='ml-lg-5 navbar navbar_mode'>
                 <div className='dropright'>
-                    <a className={`text_mode nav-link dropdown-toggle text-dark h3 ${isLoggedIn !== true ? "disabled" : ""}`}
-                       href="/"
-                       onClick={(e) => {
-                           e.preventDefault();
-                           showAddArticleModal(true)}}>
+                    <button className={`text_mode nav-link dropdown-toggle text-dark h3`}
+                            disabled={isLoggedIn !== true}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                showAddArticleModal(true)
+                            }}>
                         Add News
-                    </a>
+                    </button>
                     <div className={`dimScreen dark ${isOpenAddArticleModal ? "" : "disabled"}`}>
                         <div className='add_article_modal' ref={this.modal}>
                             <div className="row form-group m-3">

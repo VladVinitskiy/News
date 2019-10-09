@@ -8,6 +8,8 @@ const spinner = (state = false, action) => {
         case 'EDIT_USER_PENDING':
         case 'POST_ARTICLE_PENDING':
         case 'DELETE_ARTICLE_PENDING':
+        case 'POST_COMMENT_PENDING':
+        case 'DELETE_COMMENT_PENDING':
             return true;
 
         case 'GET_NEWS_FULFILLED':
@@ -18,6 +20,8 @@ const spinner = (state = false, action) => {
         case 'EDIT_USER_FULFILLED':
         case 'POST_ARTICLE_FULFILLED':
         case 'DELETE_ARTICLE_FULFILLED':
+        case 'POST_COMMENT_FULFILLED':
+        case 'DELETE_COMMENT_FULFILLED':
             return false;
 
         case 'GET_NEWS_REJECTED':
@@ -28,6 +32,8 @@ const spinner = (state = false, action) => {
         case 'EDIT_USER_REJECTED':
         case 'POST_ARTICLE_REJECTED':
         case 'DELETE_ARTICLE_REJECTED':
+        case 'POST_COMMENT_REJECTED':
+        case 'DELETE_COMMENT_REJECTED':
             return false;
 
         default:

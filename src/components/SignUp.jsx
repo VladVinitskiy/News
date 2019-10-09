@@ -64,10 +64,8 @@ class SignUp extends Component{
                     <input
                         type="email"
                         className="form-control mb-4"
-                        placeholder="E-mail"
-                        // pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        placeholder="Email"
                         ref={node => email = node}
-                        // title="Must have a look ___@___.___"
                         required
                     />
                     <DatePicker
@@ -80,12 +78,7 @@ class SignUp extends Component{
                         type="password"
                         className="form-control"
                         placeholder="Password"
-                        aria-describedby="defaultRegisterFormPasswordHelpBlock"
                         ref={node => password = node}
-                        minLength='4'
-                        maxLength='10'
-                        pattern="[a-zA-Z0-9_]{4,10}"
-                        title="Password must have from 4 to 10 symbols"
                         required
                     />
                     <small className="form-text text-muted mb-4">
@@ -94,13 +87,10 @@ class SignUp extends Component{
 
                     <input
                         className="form-control"
-                        aria-describedby="defaultRegisterFormPhoneHelpBlock"
                         ref={node => phone = node}
                         type='tel'
                         placeholder='Phone'
-                        pattern="380[0-9]{9}"
                         maxLength='12'
-                        title="Password must have 12 symbols and start by 380"
                         required
                     />
                     <small className="form-text text-muted mb-4">

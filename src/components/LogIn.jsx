@@ -21,9 +21,6 @@ const LogIn = ({login, history}) => {
                         type='email'
                         placeholder='Email'
                         required
-                        defaultValue="USERADMIN@com.ua"
-                        minLength='4'
-                        maxLength='20'
                     />
 
                     <input
@@ -31,9 +28,6 @@ const LogIn = ({login, history}) => {
                         className="form-control mb-4"
                         type='password'
                         placeholder='Password'
-                        defaultValue="password"
-                        minLength='4'
-                        maxLength='10'
                         required
                     />
 
@@ -43,6 +37,7 @@ const LogIn = ({login, history}) => {
                         <input
                             className="custom-control-input"
                             id="defaultContactFormCopy"
+                            defaultChecked={true}
                             ref={node => remembered = node}
                             type="checkbox"
                             name="remember"

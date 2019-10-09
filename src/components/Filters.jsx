@@ -8,7 +8,7 @@ const Filters = ({getNews, newsSource, sources}) => {
                    href='/' data-toggle="dropdown">
                     {newsSource === "global" ? "Choose source": sources.find(it => it.countryCode === newsSource).name}
                 </a>
-                <div className='filters_sources border-secondary dropdown-menu dropdown-menu-right p-lg-3 p-md-3 p-sm-2 p-1'>
+                <div className='filters_sources border-secondary dropdown-menu p-lg-3 p-md-3 p-sm-2 p-1'>
                     <span className={`nav-item h4 ml-lg-3 ml-md-3 ml-sm-3 ml-2 ${newsSource==="global" ? "active" :""}`}
                           onClick={()=>getNews("global")}>Global</span>
 
