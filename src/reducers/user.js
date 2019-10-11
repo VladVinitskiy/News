@@ -11,7 +11,7 @@ const user = (state = defaultState, action) =>{
         case 'LOG_IN_FULFILLED':
         case 'GET_CURRENT_SESSION_FULFILLED':
         case 'EDIT_USER_FULFILLED': {
-            return action.payload
+            return action.payload ? action.payload : state
         }
         case 'LOGGED_OUT_FULFILLED': {
             return defaultState

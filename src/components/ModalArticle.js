@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import moment from "moment";
 import KeyboardEventHandler from "react-keyboard-event-handler";
 import "../styles/ModalArticle.sass";
@@ -108,30 +108,32 @@ class ModalArticle extends Component{
                         {publishedAt && <span className="publish_date">{moment(publishedAt).format("YYYY-MM-DD HH:mm")}</span>}
                     </footer>
 
-                    <div className={`comments_wrap ${(comments &&comments.length > 5) ? "scroll" : ""}`}>
-                        {(comments && comments.length > 0) && comments.map((item, index) => {
-                            return (
-                                <Comment deleteComment={deleteComment}
-                                         item={item}
-                                         author={author}
-                                         key={index}
-                                         articleId={id}
-                                         newsSource={newsSource}
-                                         role={role}/>
-                            )
-                        })}
-                    </div>
+                    {(!previewMode && isLoggedIn) && <Fragment>
+                        <div className={`comments_wrap ${(comments &&comments.length > 5) ? "scroll" : ""}`}>
+                            {(comments && comments.length > 0) && comments.map((item, index) => {
+                                return (
+                                    <Comment deleteComment={deleteComment}
+                                             item={item}
+                                             author={author}
+                                             key={index}
+                                             articleId={id}
+                                             newsSource={newsSource}
+                                             role={role}/>
+                                )
+                            })}
+                        </div>
 
-                    {isLoggedIn && <div className="post_comment">
-                        <input value={comment} placeholder="Add comment" onChange={(e) => this.setState({comment: e.target.value})}/>
-                        <button onClick={() => {
-                            // postComment(id, newsSource, {author: `${name} ${surname}`, comment});
-                            socket.emit("post comment", {id, newsSource, author: `${name} ${surname}`, content: comment,
-                                publishedAt: moment.parseZone(Date.now()).utc().format()});
-                            this.setState({comment: ""});
-                        }
-                        }>Public</button>
-                    </div>}
+                        <div className="post_comment">
+                            <input value={comment} placeholder="Add comment" onChange={(e) => this.setState({comment: e.target.value})}/>
+                            <button onClick={() => {
+                                // postComment(id, newsSource, {author: `${name} ${surname}`, comment});
+                                socket.emit("post comment", {id, newsSource, author: `${name} ${surname}`, content: comment,
+                                    publishedAt: moment.parseZone(Date.now()).utc().format()});
+                                this.setState({comment: ""});
+                            }
+                            }>Public</button>
+                        </div>
+                    </Fragment>}
 
                     {previewMode && <div className="add_article_wrap_buttons">
                         <button className="back"

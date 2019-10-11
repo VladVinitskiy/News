@@ -67,8 +67,6 @@ class StatisticsAdminComponent extends Component{
                     striped
                     bordered
                     info={false}
-                    searching={false}
-                    displayEntries={false}
                     data={data}
                 />
             </div>

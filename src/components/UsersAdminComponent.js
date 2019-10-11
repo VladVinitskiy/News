@@ -50,7 +50,7 @@ class UsersAdminComponent extends Component{
                     shop: email,
                     birthday: moment(birthday).local().format("YYYY-MM-DD"),
                     phone: phone,
-                    // clickEvent: () => this.switchEditMode(item)
+                    // clickEvent: () => this.deleteUser()
                 }})
         };
 
@@ -61,8 +61,6 @@ class UsersAdminComponent extends Component{
                     striped
                     bordered
                     info={false}
-                    searching={false}
-                    displayEntries={false}
                     data={data}
                 />
             </div>

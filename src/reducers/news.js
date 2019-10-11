@@ -5,7 +5,7 @@ const defaultState= [];
 export default function news(state = defaultState, action) {
     switch (action.type) {
         case "GET_NEWS_FULFILLED":
-            return (action.payload && action.payload.length !== 0) ?  action.payload : newsData;
+            return action.payload === "Error" ? newsData : action.payload;
         case "POST_ARTICLE_FULFILLED":
             return action.payload  ?  [action.payload, ...state] : newsData;
         case "DELETE_ARTICLE_FULFILLED":
