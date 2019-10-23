@@ -16,7 +16,6 @@ const mapDispatchToProps = dispatch => {
     return {
         getNews:(countryCode)=>{
             dispatch(getNews(countryCode));
-            // dispatch(getNews(`?source=${countryCode}`));
             dispatch(switchNewsSource(countryCode))
         },
     }

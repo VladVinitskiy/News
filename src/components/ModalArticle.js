@@ -5,6 +5,7 @@ import "../styles/ModalArticle.sass";
 import socketIOClient from "socket.io-client";
 import Comment from "./Comment";
 import {API_URL} from "./../constants"
+
 const socket = socketIOClient(API_URL);
 
 
@@ -63,7 +64,6 @@ class ModalArticle extends Component{
             previewMode,
             switchPreviewMode,
             showAddArticleModal,
-            postComment,
             isLoggedIn,
             deleteComment
         } = this.props;
@@ -76,18 +76,22 @@ class ModalArticle extends Component{
                 <KeyboardEventHandler handleKeys={['esc']} onKeyEvent={() => showArticleModal(false)}/>
                 <div className="modal_content px-lg-5 px-md-4 px-sm-3 py-lg-4 py-md-3 py-sm-2 ml-5" ref={this.modal}>
                     {author === `${name} ${surname}` &&
-                    <button className="close_btn delete"
-                            type="button"
-                            onClick={() => {
-                                showArticleModal(false);
-                                deleteArticle(id, newsSource)
-                            }}>
-                    </button>}
+                    <button
+                        className="close_btn delete"
+                        type="button"
+                        onClick={() => {
+                            showArticleModal(false);
+                            deleteArticle(id, newsSource)
+                        }}/>
+                    }
 
-                    <button className="close_btn"
-                            type="button"
-                            onClick={() => showArticleModal(false)}>
-                    </button>
+                    <button
+                        className="close_btn"
+                        type="button"
+                        onClick={() => {
+                            showArticleModal(false);
+                            switchPreviewMode(false);
+                        }}/>
 
                     <div className="wrap_for_title">
                         <div className="article_image">

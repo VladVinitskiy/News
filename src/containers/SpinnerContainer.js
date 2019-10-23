@@ -9,11 +9,7 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-    };
-};
-const SpinnerContainer = withRouter(connect(mapStateToProps,mapDispatchToProps)(Spinner));
+const SpinnerContainer = withRouter(connect(mapStateToProps)(Spinner));
 
 
 export default SpinnerContainer;

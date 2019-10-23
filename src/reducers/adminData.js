@@ -13,8 +13,6 @@ const adminData = (state = defaultState, action) => {
             return Object.assign({}, state, {
                 statistics: action.payload.length === 0 ? [] : action.payload
             });
-        case "REMOVE_USER_FULFILLED":
-            return state.filter((user) => action.payload !== user.name);
         default:
             return state;
     }

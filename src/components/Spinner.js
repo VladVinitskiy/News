@@ -17,4 +17,3 @@ const Spinner = ({show}) => {
 };
 
 export default Spinner
-

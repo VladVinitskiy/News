@@ -10,17 +10,6 @@ export default function news(state = defaultState, action) {
             return action.payload  ?  [action.payload, ...state] : newsData;
         case "DELETE_ARTICLE_FULFILLED":
             return action.payload  ? state.filter((item) => action.payload.id !== item.id) : newsData;
-        case "ADD_NEWS":
-            return [
-                {
-                    author: action.author,
-                    text: action.text,
-                    description: action.description,
-                    comments: [],
-                    status: false
-                },
-                ...state
-            ];
         case "POST_COMMENT_FULFILLED":
             return state.map((article) => {
                 if (article.id === action.payload.id) {

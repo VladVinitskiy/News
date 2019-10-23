@@ -43,7 +43,7 @@ class StatisticsAdminComponent extends Component{
                     width: 200
                 },
                 {
-                    label: 'visit',
+                    label: 'Visit at',
                     field: 'visitedAt',
                     sort: 'asc',
                     width: 200
@@ -52,11 +52,11 @@ class StatisticsAdminComponent extends Component{
             rows: statistics.length > 0 && statistics.map(({ip, city, country, timezone, ll, visitedAt}) => {
                 return {
                     ip: ip,
-                    city: city,
                     country: country,
+                    city: city,
                     timezone: timezone,
                     ll: `${ll[0]}, ${ll[1]}`,
-                    visitedAt: moment(visitedAt).local().format("YYYY-MM-DD HH:mm"),
+                    visitedAt: moment(visitedAt).local().format("LLL"),
                 }})
         };
 
@@ -66,6 +66,7 @@ class StatisticsAdminComponent extends Component{
                     className="data_table"
                     striped
                     bordered
+                    responsive
                     info={false}
                     data={data}
                 />

@@ -50,7 +50,6 @@ class UsersAdminComponent extends Component{
                     shop: email,
                     birthday: moment(birthday).local().format("YYYY-MM-DD"),
                     phone: phone,
-                    // clickEvent: () => this.deleteUser()
                 }})
         };
 
@@ -60,6 +59,7 @@ class UsersAdminComponent extends Component{
                     className="data_table"
                     striped
                     bordered
+                    responsive
                     info={false}
                     data={data}
                 />

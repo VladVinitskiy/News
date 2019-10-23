@@ -19,6 +19,9 @@ export default class ProfileComponent extends Component{
         };
 
         this.changeBirthday = this.changeBirthday.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+
+        this.modal = React.createRef();
     }
 
     changeBirthday(date) {
@@ -38,7 +41,7 @@ export default class ProfileComponent extends Component{
     editData(){
         const { open, birthday, id, ...request } = this.state;
 
-        this.props.editUser(id,{birthday: moment(birthday).format("YYYY-MM-DD"), ...request});
+        this.props.editUser(id, {birthday: moment(birthday).format("YYYY-MM-DD"), ...request});
 
         this.setState({
             open: false,
@@ -51,8 +54,20 @@ export default class ProfileComponent extends Component{
         });
     }
 
-    componentWillUnmount(){
-        this.setState({open: false})
+    handleClickOutside = (event) => {
+        if (this.modal.current && !this.modal.current.contains(event.target)) {
+            this.setState({open: false})
+        }
+    };
+
+
+    componentDidMount(){
+        document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        this.setState({open: false});
+        document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
     render(){
@@ -61,15 +76,17 @@ export default class ProfileComponent extends Component{
 
         return (
             <div className={`container-fluid profile_wrap ${open ? "open" : ""}`}>
-                <Form className={`add_new_data ${open ? "open" : ""}`}>
+                <Form className={`add_new_data ${open ? "open" : ""}`} ref={this.modal}>
                     <h3>Edit Profile Data</h3>
 
-                    <button className="close_btn"
-                            type="button"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                this.setState({open:false})}}>
-                    </button>
+                    <button
+                        className="close_btn"
+                        type="button"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            this.setState({open: false})
+                        }}
+                    />
 
                     <div className="main_data mb-3">
                         <div className="main_info">

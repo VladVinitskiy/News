@@ -1,10 +1,9 @@
-import axios from 'axios'
-import {toastr} from 'react-redux-toastr'
+import axios from 'axios';
+import {toastr} from 'react-redux-toastr';
 import Cookies from "js-cookie";
-import {API_URL} from "./../constants"
+import moment from "moment";
+import {API_URL} from "./../constants";
 const jwt = require('jsonwebtoken');
-
-// console.log(process.env.NODE_ENV);
 
 export const apiCall = (method, type, data = null) => {
     const url = `${API_URL + type}`;
@@ -117,7 +116,6 @@ export const addUser = (data) => {
 };
 
 export function postArticle(data, source) {
-    console.log(data)
     const payload = apiCallv2("post", `article?source=${source}`, data)
         .then((response) => {
             toastr.info("Success", "Article have successfully added");
@@ -138,7 +136,7 @@ export const postStatistics = ()=>{
     axios("https://api.ipify.org")
         .then((response) => {
             const token = jwt.sign({ token: response.data }, 'shhhhh');
-            apiCall("post", `statistics?token=${token}`)
+            apiCall("post", `statistics?token=${token}`,{date: moment.utc()})
                 .catch(() => {
                     toastr.error("Error", "Something went wrong");
                     return false;
@@ -213,7 +211,7 @@ export const editUser = (id, data) => {
 
 
 export const login = (data, remember) => {
-    const payload = apiCall("post", "login", data) //{"email": "kalit@gmail.com", "password": "password"}
+    const payload = apiCall("post", "login", data)
         .then((response) => {
             if(remember) {
                 Cookies.set('isLoggedIn', true, { expires: 7 });
