@@ -154,9 +154,7 @@ export default class ProfileComponent extends Component{
                 <div className="profile">
                     <div className="head">Profile</div>
                     <div className="main">
-                        <button className="edit"
-                                onClick={() => this.switchEditMode(user)}>
-                        </button>
+                        <button className="edit" onClick={() => this.switchEditMode(user)}/>
 
                         <div className="avatar">
                             <img src="/images/profile.png" alt="Avatar"/>

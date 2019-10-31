@@ -1,0 +1,151 @@
+@startuml
+
+package  User_Interface <<Node>> {
+    package Redux <<Database>> {
+        class Store {
+            +filters
+            #admin_data
+            +news
+            +user
+            ~give_data()
+        }
+    }
+
+    class Profile {
+        +name
+        +surname
+        +phone
+        +email
+        +birthday
+        #edit_data()
+        +switch_edit_mode()
+    }
+
+    class Spinner {
+        -switch_spinner()
+    }
+
+    class Header {
+        +navigate()
+    }
+
+
+
+    rectangle Dashboard {
+        class AddArticle {
+             #post_article()
+        }
+
+        class Filters {
+            +choose_source()
+        }
+
+        class NewsBoard {
+            ~render_news()
+            +choose_article()
+        }
+
+        class ModalArticle {
+            #post_article()
+        }
+
+        class Comment {
+            #post_comment()
+        }
+
+        class Article {
+            #edit()
+            #delete_comment()
+        }
+    }
+
+    class Footer {
+        +render_amount_of_news()
+    }
+        
+
+    rectangle Admin {
+        #class Statistics {
+            ~render_statistics()
+        }
+
+        #class Users {
+             ~render_users()
+        }
+    }
+
+    rectangle Authorization {
+        class Login {
+            +email
+            -password
+            +login()
+        }
+
+        class SignUp {
+            +name
+            +surname
+            +phone
+            +email
+            +birthday
+            -password
+            +signup()
+        }
+    }
+    
+        Store <|-u-o Header
+        Store -u-> Footer
+        Store <|-u-> Spinner
+        Store <|-u-> Authorization
+        Store <|-d-> Users
+        Store <|-d-> Statistics
+        Store <|-l-> Profile
+        Store <|-r-o Dashboard
+
+        NewsBoard <-u-> AddArticle
+        NewsBoard <-r-> Filters
+        NewsBoard <-l-> ModalArticle
+        NewsBoard *-u-> Article
+
+        Article *-r- Comment
+
+        AddArticle o--o ModalArticle
+
+        Profile -d-|> Users
+        Header <|-d-|> Profile
+}
+
+package News_Provider_Cloud <<Cloud>> {
+
+}
+
+package API <<Node>> {
+    package Data <<Database>> {
+        object news { 
+            +send_news()
+            #save_news()
+        }
+
+        object users {
+            #send_users()
+            #edit_user()
+            #save_user()
+        }
+
+        object statistics {
+            #send_statistics()
+            +save_statistics()
+        }
+
+
+        statistics <|-|> users
+        users <|-|> news
+    }
+}
+
+User_Interface <-u-> API : HTTPS
+User_Interface <-u-> API : TCP/IP
+User_Interface <-u-> API : HTTP
+
+News_Provider_Cloud <-u- news : HTTPS
+
+@enduml

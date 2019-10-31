@@ -21,16 +21,38 @@ class AddArticle extends Component{
     }
 
     componentWillReceiveProps(nextProps){
+        const {editMode, chosenArticle} = this.props;
+
         if (nextProps.isOpenAddArticleModal){
             document.addEventListener('mousedown', this.handleClickOutside);
         } else {
             document.removeEventListener('mousedown', this.handleClickOutside);
         }
+
+        if (editMode !== nextProps.editMode) {
+            if(nextProps.editMode){
+                this.setState({
+                    title: chosenArticle.title,
+                    description: chosenArticle.description,
+                    main_image : chosenArticle.urlToImage
+                })
+            }else {
+                this.setState({
+                    title: "",
+                    description: "",
+                    main_image : null
+                })
+            }
+        }
     }
 
     handleClickOutside = (event) => {
+        const {showAddArticleModal, chooseArticle, switchEditMode, editMode} = this.props;
+
         if (this.modal.current && !this.modal.current.contains(event.target)) {
-            this.props.showAddArticleModal(false);
+            showAddArticleModal(false);
+            chooseArticle(false);
+            editMode && switchEditMode(false);
             this.file.current.value = "";
             this.setState({
                 main_image: null
@@ -40,7 +62,7 @@ class AddArticle extends Component{
 
     post(type=""){
         const {title, description, main_image} = this.state;
-        const {postArticle, chooseArticle, user, newsSource} = this.props;
+        const {postArticle, chooseArticle, user, newsSource, editMode, chosenArticle, showAddArticleModal, switchPreviewMode, showArticleModal} = this.props;
         const {name, surname} = user;
         const data = {
             author:`${name} ${surname}`,
@@ -54,16 +76,25 @@ class AddArticle extends Component{
             main_image
         };
 
-        if (type==="preview") {
+        showAddArticleModal(false);
+
+        if (type==="preview" && !editMode) {
             readImage(this.file.current, "modal_article_img");
             chooseArticle(data);
-        }else {
+            switchPreviewMode(true);
+            showArticleModal(true);
+        }else if(editMode){
+            chooseArticle(chosenArticle);
+            switchPreviewMode(true);
+            showArticleModal(true);
+        }
+        else {
             postArticle(data, newsSource);
         }
     }
 
     render(){
-        const {isLoggedIn, showAddArticleModal, isOpenAddArticleModal} = this.props;
+        const {isLoggedIn, showAddArticleModal, isOpenAddArticleModal, editMode, deleteArticle, newsSource, chosenArticle} = this.props;
         const {title, description, main_image} = this.state;
 
         return (
@@ -108,9 +139,9 @@ class AddArticle extends Component{
                                         this.setState({main_image: e.target.files[0]})
                                     }}/>
 
-                                <label htmlFor="file">{main_image ? this.file.current.files.item(0).name : "Choose an image"}</label>
+                                <label htmlFor="file">{(typeof main_image === "object" && main_image !== null) ? this.file.current.files.item(0).name : "Choose an image"}</label>
                             </div>
-                            <div className="row form-group m-3 wrap_for_buttons">
+                            <div className={`row form-group m-3 wrap_for_buttons ${editMode ? "edit_btns":""}`}>
                                 <button className="btn btn-dark btn-block"
                                         type='submit'
                                         onClick={(e) => {
@@ -119,8 +150,16 @@ class AddArticle extends Component{
                                         }}
                                         disabled={!(title.trim().length !== 0 && description.trim().length !== 0)}
                                 >
-                                    Public
+                                    {editMode ? "Edit" :"Public"}
                                 </button>
+
+                                {editMode && <button className="btn btn-dark btn-block"
+                                        onClick={() => {
+                                            showAddArticleModal(false);
+                                            deleteArticle(chosenArticle.id, newsSource)
+                                        }}>
+                                    Delete
+                                </button>}
 
                                 <button className="btn btn-dark btn-block"
                                         onClick={(e) => {

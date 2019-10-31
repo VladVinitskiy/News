@@ -84,6 +84,23 @@ input, textarea
   &:after,&:before
     background-color: red
 
+.edit
+  position: absolute
+  border: none
+  background: none
+  width: 30px
+  height: 30px
+  top: 15px
+  right: 15px
+  outline: none
+  &:before
+    content: url("/images/edit.svg")
+    top: 0
+
+.edit.modal_edit
+  top: 4px
+  right: 40px
+
 .wrapper_header
   display: flex
   justify-content: space-between

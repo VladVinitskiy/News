@@ -6,6 +6,7 @@ const defaultState = {
     chosenArticle: {},
     isArticleModalOpen: false,
     previewMode: false,
+    editMode: false,
     isOpenAddArticleModal: false,
     newsSource:"global",
     sources: sources
@@ -32,7 +33,7 @@ const filters = (state = defaultState, action) =>{
         case 'POST_COMMENT_FULFILLED': {
             return Object.assign({}, state, {
                 chosenArticle: Object.assign({}, state.chosenArticle, {
-                    comments: [action.payload.comment, ...state.chosenArticle.comments]
+                    comments: [...state.chosenArticle.comments, action.payload.comment]
                 })
             });
         }
@@ -46,6 +47,11 @@ const filters = (state = defaultState, action) =>{
         case 'SWITCH_PREVIEW_MODE': {
             return Object.assign({}, state, {
                 previewMode: action.payload
+            });
+        }
+        case 'SWITCH_EDIT_MODE': {
+            return Object.assign({}, state, {
+                editMode: action.payload
             });
         }
         case 'SHOW_ARTICLE_MODAL': {

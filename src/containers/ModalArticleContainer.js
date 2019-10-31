@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
-import {showArticleModal, switchPreviewMode, showAddArticleModal} from '../action/filters';
+import {showArticleModal, switchPreviewMode, showAddArticleModal, switchEditMode} from '../action/filters';
 import ModalArticle from '../components/ModalArticle';
-import {deleteArticle, postArticle, postComment, deleteComment, postCommentIO, deleteCommentIO} from "../action/apiRequests";
+import {postArticle, postComment, deleteComment, postCommentIO, deleteCommentIO} from "../action/apiRequests";
 
 const mapStateToProps = state => {
     const { filters } = state;
@@ -19,8 +19,8 @@ const mapDispatchToProps = dispatch => {
     return {
         showArticleModal: state => dispatch(showArticleModal(state)),
         showAddArticleModal: state => dispatch(showAddArticleModal(state)),
-        deleteArticle: (id, type)=> dispatch(deleteArticle(id, type)),
         switchPreviewMode: (state) => dispatch(switchPreviewMode(state)),
+        switchEditMode: (state) => dispatch(switchEditMode(state)),
         postArticle: (data, source) => dispatch(postArticle(data, source)),
         postComment: (id, source, comment) => dispatch(postComment(id, source, comment)),
         postCommentIO: (payload) => dispatch(postCommentIO(payload)),

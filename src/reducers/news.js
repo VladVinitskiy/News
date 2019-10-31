@@ -14,7 +14,7 @@ export default function news(state = defaultState, action) {
             return state.map((article) => {
                 if (article.id === action.payload.id) {
                     return Object.assign({}, article, {
-                        comments: [action.payload.comment, ...article.comments]
+                        comments: [...article.comments, action.payload.comment]
                     })
                 }
                 return article;

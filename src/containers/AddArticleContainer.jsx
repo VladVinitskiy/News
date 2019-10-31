@@ -1,30 +1,28 @@
 import {connect} from 'react-redux';
 import AddArticle from '../components/AddArticle'
-import {postArticle} from "../action/apiRequests";
-import {showArticleModal, chooseArticle, showAddArticleModal, switchPreviewMode} from "../action/filters";
+import {deleteArticle, postArticle} from "../action/apiRequests";
+import {showArticleModal, chooseArticle, showAddArticleModal, switchPreviewMode, switchEditMode} from "../action/filters";
 
 const mapStateToProps = state => {
     return {
         user: state.user,
         newsSource: state.filters.newsSource,
         previewMode: state.filters.previewMode,
+        editMode: state.filters.editMode,
         isOpenAddArticleModal: state.filters.isOpenAddArticleModal,
+        chosenArticle: state.filters.chosenArticle,
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        postArticle: (article, type) => {
-            dispatch(postArticle(article, type));
-            dispatch(showAddArticleModal(false));
-        },
+        postArticle: (article, type) => dispatch(postArticle(article, type)),
         showAddArticleModal: (state) => dispatch(showAddArticleModal(state)),
-        chooseArticle: article => {
-            dispatch(chooseArticle(article));
-            dispatch(switchPreviewMode(true));
-            dispatch(showArticleModal(true));
-            dispatch(showAddArticleModal(false));
-        },
+        switchEditMode: (state) => dispatch(switchEditMode(state)),
+        switchPreviewMode: (state) => dispatch(switchPreviewMode(state)),
+        showArticleModal: (state) => dispatch(showArticleModal(state)),
+        chooseArticle: article => dispatch(chooseArticle(article)),
+        deleteArticle: (id, type)=> dispatch(deleteArticle(id, type)),
     }
 };
 

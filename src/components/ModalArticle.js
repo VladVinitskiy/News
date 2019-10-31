@@ -53,12 +53,19 @@ class ModalArticle extends Component{
         showArticleModal(false);
     }
 
+    edit(){
+        const {showAddArticleModal, switchEditMode, showArticleModal} = this.props;
+
+        showAddArticleModal(true);
+        showArticleModal(false);
+        switchEditMode(true);
+    }
+
     render(){
         const {
             chosenArticle,
             showArticleModal,
             isArticleModalOpen,
-            deleteArticle,
             newsSource,
             user,
             previewMode,
@@ -75,15 +82,7 @@ class ModalArticle extends Component{
             <div className={`dimScreen dark fd ${isArticleModalOpen ? "" : "disabled"}`}>
                 <KeyboardEventHandler handleKeys={['esc']} onKeyEvent={() => showArticleModal(false)}/>
                 <div className="modal_content px-lg-5 px-md-4 px-sm-3 py-lg-4 py-md-3 py-sm-2 ml-5" ref={this.modal}>
-                    {author === `${name} ${surname}` &&
-                    <button
-                        className="close_btn delete"
-                        type="button"
-                        onClick={() => {
-                            showArticleModal(false);
-                            deleteArticle(id, newsSource)
-                        }}/>
-                    }
+                    {author === `${name} ${surname}` && <button className="edit modal_edit" onClick={() => this.edit()}/>}
 
                     <button
                         className="close_btn"

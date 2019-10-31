@@ -19,6 +19,13 @@ export function switchPreviewMode(state) {
     }
 }
 
+export function switchEditMode(state) {
+    return {
+        type: "SWITCH_EDIT_MODE",
+        payload: state
+    }
+}
+
 export function showAddArticleModal(state) {
     return {
         type: "SHOW_ADD_ARTICLE_MODAL",
