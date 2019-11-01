@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import AddArticle from '../components/AddArticle'
-import {deleteArticle, postArticle} from "../action/apiRequests";
+import {deleteArticle, postArticle, editArticle} from "../action/apiRequests";
 import {showArticleModal, chooseArticle, showAddArticleModal, switchPreviewMode, switchEditMode} from "../action/filters";
 
 const mapStateToProps = state => {
@@ -17,6 +17,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         postArticle: (article, type) => dispatch(postArticle(article, type)),
+        editArticle: (article, type) => dispatch(editArticle(article, type)),
         showAddArticleModal: (state) => dispatch(showAddArticleModal(state)),
         switchEditMode: (state) => dispatch(switchEditMode(state)),
         switchPreviewMode: (state) => dispatch(switchPreviewMode(state)),

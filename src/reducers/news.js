@@ -19,6 +19,13 @@ export default function news(state = defaultState, action) {
                 }
                 return article;
             });
+        case "EDIT_ARTICLE_FULFILLED":
+            return action.payload ? state.map((article) => {
+                if (article.id === action.payload.id) {
+                    return action.payload
+                }
+                return article;
+            }) : state ;
         case "DELETE_COMMENT_FULFILLED":
             return state.map((article) => {
                 if (article.id === action.payload.articleId) {

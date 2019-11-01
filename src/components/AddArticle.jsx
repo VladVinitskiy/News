@@ -62,7 +62,19 @@ class AddArticle extends Component{
 
     post(type=""){
         const {title, description, main_image} = this.state;
-        const {postArticle, chooseArticle, user, newsSource, editMode, chosenArticle, showAddArticleModal, switchPreviewMode, showArticleModal} = this.props;
+        const {
+            postArticle,
+            chooseArticle,
+            user,
+            newsSource,
+            editMode,
+            chosenArticle: {id},
+            showAddArticleModal,
+            switchPreviewMode,
+            showArticleModal,
+            editArticle,
+            chosenArticle
+        } = this.props;
         const {name, surname} = user;
         const data = {
             author:`${name} ${surname}`,
@@ -78,15 +90,20 @@ class AddArticle extends Component{
 
         showAddArticleModal(false);
 
-        if (type==="preview" && !editMode) {
-            readImage(this.file.current, "modal_article_img");
-            chooseArticle(data);
+        if (type==="preview") {
+            if (editMode){
+                chooseArticle(chosenArticle);
+            } else {
+                readImage(this.file.current, "modal_article_img");
+                chooseArticle(data);
+            }
             switchPreviewMode(true);
             showArticleModal(true);
         }else if(editMode){
-            chooseArticle(chosenArticle);
-            switchPreviewMode(true);
-            showArticleModal(true);
+            switchPreviewMode(false);
+            showArticleModal(false);
+
+            editArticle({id, ...data}, newsSource);
         }
         else {
             postArticle(data, newsSource);
@@ -153,7 +170,7 @@ class AddArticle extends Component{
                                     {editMode ? "Edit" :"Public"}
                                 </button>
 
-                                {editMode && <button className="btn btn-dark btn-block"
+                                {editMode && <button className="btn btn-outline-danger btn-block"
                                         onClick={() => {
                                             showAddArticleModal(false);
                                             deleteArticle(chosenArticle.id, newsSource)

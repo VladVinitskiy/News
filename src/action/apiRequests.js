@@ -118,7 +118,7 @@ export const addUser = (data) => {
 export function postArticle(data, source) {
     const payload = apiCallv2("post", `article?source=${source}`, data)
         .then((response) => {
-            toastr.info("Success", "Article have successfully added");
+            toastr.success("Success", "Article have successfully added");
             return response
         })
         .catch((e) => {
@@ -208,6 +208,23 @@ export const editUser = (id, data) => {
         });
     };
 };
+
+export function editArticle(data, source) {
+    const payload = apiCallv2("put", `article?source=${source}`, data)
+        .then((response) => {
+            toastr.success("Success", "Article have successfully edited");
+            return response
+        })
+        .catch(() => {
+            toastr.info("Error", "Article haven't edited");
+            return null
+        });
+
+    return {
+        type: "EDIT_ARTICLE",
+        payload
+    }
+}
 
 
 export const login = (data, remember) => {
