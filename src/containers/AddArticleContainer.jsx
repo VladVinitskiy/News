@@ -17,7 +17,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         postArticle: (article, type) => dispatch(postArticle(article, type)),
-        editArticle: (article, type) => dispatch(editArticle(article, type)),
+        editArticle: (article, id) => dispatch(editArticle(article, id)),
         showAddArticleModal: (state) => dispatch(showAddArticleModal(state)),
         switchEditMode: (state) => dispatch(switchEditMode(state)),
         switchPreviewMode: (state) => dispatch(switchPreviewMode(state)),

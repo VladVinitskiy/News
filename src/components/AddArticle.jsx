@@ -103,7 +103,7 @@ class AddArticle extends Component{
             switchPreviewMode(false);
             showArticleModal(false);
 
-            editArticle({id, ...data}, newsSource);
+            editArticle(data, id);
         }
         else {
             postArticle(data, newsSource);

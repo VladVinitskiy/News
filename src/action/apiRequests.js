@@ -209,8 +209,8 @@ export const editUser = (id, data) => {
     };
 };
 
-export function editArticle(data, source) {
-    const payload = apiCallv2("put", `article?source=${source}`, data)
+export function editArticle(data, id) {
+    const payload = apiCallv2("put", `article?id=${id}`, data)
         .then((response) => {
             toastr.success("Success", "Article have successfully edited");
             return response
