@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import Base from '../components/Base';
+import {withRouter} from "react-router-dom";
 import {getNews, getCurrentSession, login, addUser} from '../action/apiRequests';
 
 const mapStateToProps = (state) => {
@@ -19,6 +20,6 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-const BaseContainer = connect(mapStateToProps,mapDispatchToProps)(Base);
+const BaseContainer = withRouter(connect(mapStateToProps,mapDispatchToProps)(Base));
 
 export default BaseContainer;

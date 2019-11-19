@@ -229,8 +229,10 @@ export function editArticle(data, id) {
 }
 
 
-export const login = (data, remember) => {
-    const payload = apiCall("post", "login", data)
+export const login = ({email, password}, remember) => {
+    const cryptoPassword = jwt.sign({password}, 'cryptoPassword');
+
+    const payload = apiCall("post", "login", {email, password: cryptoPassword})
         .then((response) => {
             if(remember) {
                 Cookies.set('isLoggedIn', true, { expires: 7 });
@@ -239,7 +241,7 @@ export const login = (data, remember) => {
             return response.response
         })
         .catch((e) => {
-            toastr.error("Error", "Something went wrong");
+            toastr.error("Error", e.response.statusText);
             return false;
         });
 

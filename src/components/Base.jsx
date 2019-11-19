@@ -17,6 +17,14 @@ export default class Base extends Component{
         postStatistics();
     }
 
+    componentWillReceiveProps(nextProps){
+        const { isLoggedIn, history } = this.props;
+
+        if (isLoggedIn !== nextProps.isLoggedIn && nextProps.isLoggedIn){
+            history.push("/dashboard")
+        }
+    }
+
     render(){
         const {login, addUser, getNews, isLoggedIn, news, isAdmin} = this.props;
 

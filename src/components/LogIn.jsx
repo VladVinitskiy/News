@@ -9,7 +9,7 @@ const LogIn = ({login, history}) => {
                   onSubmit={e => {
                       e.preventDefault();
                       login({email: email.value, password: password.value}, remembered.checked)
-                      history.push("/")
+                      // history.push("/")
                   }}>
                 <p className="h4 mb-4">Log In</p>
                 <p>Join our mailing list. We write rarely, but only the best content.</p>
