@@ -4,8 +4,7 @@
     <list default="true" id="b37f9447-2aeb-4cf6-8f23-f5c92453d82f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/action/apiRequests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/apiRequests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddArticle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddArticle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/AddArticleContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AddArticleContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/news.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/reducers/news.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state relative-caret-position="102">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -30,7 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/ModalArticleContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="578">
               <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
@@ -42,7 +41,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ModalArticle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2346">
+            <state relative-caret-position="2448">
               <caret line="144" column="60" lean-forward="true" selection-start-line="144" selection-start-column="60" selection-end-line="144" selection-end-column="60" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
@@ -63,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/filters.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
+            <state relative-caret-position="867">
               <caret line="51" column="30" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="30" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -75,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/AddArticleContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="323">
               <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
@@ -96,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/AddArticle.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1768">
+            <state relative-caret-position="1836">
               <caret line="108" column="32" lean-forward="true" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -105,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/action/apiRequests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="166" column="5" lean-forward="true" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
+            <state relative-caret-position="215">
+              <caret line="126" column="21" selection-start-line="126" selection-start-column="16" selection-end-line="126" selection-end-column="21" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -215,10 +214,10 @@
         <option value="$PROJECT_DIR$/src/styles/AddArticleModal.sass" />
         <option value="$PROJECT_DIR$/src/containers/ModalArticleContainer.js" />
         <option value="$PROJECT_DIR$/src/components/ModalArticle.js" />
-        <option value="$PROJECT_DIR$/src/reducers/news.js" />
-        <option value="$PROJECT_DIR$/src/action/apiRequests.js" />
         <option value="$PROJECT_DIR$/src/containers/AddArticleContainer.jsx" />
         <option value="$PROJECT_DIR$/src/components/AddArticle.jsx" />
+        <option value="$PROJECT_DIR$/src/action/apiRequests.js" />
+        <option value="$PROJECT_DIR$/src/reducers/news.js" />
       </list>
     </option>
   </component>
@@ -236,6 +235,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -288,13 +288,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/../Portfolio/News/news/node_modules/eslint" />
@@ -374,7 +373,8 @@
       <workItem from="1573636057490" duration="3553000" />
       <workItem from="1573651156285" duration="2577000" />
       <workItem from="1573732353924" duration="5687000" />
-      <workItem from="1573823407842" duration="2485000" />
+      <workItem from="1573823407842" duration="3692000" />
+      <workItem from="1574163790359" duration="1570000" />
     </task>
     <task id="LOCAL-00001" summary="The time has come for great changes!">
       <created>1567690583644</created>
@@ -523,17 +523,23 @@
       <option name="project" value="LOCAL" />
       <updated>1572613021421</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="refactored some logic">
+      <created>1574074632254</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1574074632254</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261345000" />
+    <option name="totallyTimeSpent" value="264122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1368" y="183" width="1376" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26139817" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26519758" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -602,7 +608,8 @@
     <MESSAGE value="Refactoring project, changed some components and styles." />
     <MESSAGE value="Added delete feature for article and edit chosen article mode" />
     <MESSAGE value="Added edit request." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added edit request." />
+    <MESSAGE value="refactored some logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored some logic" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/components/Footer.jsx" />
@@ -911,16 +918,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/news.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/ModalArticleContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
+        <state relative-caret-position="578">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
@@ -930,7 +930,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ModalArticle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2346">
+        <state relative-caret-position="2448">
           <caret line="144" column="60" lean-forward="true" selection-start-line="144" selection-start-column="60" selection-end-line="144" selection-end-column="60" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
@@ -947,7 +947,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/filters.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
+        <state relative-caret-position="867">
           <caret line="51" column="30" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="30" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -957,7 +957,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/AddArticleContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="323">
           <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
@@ -974,7 +974,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/AddArticle.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1768">
+        <state relative-caret-position="1836">
           <caret line="108" column="32" lean-forward="true" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -991,11 +991,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/action/apiRequests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="166" column="5" lean-forward="true" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
+        <state relative-caret-position="215">
+          <caret line="126" column="21" selection-start-line="126" selection-start-column="16" selection-end-line="126" selection-end-column="21" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/news.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
         </state>
       </provider>
     </entry>

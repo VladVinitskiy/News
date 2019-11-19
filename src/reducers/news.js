@@ -7,7 +7,7 @@ export default function news(state = defaultState, action) {
         case "GET_NEWS_FULFILLED":
             return action.payload === "Error" ? newsData : action.payload;
         case "POST_ARTICLE_FULFILLED":
-            return action.payload  ?  [action.payload, ...state] : newsData;
+            return !action.payload.error  ?  [action.payload, ...state] : state;
         case "DELETE_ARTICLE_FULFILLED":
             return action.payload  ? state.filter((item) => action.payload.id !== item.id) : newsData;
         case "POST_COMMENT_FULFILLED":

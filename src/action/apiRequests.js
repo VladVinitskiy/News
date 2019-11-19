@@ -123,7 +123,9 @@ export function postArticle(data, source) {
         })
         .catch((e) => {
             toastr.info("Error", "Article haven't added");
-            return []
+            return {
+                error : e.response.statusText
+            }
         });
 
     return {
