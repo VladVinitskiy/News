@@ -8,7 +8,7 @@ const defaultState = {
     previewMode: false,
     editMode: false,
     isOpenAddArticleModal: false,
-    newsSource:"global",
+    newsSource: "global",
     sources: sources
 };
 
@@ -17,7 +17,7 @@ const filters = (state = defaultState, action) =>{
         case 'LOG_IN_FULFILLED':
         case 'GET_CURRENT_SESSION_FULFILLED': {
             return Object.assign({}, state, {
-                isLoggedIn: action.payload ? true : state.isLoggedIn
+                isLoggedIn: action.payload && true
             });
         }
         case 'LOGGED_OUT_FULFILLED': {

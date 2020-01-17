@@ -114,31 +114,36 @@ package  User_Interface <<Node>> {
         Header <|-d-|> Profile
 }
 
-package News_Provider_Cloud <<Cloud>> {
-
+package Mongo_Cloud <<Cloud>> {
+    object DB {
+            +people
+            +news
+            +images
+            +statistics
+        }
 }
 
 package API <<Node>> {
     package Data <<Database>> {
-        object news { 
-            +send_news()
-            #save_news()
-        }
-
         object users {
             #send_users()
             #edit_user()
             #save_user()
+            #registration()
+            #authorization()
         }
 
+        object news { 
+            +send_news()
+            #save_news()
+        }
+        
         object statistics {
             #send_statistics()
             +save_statistics()
         }
 
-
-        statistics <|-|> users
-        users <|-|> news
+        news <-l-> users
     }
 }
 
@@ -146,6 +151,8 @@ User_Interface <-u-> API : HTTPS
 User_Interface <-u-> API : TCP/IP
 User_Interface <-u-> API : HTTP
 
-News_Provider_Cloud <-u- news : HTTPS
+DB <-d-> news : HTTPS
+DB <-d-> users : HTTPS
+DB <-l-> statistics : HTTPS
 
 @enduml

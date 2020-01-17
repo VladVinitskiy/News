@@ -2,8 +2,9 @@ import axios from 'axios';
 import {toastr} from 'react-redux-toastr';
 import Cookies from "js-cookie";
 import moment from "moment";
-import {API_URL} from "./../constants";
-const jwt = require('jsonwebtoken');
+import jwt from "jsonwebtoken"
+
+const API_URL = process.env.REACT_APP_API_URL
 
 export const apiCall = (method, type, data = null) => {
     const url = `${API_URL + type}`;
@@ -255,9 +256,14 @@ export const login = ({email, password}, remember) => {
 
 export const getCurrentSession = () => {
     const payload = apiCall("get", `session?token=${Cookies.get("token")}`)
-        .then((response) => response)
-        .catch(() => {
-            return false;
+        .then((response) => {
+            if (response.error) {
+                Cookies.remove('isLoggedIn');
+                Cookies.remove('token');
+                toastr.error(response.status, response.message);
+                return false
+            }
+            return response
         });
 
     return (dispatch) => {

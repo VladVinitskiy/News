@@ -10,7 +10,7 @@ const Spinner = ({show}) => {
                 sizeUnit={"px"}
                 size={150}
                 color={'#23272b'}
-                loading={show}
+                loading={show > 0}
             />
         </div>
     )
