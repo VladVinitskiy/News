@@ -4,9 +4,8 @@ import KeyboardEventHandler from "react-keyboard-event-handler";
 import "../styles/ModalArticle.sass";
 import socketIOClient from "socket.io-client";
 import Comment from "./Comment";
-import {API_URL} from "./../constants"
 
-const socket = socketIOClient(API_URL);
+const socket = socketIOClient(process.env.REACT_APP_API_URL);
 
 
 class ModalArticle extends Component{

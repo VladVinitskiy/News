@@ -1,9 +1,8 @@
 import React from 'react'
 import moment from "moment";
-import {API_URL} from "./../constants"
 import socketIOClient from "socket.io-client";
 
-const socket = socketIOClient(API_URL);
+const socket = socketIOClient(process.env.REACT_APP_API_URL);
 
 const Comment = ({role, newsSource, author, item, articleId}) => {
     const {name, surname, id} = item;

@@ -1,1 +1,0 @@
-export const API_URL = window.location.hostname === "newssss.herokuapp.com" ? "https://newssss-api.herokuapp.com/" : "http://localhost:5000/";

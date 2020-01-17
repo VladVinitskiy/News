@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import moment from "moment";
 import jwt from "jsonwebtoken"
 
-const API_URL = process.env.REACT_APP_API_URL
+const API_URL = process.env.REACT_APP_API_URL;
 
 export const apiCall = (method, type, data = null) => {
     const url = `${API_URL + type}`;
