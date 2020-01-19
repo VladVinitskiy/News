@@ -81,7 +81,7 @@ class AddArticle extends Component{
             title,
             description,
             source:`${name} ${surname}`,
-            urlToImage:null,
+            urlToImage: (chosenArticle && chosenArticle.urlToImage) ? chosenArticle.urlToImage : null,
             url:null,
             publishedAt: moment.parseZone(Date.now()).utc().format(),
             comments:[],
