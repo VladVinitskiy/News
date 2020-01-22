@@ -39,6 +39,7 @@
   "scripts": {
     "heroku_build": "env-cmd -f .env.heroku react-scripts build",
     "production": "env-cmd -f .env.production react-scripts build",
+    "develop_build": "env-cmd -f .env.development react-scripts build",
     "develop": "env-cmd -f .env.development react-scripts start",
     "start": "env-cmd -f .env.production react-scripts start",
     "build": "env-cmd -f .env.production react-scripts build",
