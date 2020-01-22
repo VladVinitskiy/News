@@ -37,6 +37,8 @@
     "socket.io-client": "^2.3.0"
   },
   "scripts": {
+    "heroku_build": "env-cmd -f .env.heroku react-scripts build",
+    "production": "env-cmd -f .env.production react-scripts build",
     "develop": "env-cmd -f .env.development react-scripts start",
     "start": "env-cmd -f .env.production react-scripts start",
     "build": "env-cmd -f .env.production react-scripts build",
