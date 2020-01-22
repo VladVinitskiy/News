@@ -157,7 +157,7 @@ export default class ProfileComponent extends Component{
                         <button className="edit" onClick={() => this.switchEditMode(user)}/>
 
                         <div className="avatar">
-                            <img src="/images/profile.png" alt="Avatar"/>
+                            <img src="/icons/profile.png" alt="Avatar"/>
                         </div>
 
                         <table>

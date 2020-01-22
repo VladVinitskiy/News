@@ -9,7 +9,7 @@ const Header = ({isLoggedIn, logout, isAdmin}) => {
             <div className='header_wrap'>
                 <div className=' logo_mode header_logo'>
                     <Link className='' to={`/`}>
-                        <img className='img-fluid navbar-brand' src="/images/logo.png" alt='logo'/>
+                        <img className='img-fluid navbar-brand' src="/icons/logo.png" alt='logo'/>
                     </Link>
                 </div>
                 <nav className='navbar nav_mode navbar-expand-lg header_nav'>

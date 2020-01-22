@@ -96,8 +96,8 @@ class ModalArticle extends Component{
 
                     <div className="wrap_for_title">
                         <div className="article_image">
-                            <img src={urlToImage ? urlToImage : "/images/no_image.png"}
-                                 onError={e => e.target.src = "images/no_image.png"}
+                            <img src={urlToImage ? urlToImage : "/icons/no_image.png"}
+                                 onError={e => e.target.src = "icons/no_image.png"}
                                  id="modal_article_img"
                                  alt="article_image"/>
                         </div>
