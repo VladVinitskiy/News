@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
-import logo from '../logo.png'
 
 import "../styles/Header.sass"
 
@@ -10,7 +9,7 @@ const Header = ({isLoggedIn, logout, isAdmin}) => {
             <div className='header_wrap'>
                 <div className=' logo_mode header_logo'>
                     <Link className='' to={`/`}>
-                        <img className='img-fluid navbar-brand' src={logo} alt='logo'/>
+                        <img className='img-fluid navbar-brand' src="/images/logo.png" alt='logo'/>
                     </Link>
                 </div>
                 <nav className='navbar nav_mode navbar-expand-lg header_nav'>
