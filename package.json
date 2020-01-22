@@ -38,9 +38,7 @@
   },
   "scripts": {
     "develop": "env-cmd -f .env.development react-scripts start",
-    "prestart": "env-cmd -f .env.production react-scripts build",
-    "start": "serve -s build",
-    "this_start": "^^^only for heroku",
+    "start": "env-cmd -f .env.production react-scripts start",
     "build": "env-cmd -f .env.production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
