@@ -30,5 +30,13 @@
   {
     "name": "United Kingdom",
     "countryCode": "gb"
+  },
+  {
+    "name": "Vlad's blog",
+    "countryCode": "vb"
+  },
+  {
+    "name": "Yura's blog",
+    "countryCode": "yb"
   }
 ]
